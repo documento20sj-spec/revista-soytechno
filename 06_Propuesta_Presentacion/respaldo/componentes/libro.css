@@ -1,0 +1,27 @@
+/* Libro: pliego 420 × 280 mm (3:2) con perspectiva real */
+.libro{position:relative;width:100%;aspect-ratio:3/2;outline:none;touch-action:pan-y}
+.libro:focus-visible{outline:2px solid var(--azul-luz);outline-offset:8px}
+.libro-escena{position:absolute;inset:0;perspective:2600px;perspective-origin:50% 40%;transform-style:preserve-3d;cursor:pointer}
+.libro .hoja{position:absolute;top:0;left:50%;width:50%;height:100%;transform-style:preserve-3d;transform-origin:0 50%;will-change:transform}
+.libro .cara{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;background:#fff}
+.libro .cara.dorso{transform:rotateY(180deg)}
+.libro .cara.vacia{background:transparent}
+.libro .cara > .pg{width:100%;height:100%}
+/* curvatura junto al lomo: sombreado interior en cada cara */
+.libro .cara.frente::after,.libro .cara.dorso::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:30}
+.libro .cara.frente::after{background:linear-gradient(90deg,rgba(13,14,18,.20) 0,rgba(13,14,18,.06) 3%,rgba(13,14,18,0) 9%)}
+.libro .cara.dorso::after{background:linear-gradient(270deg,rgba(13,14,18,.20) 0,rgba(13,14,18,.06) 3%,rgba(13,14,18,0) 9%)}
+.libro .cara.vacia::after{display:none}
+/* sombra dinámica durante el giro */
+.libro .sombra{position:absolute;inset:0;pointer-events:none;z-index:31;opacity:0}
+.libro .s-f{background:linear-gradient(270deg,rgba(13,14,18,.55),rgba(13,14,18,.15) 60%,rgba(13,14,18,0))}
+.libro .s-r{background:linear-gradient(90deg,rgba(13,14,18,.55),rgba(13,14,18,.15) 60%,rgba(13,14,18,0))}
+.libro-lomo{position:absolute;left:calc(50% - 1px);top:0;width:2px;height:100%;background:rgba(13,14,18,.25);transform:translateZ(1px)}
+.libro.cerrado .libro-lomo{display:none}
+.libro-asa{position:absolute;inset:0;pointer-events:none}
+.libro-vivo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* Teléfono: una página por vez (3:4); la hoja girada sale por la izquierda, fuera del marco */
+.libro.una{aspect-ratio:3/4;overflow:hidden}
+.libro.una .libro-escena{left:-100%;width:200%;right:auto}
+.libro.una .libro-lomo{display:none}
+.libro.una .cara.frente::after{background:linear-gradient(90deg,rgba(13,14,18,.12) 0,rgba(13,14,18,0) 5%)}

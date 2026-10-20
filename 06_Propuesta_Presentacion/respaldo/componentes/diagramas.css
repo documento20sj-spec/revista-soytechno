@@ -1,0 +1,89 @@
+/* Diagramas · comparten los tokens de .gr (graficos.css) */
+.dg{--g-acento:#0057A6;--g-neutro:#5B6472;--g-pista:#E6E9EE;--g-rej:#DDE1E7;--g-txt:#0D0E12;--g-txt2:#5B6472;--g-sup:#FFFFFF;--g-banda:#F4F5F7;--g-carbon:#0D0E12;
+  margin:0;font-family:"Archivo",system-ui,sans-serif;color:var(--g-txt)}
+.tema-oscuro .dg{--g-acento:#1B6BD6;--g-neutro:#7E8796;--g-pista:#1E2430;--g-rej:#2A3240;--g-txt:#F4F5F7;--g-txt2:#A9B3C1;--g-sup:#0E0E12;--g-banda:#141922;--g-carbon:#1B2230}
+.dg figcaption{display:flex;flex-direction:column;gap:4px;margin:0 0 16px}
+.dg figcaption b{font-weight:700;font-size:18px;line-height:1.3}
+.dg figcaption span{font-size:14px;color:var(--g-txt2)}
+/* Mapa de paginación */
+.mp-ley{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--g-txt)}
+.mp-ley li{display:flex;align-items:center;gap:8px}
+.mp-ley i{display:inline-block;width:14px;height:18px;border-radius:2px}
+.mp-reja{display:grid;grid-template-columns:repeat(7,1fr);gap:14px 12px}
+.mp-pl{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.mp-pl.uno:first-child .mp-p{grid-column:2}
+.mp-p{aspect-ratio:3/4;border-radius:2px;padding:4px 5px;display:flex;flex-direction:column;justify-content:space-between;outline:none;min-width:0;transition:transform .15s,filter .15s}
+.mp-p b{font:600 12px/1 "JetBrains Mono",monospace;font-variant-numeric:tabular-nums}
+.mp-p i{font:normal 500 12px/1.1 "Archivo",sans-serif;letter-spacing:-.01em;overflow-wrap:anywhere}
+.mp-p.edit,.mp-ley i.edit{background:var(--g-sup);box-shadow:inset 0 0 0 1px var(--g-rej)}
+.mp-p.portada{background:var(--g-sup);box-shadow:inset 0 0 0 2px var(--g-txt)}
+.mp-p.oscuro,.mp-ley i.oscuro{background:var(--g-carbon);color:#F4F5F7}
+.mp-p.pauta,.mp-ley i.pauta{background:var(--g-acento);color:#fff}
+.mp-p.auto,.mp-ley i.auto{background:repeating-linear-gradient(45deg,var(--g-acento) 0 1.5px,transparent 1.5px 6px),var(--g-sup);box-shadow:inset 0 0 0 1.5px var(--g-acento)}
+.mp-p.auto b,.mp-p.auto i{background:var(--g-sup);padding:1px 2px;border-radius:2px;width:max-content}
+.mp-p[data-pliego]{cursor:pointer}
+button.mp-p{font:inherit;color:inherit;text-align:left;border:0;margin:0;-webkit-appearance:none;appearance:none}
+@media (hover:hover) and (pointer:fine){.mp-p[data-pliego]:hover{transform:translateY(-3px);filter:brightness(1.06)}}
+.mp-p:focus-visible{transform:translateY(-3px)}
+.mp-p[data-pliego]:active{transform:scale(.97);transition-duration:.1s}
+.mp-p:focus-visible{outline:2px solid var(--g-acento);outline-offset:2px}
+@media (max-width:900px){.mp-reja{grid-template-columns:repeat(5,1fr)}}
+@media (max-width:560px){.mp-reja{grid-template-columns:repeat(3,1fr)}}
+/* Ciclo de ocho semanas */
+.cg-reja{display:grid;gap:6px}
+.cg-cab,.cg-f{display:grid;grid-template-columns:170px 1fr;align-items:center;gap:12px}
+.cg-sem{display:grid;grid-template-columns:repeat(8,1fr)}
+.cg-s{font:600 12px/1 "JetBrains Mono",monospace;color:var(--g-txt2);padding-left:6px}
+.cg-n{font-size:14px;color:var(--g-txt)}
+.cg-f.sec .cg-n{color:var(--g-txt2)}
+.cg-pista{position:relative;height:28px;background:repeating-linear-gradient(90deg,var(--g-banda) 0 calc(100%/8),transparent calc(100%/8) calc(100%/4));border-radius:3px}
+.cg-b{position:absolute;top:4px;bottom:4px;left:calc(var(--a) / 8 * 100% + 3px);width:calc((var(--b) - var(--a)) / 8 * 100% - 6px);background:var(--g-acento);border-radius:4px}
+.cg-f.sec .cg-b{background:var(--g-neutro)}
+.cg-f.marcas .cg-pista{height:84px;background:repeating-linear-gradient(90deg,var(--g-banda) 0 calc(100%/8),transparent calc(100%/8) calc(100%/4))}
+.cg-g{position:absolute;top:8px;left:calc(var(--x) * 100%);transform:translateX(-50%);width:40px;height:30px;border:0;border-radius:6px;background:var(--g-txt);color:var(--g-sup);
+  font:700 13px/30px "Archivo",sans-serif;cursor:pointer;padding:0;z-index:2}
+.cg-g.doble{top:44px}
+.cg-g:hover,.cg-g:focus-visible{background:var(--g-acento);color:#fff;outline:none}
+.cg-g:focus-visible{box-shadow:0 0 0 2px var(--g-sup),0 0 0 4px var(--g-acento)}
+.cg-dia{position:absolute;top:-232px;bottom:0;left:calc(var(--x) * 100%);width:0;border-left:2px dashed var(--g-acento);z-index:1;pointer-events:none}
+.cg-dia span{position:absolute;bottom:-26px;left:-4px;white-space:nowrap;font:700 12px/1 "Archivo",sans-serif;color:var(--g-acento);transform:translateX(-100%)}
+.cg-det{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.cg-det b{font-size:14px}
+.cg-det ol{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:14px;color:var(--g-txt)}
+.cg-det li{padding-left:14px;position:relative}
+.cg-det li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--g-acento)}
+.cg-ed01{margin:20px 0 0;font:500 13px/1.5 "JetBrains Mono",monospace;color:var(--g-txt2)}
+@media (max-width:700px){.cg-cab,.cg-f{grid-template-columns:96px 1fr}.cg-n{font-size:12px}.cg-det{grid-template-columns:1fr}.cg-g{width:32px;font-size:12px}}
+/* Hora cero */
+.hc-eje{position:relative;list-style:none;margin:24px 0 0;padding:0;height:250px}
+.hc-eje::before{content:"";position:absolute;left:0;right:0;top:125px;height:2px;background:var(--g-rej)}
+.hc-h{position:absolute;left:calc(var(--x) * 100%);top:125px;width:0;outline:none}
+.hc-h::before{content:"";position:absolute;left:-7px;top:-6px;width:14px;height:14px;border-radius:50%;background:var(--g-txt);box-shadow:0 0 0 3px var(--g-sup)}
+.hc-h.p2::before{left:-12px;top:-11px;width:24px;height:24px;background:var(--g-acento)}
+.hc-h.p1::before{background:var(--g-acento)}
+.hc-t{position:absolute;left:-30px;width:60px;text-align:center;font:700 15px/1 "JetBrains Mono",monospace;font-variant-numeric:tabular-nums}
+.hc-a{position:absolute;left:-80px;width:160px;text-align:center;font-size:13px;line-height:1.35;color:var(--g-txt2)}
+.hc-h:nth-child(odd) .hc-t{bottom:20px}.hc-h:nth-child(odd) .hc-a{bottom:42px}
+.hc-h:nth-child(even) .hc-t{top:22px}.hc-h:nth-child(even) .hc-a{top:44px}
+.hc-h.p2 .hc-t{font-size:22px;color:var(--g-acento)}
+.hc-h:first-child .hc-t,.hc-h:first-child .hc-a{left:-8px;text-align:left}
+.hc-h:last-child .hc-t,.hc-h:last-child .hc-a{left:auto;right:-8px;text-align:right}
+.hc-h:focus-visible::before{box-shadow:0 0 0 3px var(--g-sup),0 0 0 5px var(--g-acento)}
+@media (max-width:760px){.hc-eje{height:auto;display:grid;gap:14px;padding-left:28px}.hc-eje::before{left:6px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .hc-h{position:relative;left:auto;top:auto;width:auto}.hc-h::before{left:-29px;top:2px}.hc-h.p2::before{left:-34px;top:-3px}
+  .hc-t,.hc-a,.hc-h:nth-child(n) .hc-t,.hc-h:nth-child(n) .hc-a{position:static;width:auto;text-align:left;display:block}}
+/* Calendario 2027 */
+.ca-reja{display:grid;gap:8px}
+.ca-meses{position:relative;height:22px;margin-left:84px}
+.ca-m{position:absolute;left:calc(var(--x) * 100%);font:500 12px/1 "JetBrains Mono",monospace;color:var(--g-txt2);white-space:nowrap}
+.ca-f{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:center}
+.ca-n{font-size:14px;font-weight:600}
+.ca-pista{position:relative;height:30px;border-bottom:1px solid var(--g-rej)}
+.ca-pausa{position:absolute;top:0;bottom:0;left:calc(var(--a) * 100%);width:calc((var(--b) - var(--a)) * 100%);background:repeating-linear-gradient(45deg,var(--g-rej) 0 1px,transparent 1px 5px)}
+.ca-b{position:absolute;top:9px;height:12px;left:calc(var(--a) * 100%);width:calc((var(--b) - var(--a)) * 100%);background:var(--g-neutro);border-radius:4px;opacity:.55}
+.ca-b.gala{background:var(--g-acento);opacity:.75}
+.ca-d{position:absolute;left:calc(var(--x) * 100%);top:3px;width:24px;height:24px;margin-left:-12px;border-radius:50%;background:var(--g-acento);box-shadow:0 0 0 3px var(--g-sup);outline:none;cursor:default}
+.ca-d b{position:absolute;left:30px;top:4px;white-space:nowrap;font:700 13px/1 "JetBrains Mono",monospace;color:var(--g-txt)}
+/* Día D al final del eje (Ed. 06, 04-nov): en pantallas estrechas la fecha pasa a la izquierda del punto, con fondo propio sobre la barra; a la derecha se salía 30 px a 390 */
+@media (max-width:1099px){.ca-d.fin b{left:auto;right:30px;top:2px;padding:2px 4px;border-radius:3px;background:var(--g-sup)}}
+.ca-d:focus-visible{box-shadow:0 0 0 3px var(--g-sup),0 0 0 5px var(--g-acento)}

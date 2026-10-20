@@ -1,0 +1,1150 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SoyTechno, la revista · Escenario</title>
+<meta name="description" content="Propuesta para evaluación del proyecto editorial SoyTechno, la revista. Dirección A: escenario negro de cifras gigantes.">
+<meta name="theme-color" content="#0E0E12">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000&q=80&auto=format" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+/* Bandera temprana: sin animación en captura o con movimiento reducido (estado final, sin parpadeo). */
+(function(){
+  var q=new URLSearchParams(location.search);
+  var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.documentElement.className=(q.get('captura')==='1'||rm)?'no-anim':'anim';
+})();
+</script>
+<style>
+/* ============================================================
+   TOKENS · paleta de brand-spec.md (sin colores ajenos)
+   ============================================================ */
+:root{
+  --negro:#0E0E12; --noche:#001433; --azul:#0057A6; --luz:#1B6BD6;
+  --blanco:#FFFFFF; --platino:#F4F5F7; --carbon:#0D0E12; --profundo:#0B1F3A; --gris:#5B6472;
+  --txt-2:rgba(244,245,247,.78);   /* texto secundario sobre negro: 9:1 */
+  --txt-3:rgba(244,245,247,.62);   /* notas: 6,6:1 */
+  --line:rgba(244,245,247,.22);
+  --f-d:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --f-s:'Source Serif 4',Georgia,serif;
+  --f-m:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:48px; --s6:64px; --s7:96px; /* escala de espaciado */
+  --ease-out:cubic-bezier(.23,1,.32,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--negro);color:var(--blanco);overflow:hidden;color-scheme:dark}
+body{font-family:var(--f-d);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;-webkit-text-size-adjust:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+button,a,.stop,.gate{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.skip{position:absolute;left:var(--s2);top:-100px;z-index:100;padding:var(--s1) var(--s2);background:var(--blanco);color:var(--negro);font:700 16px/1.2 var(--f-d);border-radius:2px}
+.skip:focus{top:var(--s2)}
+img{-webkit-user-drag:none;user-select:none}
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--blanco);outline-offset:3px;border-radius:2px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ============================================================
+   ESCENARIO 16:9 con letterbox (u = 1 % del ancho del escenario)
+   ============================================================ */
+.viewport{position:fixed;inset:0;display:grid;place-items:center;background:var(--negro)}
+.stage{--sw:min(100vw,calc(100dvh*16/9));--u:calc(var(--sw)/100);
+  --sh:calc(var(--sw)*9/16);position:relative;width:var(--sw);height:var(--sh);background:var(--negro);isolation:isolate;touch-action:pan-y;
+  --fs-body:calc(var(--u)*1.14);         /* texto: 16,4 px a 1440 de ancho */
+  --fs-small:calc(var(--u)*.9);          /* rótulos: 13 px a 1440 de ancho */
+  --t-body:calc(var(--u)*1.25);
+  --t-note:var(--fs-small);
+  --pad:calc(var(--u)*4.444);}
+@media (max-aspect-ratio:1/1){
+  .stage{--sw:100vw;--sh:100dvh;width:100vw;height:100dvh;--u:calc(100vw/32);--pad:var(--s3);
+    --fs-body:max(16px,calc(var(--u)*1.3));--fs-small:max(12.5px,calc(var(--u)*1));--t-body:16px}
+}
+
+/* Fondo: pared negra, suelo azul noche y foco neutro (sin brillo, sin color) */
+.backdrop{position:absolute;inset:0;pointer-events:none;z-index:0}
+.wall-spot{position:absolute;left:-60vw;right:-60vw;top:-60vh;bottom:-60vh;
+  background:radial-gradient(ellipse calc(var(--u)*30) calc(var(--sh)*.72) at 50% calc(50% - var(--sh)*.1),rgba(244,245,247,.15),rgba(244,245,247,.06) 46%,rgba(244,245,247,0) 76%)}
+.floor{position:absolute;left:-60vw;right:-60vw;top:calc(var(--sh)*.6);bottom:-60vh;background:var(--noche);
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 calc(var(--sh)*.32));mask-image:linear-gradient(to bottom,transparent,#000 calc(var(--sh)*.32))}
+.pool{position:absolute;left:-60vw;right:-60vw;top:calc(var(--sh)*.5);bottom:-60vh;
+  background:radial-gradient(ellipse calc(var(--u)*26) calc(var(--sh)*.12) at 50% calc(var(--sh)*.29),rgba(244,245,247,.22),rgba(244,245,247,.07) 56%,rgba(244,245,247,0) 100%)}
+
+/* ============================================================
+   CABECERA FIJA (logotipo + contador) y bordes de navegación
+   ============================================================ */
+.chrome{position:absolute;left:0;right:0;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;
+  padding:calc(var(--u)*2.3) var(--pad) 0;pointer-events:none}
+.mark{display:block;width:clamp(120px,calc(var(--u)*10.4),240px);pointer-events:auto;text-decoration:none}
+.mark svg{display:block;width:100%;height:auto;fill:var(--blanco)}
+.counter{display:flex;align-items:center;gap:var(--s2);pointer-events:auto;font:500 var(--t-note)/1 var(--f-m);letter-spacing:.14em;font-variant-numeric:tabular-nums}
+.counter a{min-width:44px;min-height:44px;display:grid;place-items:center;color:var(--txt-3);letter-spacing:.14em;
+  font:500 var(--t-note)/1 var(--f-m);transition:color .2s}
+.counter a[aria-current="true"]{color:var(--blanco)}
+@media (hover:hover) and (pointer:fine){.counter a:hover{color:var(--blanco)}}
+.counter .sep{color:var(--txt-3)}
+
+.edge{position:absolute;top:14%;bottom:14%;width:clamp(48px,calc(var(--u)*6.4),128px);z-index:35;display:grid;place-items:center;
+  color:var(--blanco);opacity:.34;transition:opacity .25s var(--ease-out)}
+.edge svg{width:clamp(20px,calc(var(--u)*1.8),32px);height:auto;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.edge-prev{left:0}.edge-next{right:0}
+.edge[hidden]{display:none}
+@media (hover:hover) and (pointer:fine){.edge{opacity:0}.edge:hover,.edge:focus-visible{opacity:1}}
+@media (max-aspect-ratio:1/1){.edge{top:auto;bottom:calc(var(--s2) + env(safe-area-inset-bottom));width:48px;height:48px;border-radius:50%;background:rgba(14,14,18,.78);border:1px solid var(--line);opacity:1}.edge-prev{left:var(--s2)}.edge-next{right:var(--s2)}}
+
+/* ============================================================
+   PANTALLAS
+   ============================================================ */
+.screen{position:absolute;inset:0;z-index:10;visibility:hidden;pointer-events:none}
+.screen button,.screen a{pointer-events:auto}
+.screen.is-active{visibility:visible}
+html.anim .screen:not(.is-active){visibility:hidden}
+.eyebrow{font:500 var(--t-note)/1.4 var(--f-m);letter-spacing:.12em;text-transform:uppercase;color:var(--txt-2)}
+.note{font:400 var(--t-note)/1.45 var(--f-m);color:var(--txt-2)}
+.num{font-family:var(--f-d);font-weight:900;letter-spacing:-.045em;line-height:.8;font-variant-numeric:tabular-nums lining-nums;font-feature-settings:"tnum" 1,"lnum" 1}
+.accent{color:var(--luz)}
+html.anim [data-reveal]{opacity:0}   /* GSAP los lleva a su estado final; sin JS o en captura, visibles */
+
+/* Botón principal (una sola acción por pantalla) */
+.btn{display:inline-flex;align-items:center;gap:var(--s2);min-height:48px;padding:calc(var(--u)*1.05) calc(var(--u)*2.2);
+  border-radius:999px;background:var(--luz);color:var(--blanco);font:700 calc(var(--fs-body)*1.12)/1 var(--f-d);
+  letter-spacing:-.012em;transition:transform .16s var(--ease-out),background-color .2s}
+.btn svg{width:1.05em;height:1.05em;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.btn:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){.btn:hover{background:var(--azul)}}
+
+/* ============================================================
+   PANTALLA 1 · Apertura (portada negra + cifra gigante)
+   ============================================================ */
+#screen-1 .s1-text{position:absolute;left:var(--pad);top:calc(var(--u)*6.7);width:calc(var(--u)*56)}
+#screen-1 h1{font-kerning:none;margin-top:var(--s2);font-weight:900;font-size:clamp(46px,calc(var(--u)*5.3),136px);line-height:.94;letter-spacing:-.045em}
+#screen-1 h1 .ln{display:block}
+.bajada{text-wrap:pretty;margin-top:var(--s3);max-width:calc(var(--u)*34);font:400 var(--fs-body)/1.5 var(--f-d);color:var(--txt-2)}
+.lema{margin-top:var(--s2);font-weight:800;font-size:clamp(22px,calc(var(--u)*2.35),60px);line-height:1.12;letter-spacing:-.032em}
+.cta-row{margin-top:var(--s3);display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap}
+.respaldo{max-width:calc(var(--u)*27);font:400 var(--t-note)/1.45 var(--f-m);color:var(--txt-3)}
+.figures{position:absolute;left:var(--pad);right:var(--pad);bottom:calc(var(--u)*3);display:grid;grid-template-columns:repeat(5,auto);
+  justify-content:space-between;align-items:end;gap:var(--s3);border-top:1px solid var(--line);padding-top:var(--s3);list-style:none}
+.fig{display:flex;flex-direction:column;gap:var(--s2)}
+.fig .num{font-size:clamp(40px,calc(var(--u)*5.2),128px)}
+.fig .unit{font:400 var(--t-note)/1.4 var(--f-m);color:var(--txt-2);max-width:calc(var(--u)*15)}
+.fig-qr .num{font-size:clamp(30px,calc(var(--u)*3.9),96px);letter-spacing:-.035em;padding-bottom:calc(var(--u)*.55)}
+.fig-hero .num{color:var(--luz);font-size:clamp(48px,calc(var(--u)*7.4),180px)}
+.fig-hero .unit{max-width:calc(var(--u)*19)}
+/* Beat de ignición: la cifra «19:30» antes de la revelación */
+.ignite{position:absolute;inset:0;z-index:22;display:none;flex-direction:column;align-items:center;justify-content:center;gap:var(--s3);pointer-events:none;text-align:center}
+html.anim .ignite{display:flex}
+.ignite.done{display:none!important}
+.ignite .num{font-kerning:none;font-size:clamp(120px,calc(var(--u)*30),720px);color:var(--blanco);letter-spacing:-.05em;line-height:.82}
+.ignite .note{color:var(--txt-2)}
+.ignite .num .ch{display:inline-block}
+
+/* ============================================================
+   ESCENA · la revista como objeto iluminado (persistente 1 → 2)
+   ============================================================ */
+.scene{--pw:calc(var(--u)*32);--ph:calc(var(--pw)*4/3);--mm:calc(var(--pw)/210);--pt:calc(var(--mm)*.3528);
+  position:absolute;inset:0;z-index:5;perspective:calc(var(--u)*170);perspective-origin:50% 38%;pointer-events:none}
+@media (max-aspect-ratio:1/1){.scene{--pw:calc(var(--u)*12.4);perspective:calc(var(--u)*120)}}
+.shadow{position:absolute;left:0;top:0;pointer-events:none;transform-origin:50% 50%}
+.shadow-soft{background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(14,14,18,.5),rgba(14,14,18,0) 100%)}
+.shadow-contact{background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(14,14,18,.95),rgba(14,14,18,0) 100%)}
+.book{position:absolute;left:0;top:0;width:var(--pw);height:var(--ph);transform-style:preserve-3d;transform-origin:0 100%;pointer-events:auto;
+  cursor:grab;touch-action:pan-y;-webkit-user-select:none;user-select:none}
+.book.is-dragging{cursor:grabbing}
+.book.is-dragging *{pointer-events:none}
+.book:focus-visible{outline-offset:8px}
+.leaf{position:absolute;inset:0;transform-style:preserve-3d;transform-origin:0 50%}
+.face{position:absolute;inset:0;overflow:hidden;background:var(--blanco);-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.face.back{transform:rotateY(180deg)}
+.face .shade,.face .cast{position:absolute;inset:0;pointer-events:none;z-index:60;opacity:0}
+.face .shade{background:var(--carbon)}
+.face.front .cast{transform-origin:0 50%;background:linear-gradient(to right,rgba(13,14,18,.62),rgba(13,14,18,.22) 34%,rgba(13,14,18,0) 70%)}
+.face.back .cast{transform-origin:100% 50%;background:linear-gradient(to left,rgba(13,14,18,.62),rgba(13,14,18,.22) 34%,rgba(13,14,18,0) 70%)}
+/* canto de las hojas (grosor de 52 páginas) visible con la revista cerrada y girada */
+.base{position:absolute;inset:0;background:var(--platino);transform-style:preserve-3d}
+.edge-block{position:absolute;top:0;bottom:0;right:0;width:calc(var(--mm)*3.2);transform-origin:100% 50%;transform:rotateY(-90deg);
+  background:repeating-linear-gradient(to right,var(--platino) 0,var(--platino) calc(var(--mm)*.18),var(--blanco) calc(var(--mm)*.18),var(--blanco) calc(var(--mm)*.36));
+  -webkit-backface-visibility:hidden;backface-visibility:hidden}
+
+/* ============================================================
+   MÓVIL / VERTICAL · pantalla 1
+   ============================================================ */
+@media (max-aspect-ratio:1/1){
+  #screen-1{overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  .chrome{padding-top:calc(var(--s3) + env(safe-area-inset-top))}
+  #screen-1 .s1-text{position:relative;left:auto;top:auto;width:auto;padding:calc(var(--u)*26) var(--pad) 0}
+  #screen-1 h1{font-size:clamp(44px,calc(var(--u)*3.9),96px)}
+  .bajada{max-width:none;font-size:16px}
+  .lema{font-size:clamp(22px,calc(var(--u)*1.9),40px)}
+  .respaldo{max-width:none;padding-right:56px}
+  .figures{position:relative;left:auto;right:auto;bottom:auto;margin:var(--s4) var(--pad) calc(var(--s7) - var(--s3));grid-template-columns:1fr 1fr;justify-content:stretch;gap:var(--s3) var(--s2)}
+  .fig .num{font-size:clamp(40px,calc(var(--u)*3.2),84px)}
+  .fig-qr .num{font-size:clamp(30px,calc(var(--u)*2.4),64px)}
+  .fig-hero{grid-column:1/-1}
+  .fig-hero .num{font-size:clamp(56px,calc(var(--u)*5),120px)}
+  .fig .unit,.fig-hero .unit{max-width:none}
+  .ignite .num{font-kerning:none;font-size:clamp(96px,calc(var(--u)*11),300px)}
+}
+
+/* ============================================================
+   REVISTA SIMULADA · MAN-ID (210 × 280 mm · 1 mm = var(--mm))
+   ============================================================ */
+.pg{position:absolute;inset:0;overflow:hidden;background:var(--blanco);color:var(--carbon);font-family:var(--f-s);
+  font-size:calc(var(--pt)*9.5);line-height:1.3158;font-kerning:normal;text-align:left}
+.pg.dark{background:var(--carbon);color:var(--blanco)}
+.pg img{display:block}
+.pg .box{position:absolute;top:calc(var(--mm)*15);bottom:calc(var(--mm)*20)}
+.pg.odd .box{left:calc(var(--mm)*18);right:calc(var(--mm)*15)}
+.pg.even .box{left:calc(var(--mm)*15);right:calc(var(--mm)*18)}
+.folio{position:absolute;bottom:calc(var(--mm)*9.4);font:500 calc(var(--pt)*7)/1 var(--f-d);letter-spacing:.06em;text-transform:uppercase;color:var(--azul);z-index:5}
+.pg.odd .folio{right:calc(var(--mm)*15)}.pg.even .folio{left:calc(var(--mm)*15)}
+.pg.dark .folio{color:var(--blanco);font-size:calc(var(--pt)*9.5)}
+.tab{position:absolute;width:calc(var(--mm)*3);height:calc(var(--mm)*24);background:var(--azul);z-index:6;
+  top:calc(var(--mm)*(15 + (var(--k) - 1)*24.56))}
+.pg.odd .tab{right:0}.pg.even .tab{left:0}
+.t-ante{font:500 calc(var(--pt)*9)/1.39 var(--f-d);letter-spacing:.01em}
+.t-h{font:900 calc(var(--pt)*48)/1.04 var(--f-d);letter-spacing:-.015em}
+.t-ent{font:600 calc(var(--pt)*13)/1.4423 var(--f-s)}
+.t-body{font:400 calc(var(--pt)*9.5)/1.3158 var(--f-s);hyphens:auto;-webkit-hyphens:auto;text-align:justify}
+.t-lad{font:600 calc(var(--pt)*9.5)/1.3158 var(--f-s);margin-top:calc(var(--mm)*4.4)}
+.t-dest{font:italic 400 calc(var(--pt)*18)/1.3889 var(--f-s)}
+.t-pie{font:italic 400 calc(var(--pt)*7.5)/1.267 var(--f-s);color:var(--gris)}
+.pg.dark .t-pie{font-size:calc(var(--pt)*9.5);color:var(--platino)}
+.t-cred{font:400 calc(var(--pt)*6.5)/1.46 var(--f-s);font-variant-caps:all-small-caps;letter-spacing:.05em}
+.t-dat{font:400 calc(var(--pt)*8)/1.25 var(--f-m);font-variant-numeric:tabular-nums}
+.sec-h{font:900 calc(var(--pt)*24)/1.04 var(--f-d);letter-spacing:-.015em;text-transform:uppercase;padding-bottom:calc(var(--mm)*2.6);
+  border-bottom:calc(var(--pt)*1) solid var(--azul)}
+
+/* capa técnica activable: retícula de 12 columnas (11,08 mm, medianil de 4 mm) y línea base de 12,5 pt */
+.gridov{position:absolute;top:calc(var(--mm)*15);bottom:calc(var(--mm)*20);display:none;grid-template-columns:repeat(12,1fr);column-gap:calc(var(--mm)*4);z-index:55;pointer-events:none}
+.gridov.odd{left:calc(var(--mm)*18);right:calc(var(--mm)*15)}.gridov.even{left:calc(var(--mm)*15);right:calc(var(--mm)*18)}
+.gridov i{background:rgba(27,107,214,.16)}
+.gridov::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--pt)*12.5 - 1px),rgba(27,107,214,.42) calc(var(--pt)*12.5 - 1px),rgba(27,107,214,.42) calc(var(--pt)*12.5))}
+html.show-grid .gridov{display:grid}
+/* ---- C1 · portada ---- */
+.cv-ext{position:absolute;left:0;right:0;top:0;height:calc(var(--mm)*30);transform:scaleY(-1);
+  background:var(--cover-img) center top/100% auto no-repeat}
+.cv-photo{position:absolute;left:0;top:calc(var(--mm)*30);width:100%;height:calc(var(--mm)*262.5)}
+.cv-photo img{width:100%;height:100%;object-fit:cover}
+.cv-veil{position:absolute;left:0;right:0;top:0;height:calc(var(--mm)*64);
+  background:linear-gradient(rgba(13,14,18,.55),rgba(13,14,18,.4) 66%,rgba(13,14,18,0))}
+.cv-logo{position:absolute;left:calc(var(--mm)*46.5);width:calc(var(--mm)*120);top:calc(var(--mm)*15);height:auto;fill:var(--blanco);display:block}
+.cv-band{position:absolute;left:calc(var(--mm)*18);right:calc(var(--mm)*15);top:calc(var(--mm)*46.5);display:flex;justify-content:space-between;
+  font:500 calc(var(--pt)*9)/1.39 var(--f-d);color:var(--blanco)}
+.cv-h{position:absolute;left:calc(var(--mm)*18);right:calc(var(--mm)*30);bottom:calc(var(--mm)*52);color:var(--blanco);font:900 calc(var(--pt)*44)/1.02 var(--f-d);letter-spacing:-.015em}
+.cv-calls{position:absolute;left:calc(var(--mm)*18);right:calc(var(--mm)*20);bottom:calc(var(--mm)*20);list-style:none;color:var(--blanco);font:700 calc(var(--pt)*14)/1.339 var(--f-d)}
+.cv-calls li{display:flex;align-items:center;gap:calc(var(--mm)*2.6)}
+.cv-calls li::before{content:"";flex:none;width:calc(var(--mm)*2.8);height:calc(var(--mm)*2.8);border-radius:50%;background:var(--azul);box-shadow:0 0 0 calc(var(--mm)*.45) var(--blanco)}
+.cv-cred{position:absolute;right:calc(var(--mm)*5.5);bottom:calc(var(--mm)*20);writing-mode:vertical-rl;transform:rotate(180deg);color:rgba(255,255,255,.88)}
+
+/* ---- 02 · sumario ---- */
+.idx{list-style:none;margin-top:calc(var(--mm)*6)}
+.idx li{display:grid;grid-template-columns:calc(var(--mm)*41.24) 1fr;column-gap:calc(var(--mm)*4);align-items:start;padding:calc(var(--mm)*4.5) 0 calc(var(--mm)*4.3);
+  border-top:calc(var(--pt)*.5) solid var(--gris)}
+.idx li:first-child{border-top:0}
+.idx .pn{font:900 calc(var(--pt)*30)/.82 var(--f-d);letter-spacing:-.03em;color:var(--azul);font-variant-numeric:tabular-nums}
+.idx .nm{display:block;font:700 calc(var(--pt)*13)/1.2 var(--f-d);letter-spacing:-.012em}
+.idx .ds{display:block;margin-top:calc(var(--mm)*.9);font:400 calc(var(--pt)*9.5)/1.3158 var(--f-s);color:var(--gris)}
+.pg-mark{position:absolute;left:calc(var(--mm)*15);bottom:calc(var(--mm)*17);display:flex;align-items:center;gap:calc(var(--mm)*3);font:500 calc(var(--pt)*7)/1 var(--f-d);letter-spacing:.04em;color:var(--gris)}
+.pg-mark svg{width:calc(var(--mm)*6);height:auto;fill:var(--azul);display:block}
+
+/* ---- 03 · carta, mancheta, interacción ---- */
+.carta-h{font:700 calc(var(--pt)*12)/1.25 var(--f-d);letter-spacing:-.01em;padding-bottom:calc(var(--mm)*2.2);border-bottom:calc(var(--pt)*.5) solid var(--gris)}
+.carta{margin-top:calc(var(--mm)*5);column-count:2;column-gap:calc(var(--mm)*4)}
+.carta p+p{margin-top:calc(var(--pt)*12.5)}
+.firma{margin-top:calc(var(--mm)*4.4);font:italic 400 calc(var(--pt)*9.5)/1.3158 var(--f-s)}
+.manch{position:absolute;left:0;right:0;bottom:calc(var(--mm)*62);display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--mm)*3.2) calc(var(--mm)*4);
+  border-top:calc(var(--pt)*.5) solid var(--gris);padding-top:calc(var(--mm)*3)}
+.manch span{font:400 calc(var(--pt)*8)/1.25 var(--f-m);hyphens:none}
+.inter{position:absolute;left:0;right:0;bottom:0;height:calc(var(--mm)*50);background:var(--platino);padding:calc(var(--mm)*4.4);display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--mm)*5)}
+.inter h4{grid-column:1/-1;font:700 calc(var(--pt)*9)/1.2 var(--f-d);letter-spacing:.06em;text-transform:uppercase;color:var(--carbon)}
+.inter .it{display:flex;gap:calc(var(--mm)*3.4);align-items:flex-start}
+.inter .it p{font:400 calc(var(--pt)*8)/1.3 var(--f-m);margin-top:calc(var(--mm)*.6)}
+.inter .it b{display:block;font:500 calc(var(--pt)*8)/1.3 var(--f-m);letter-spacing:.04em}
+.qr{flex:none;display:block;width:calc(var(--mm)*20);height:calc(var(--mm)*20);background:var(--blanco);padding:calc(var(--mm)*1.4)}
+.nfc{flex:none;width:calc(var(--mm)*20);height:calc(var(--mm)*20)}
+.nfc svg{width:100%;height:100%;display:block;fill:none;stroke:var(--azul);stroke-width:1.4}
+
+/* ---- 16-17 · Reportaje Central (apertura a sangre, doble página) ---- */
+.pg.rc{background:var(--carbon);color:var(--blanco)}
+.rc-wrap{position:absolute;top:0;bottom:0;width:200%}
+.pg.even .rc-wrap{left:0}.pg.odd .rc-wrap{left:-100%}
+.rc-wrap img{position:absolute;left:17%;top:0;width:100%;height:100%;object-fit:cover;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 26%);mask-image:linear-gradient(to right,transparent 0,#000 26%)}
+.rc-veil{position:absolute;inset:0;background:rgba(13,14,18,.4)}
+.rc-ante{position:absolute;left:calc(var(--mm)*15);top:calc(var(--mm)*15);color:var(--platino)}
+.rc-h{position:absolute;left:calc(var(--mm)*15);right:calc(var(--mm)*20);top:calc(var(--mm)*30);font:900 calc(var(--pt)*48)/1.04 var(--f-d);letter-spacing:-.015em;color:var(--blanco)}
+.rc-ent{position:absolute;left:calc(var(--mm)*15);width:calc(var(--mm)*128);top:calc(var(--mm)*112);color:var(--blanco)}
+.rc-firma{position:absolute;left:calc(var(--mm)*15);top:calc(var(--mm)*149);font:500 calc(var(--pt)*8)/1.4 var(--f-d);color:var(--platino)}
+.rc-cols{position:absolute;left:calc(var(--mm)*15);right:calc(var(--mm)*18);top:calc(var(--mm)*164);column-count:2;column-gap:calc(var(--mm)*4);color:var(--blanco)}
+.rc-cols p+p{margin-top:calc(var(--pt)*12.5)}
+.rc-dest{position:absolute;left:calc(var(--mm)*139);right:calc(var(--mm)*14);top:calc(var(--mm)*74);padding:calc(var(--mm)*4);background:rgba(13,14,18,.66);color:var(--blanco)}
+
+/* ---- 28-29 · ADN Gamer (modo oscuro) ---- */
+.ag-h{margin-top:calc(var(--mm)*9);font:900 calc(var(--pt)*46)/1.04 var(--f-d);letter-spacing:-.015em;color:var(--blanco)}
+.ag-ent{margin-top:calc(var(--mm)*6);color:var(--blanco);max-width:calc(var(--mm)*130)}
+.ag-ficha{position:absolute;left:0;right:0;bottom:0;background:var(--profundo);padding:calc(var(--mm)*5) calc(var(--mm)*5.5) calc(var(--mm)*5.5)}
+.ag-ficha h5{font:500 calc(var(--pt)*9.5)/1.3158 var(--f-m);color:var(--blanco);padding-bottom:calc(var(--mm)*2.6);border-bottom:calc(var(--pt)*1) solid var(--azul)}
+.ag-ficha ul{list-style:none;margin-top:calc(var(--mm)*3.4)}
+.ag-ficha li{font:500 calc(var(--pt)*9.5)/1.3158 var(--f-m);color:var(--platino);font-variant-numeric:tabular-nums;padding:calc(var(--pt)*1.2) 0}
+.ag-ficha li span{color:var(--blanco)}
+.ag-photo{position:absolute;left:0;right:0;top:0;height:calc(var(--mm)*118)}
+.ag-photo img{width:100%;height:100%;object-fit:cover}
+.ag-pie{position:absolute;left:0;right:0;top:calc(var(--mm)*122)}
+.ag-qr{position:absolute;left:0;right:0;bottom:0;height:calc(var(--mm)*44);background:var(--profundo);padding:calc(var(--mm)*5.5);display:flex;align-items:center}
+.ag-qr .inner{display:flex;gap:calc(var(--mm)*4);align-items:center;background:var(--platino);color:var(--carbon);padding:calc(var(--mm)*3.2);width:100%}
+.ag-qr .qr{width:calc(var(--mm)*26.16);height:calc(var(--mm)*26.16);padding:0;background:transparent}
+.ag-qr .micro{font:500 calc(var(--pt)*7)/1.4 var(--f-d)}
+.ag-qr .url{margin-top:calc(var(--mm)*1.6);font:500 calc(var(--pt)*8)/1.25 var(--f-m)}
+
+/* ============================================================
+   PANTALLA 2 · la revista en escena (indicador y controles)
+   ============================================================ */
+#screen-2 .pager{position:absolute;left:var(--pad);right:var(--pad);bottom:calc(var(--u)*1.7);display:flex;justify-content:space-between;align-items:flex-end;gap:var(--s3);pointer-events:none}
+#screen-2 .pager>*{pointer-events:auto}
+.folio-big{font:900 clamp(40px,calc(var(--u)*4.2),100px)/.82 var(--f-d);letter-spacing:-.05em;font-variant-numeric:tabular-nums lining-nums;min-width:calc(var(--u)*14)}
+.folio-name{margin-top:var(--s2);font:500 var(--t-note)/1.4 var(--f-m);letter-spacing:.08em;text-transform:uppercase;color:var(--txt-2)}
+.hint{margin-top:var(--s1);font:400 var(--t-note)/1.4 var(--f-m);color:var(--txt-3)}
+.stops{display:flex;align-items:flex-end;gap:var(--s2);list-style:none}
+.stop{display:block;text-align:left;min-height:48px;min-width:calc(var(--u)*11.5);padding:var(--s2) var(--s1) 0 0;border-top:2px solid var(--line);
+  font:500 var(--t-note)/1.35 var(--f-m);color:var(--txt-3);transition:color .2s,border-color .2s}
+.stop b{display:block;font-weight:500;letter-spacing:.06em;color:inherit}
+.stop[aria-current="true"]{border-top-color:var(--luz);color:var(--blanco)}
+@media (hover:hover) and (pointer:fine){.stop:hover{color:var(--blanco)}}
+.pgbtn{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);color:var(--blanco);transition:transform .16s var(--ease-out),border-color .2s,opacity .2s}
+.pgbtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.pgbtn:active{transform:scale(.95)}
+.pgbtn[aria-disabled="true"]{opacity:.28;cursor:default}
+@media (hover:hover) and (pointer:fine){.pgbtn:not([aria-disabled="true"]):hover{border-color:var(--blanco)}}
+.pg-ctrl{display:flex;gap:var(--s1);align-items:center}
+.gridbtn{min-height:44px;padding:0 var(--s2);margin-right:var(--s2);border:1px solid var(--line);border-radius:999px;font:500 var(--t-note)/1 var(--f-m);letter-spacing:.06em;color:var(--txt-2);transition:color .2s,border-color .2s,transform .16s var(--ease-out)}
+.gridbtn:active{transform:scale(.97)}
+.gridbtn[aria-pressed="true"]{color:var(--blanco);border-color:var(--luz)}
+@media (hover:hover) and (pointer:fine){.gridbtn:hover{color:var(--blanco);border-color:var(--blanco)}.gridbtn[aria-pressed="true"]:hover{border-color:var(--luz)}}
+@media (max-aspect-ratio:1/1){
+  #screen-2 .pager{flex-direction:column;align-items:stretch;gap:var(--s3);bottom:calc(var(--s7) - var(--s2))}
+  .folio-big{min-width:0}
+  .pg-ctrl{display:grid;grid-template-columns:auto 1fr auto auto;gap:var(--s1);align-items:center}
+  .stops{grid-column:1/-1;grid-row:1;display:grid;grid-template-columns:1fr 1fr;gap:var(--s1) var(--s2);margin-bottom:var(--s1)}
+  .stop{min-width:0;width:100%}
+  .gridbtn{grid-row:2;grid-column:1;margin-right:0}
+  #pg-prev,#pg-next{display:none}   /* en el teléfono se hojea tocando o deslizando; los bordes cambian de pantalla */
+}
+}
+
+/* ============================================================
+   PANTALLA 3 · ciclo de ocho semanas y compuertas
+   ============================================================ */
+.s3{position:absolute;inset:0}
+.s3-title{font-kerning:none;position:absolute;left:var(--pad);top:calc(var(--u)*6.2);width:calc(var(--u)*58);font:900 clamp(30px,calc(var(--u)*3.9),100px)/.98 var(--f-d);letter-spacing:-.042em}
+.s3-title .ln{display:block}
+.s3-bajada{text-wrap:pretty;position:absolute;right:var(--pad);top:calc(var(--u)*6.5);width:calc(var(--u)*30);font:400 var(--fs-body)/1.5 var(--f-d);color:var(--txt-2)}
+.trace{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+.trace path,.trace line{fill:none;stroke:rgba(244,245,247,.32);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.trace .on{stroke:var(--luz);stroke-width:2.5}
+.trace circle{fill:var(--negro);stroke:rgba(244,245,247,.7);stroke-width:2}
+.trace circle.on{fill:var(--luz);stroke:var(--luz)}
+.gates{position:absolute;left:0;right:0;top:calc(var(--u)*14.6);height:calc(var(--u)*6.2);z-index:3}
+.gate{position:absolute;top:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:var(--s1);min-width:48px;min-height:48px;padding:0;text-align:center;color:var(--gris);transition:color .25s var(--ease-out)}
+.gate .gid{font-size:clamp(28px,calc(var(--u)*2.8),70px);line-height:.82}
+.gate .gday{white-space:nowrap;font:400 var(--t-note)/1.35 var(--f-m);color:var(--txt-3);transition:color .25s}
+.gate .gday.sh{visibility:hidden}
+.gate[aria-pressed="true"]{color:var(--luz)}
+.gate[aria-pressed="true"] .gday{color:var(--blanco)}
+@media (hover:hover) and (pointer:fine){.gate:not([aria-pressed="true"]):hover{color:var(--platino)}}
+.phases{position:absolute;left:var(--pad);right:var(--pad);top:calc(var(--u)*24.3);z-index:3;display:grid;grid-template-columns:1fr 1.25fr 1.25fr 1.5fr 1.5fr;column-gap:calc(var(--u)*1.6);list-style:none}
+.ph{padding-top:var(--s2)}
+.ph-tag{display:block;font:500 var(--t-note)/1.2 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--txt-2)}
+.ph-name{text-wrap:balance;margin-top:var(--s1);font:800 max(calc(var(--u)*1.7),20px)/1.1 var(--f-d);letter-spacing:-.03em}
+.ph p{text-wrap:pretty;margin-top:var(--s1);font:400 var(--fs-body)/1.4 var(--f-d);color:var(--txt-2)}
+.days{list-style:none;margin-top:var(--s2)}
+.days li{padding:calc(var(--u)*.42) 0;border-top:1px solid var(--line);font:400 var(--fs-body)/1.3 var(--f-d);color:var(--txt-2)}
+.days li b{font-weight:700;color:var(--blanco)}
+.ph-s7 .ph-name{color:var(--platino)}
+.ph-s8 .ph-name{color:var(--luz)}
+.ph-s8 .days li{border-top-color:rgba(27,107,214,.7)}
+.ph-s8 .days li.dd{color:var(--blanco);font-weight:700}
+.ph-s7,.ph-s8{position:relative}
+.ph-s8::before{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;background:var(--luz)}
+.ph-s7::before{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;background:var(--gris)}
+.gate-panel{position:absolute;left:var(--pad);top:calc(var(--u)*37.3);width:calc(var(--u)*48.8);z-index:3;display:grid;grid-template-columns:auto 1fr;column-gap:var(--s4);align-items:start}
+.gp-id{font-size:clamp(72px,calc(var(--u)*9.2),230px);color:var(--luz);line-height:.8;letter-spacing:-.05em;min-width:calc(var(--u)*11)}
+.gp-meta{font:500 var(--t-note)/1.3 var(--f-m);letter-spacing:.08em;text-transform:uppercase;color:var(--txt-2);padding-top:var(--s1)}
+.gp-crit{text-wrap:pretty;margin-top:var(--s2);font:500 calc(var(--fs-body)*1.16)/1.4 var(--f-d);letter-spacing:-.012em;color:var(--blanco);max-width:calc(var(--u)*34)}
+.dates{position:absolute;left:var(--pad);right:var(--pad);top:calc(var(--u)*47.5);z-index:3;display:grid;grid-template-columns:.8fr repeat(7,1fr);gap:var(--s2);border-top:1px solid var(--line);padding-top:var(--s2);list-style:none}
+.dates .dl{display:block;font:500 var(--t-note)/1.3 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--txt-3)}
+.dates .dv{display:block;margin-top:4px;font:700 calc(var(--fs-body)*1.06)/1.2 var(--f-d);letter-spacing:-.015em;font-variant-numeric:tabular-nums}
+.dates .dh{margin-top:calc(var(--t-note)*1.3 + 4px);font-weight:800}
+.glos{position:absolute;left:var(--pad);right:var(--pad);top:calc(var(--u)*53.6);z-index:3;font:400 var(--t-note)/1.4 var(--f-m);color:var(--txt-3)}
+.glos span{white-space:nowrap;transition:color .25s}
+.glos span.on{color:var(--blanco)}
+.glos span.on i{font-style:normal;color:var(--blanco)}
+.glos i{font-style:normal;font-weight:500}
+@media (max-aspect-ratio:1/1){
+  #screen-3{overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  #screen-3 .s3{position:relative;padding:calc(var(--u)*8.2) var(--pad) calc(var(--s7))}
+  .s3-title,.s3-bajada,.gates,.phases,.gate-panel,.dates,.glos{position:relative;left:auto;right:auto;top:auto;width:auto}
+  .s3-title{font-size:clamp(34px,calc(var(--u)*2.9),80px)}
+  .s3-bajada{margin-top:var(--s3)}
+  .trace{display:none}
+  #screen-3 .s3{display:flex;flex-direction:column}
+  .s3-title{order:0}.s3-bajada{order:1}.gates{order:2}.gate-panel{order:3}.phases{order:4}.dates{order:5}.glos{order:6}
+  .gates{margin-top:var(--s4);height:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3) var(--s2)}
+  .gate{position:relative;left:auto!important;transform:none;align-items:flex-start;text-align:left}
+  .gate .gid{font-size:clamp(36px,calc(var(--u)*2.6),64px)}
+  .gate .gday.sh{visibility:visible}
+  .gate-panel{margin-top:var(--s4);grid-template-columns:1fr;row-gap:var(--s2)}
+  .gp-id{min-width:0}
+  .phases{margin-top:var(--s5);grid-template-columns:1fr;row-gap:var(--s4)}
+  .dates{margin-top:var(--s5);grid-template-columns:repeat(2,1fr)}
+  .glos{margin-top:var(--s4)}
+}
+.pg.dark .sec-h{color:var(--blanco)}
+</style>
+</head>
+<body>
+<!-- Vectores reales de assets/logos (mismo trazado para lockup, isotipo y logotipo; cada viewBox recorta su parte) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><g id="st-g">
+<path d="M43,21.4a5.14,5.14,0,0,0,.34-1.93,4.16,4.16,0,0,0-1.1-2.66h0A14.28,14.28,0,0,0,38.47,14h0C36.56,13,36,12.61,35.86,12.5h0a3.77,3.77,0,0,1-.9-.91,1.47,1.47,0,0,1-.21-.75,1.23,1.23,0,0,1,.59-1,2.9,2.9,0,0,1,1.77-.49,3.8,3.8,0,0,1,1.59.33,7,7,0,0,1,1.85,1.45l.25.26L43.32,9.9l-.42-.43a9.17,9.17,0,0,0-2.84-2.13,7.21,7.21,0,0,0-2.91-.59,7.12,7.12,0,0,0-2.72.52,4.83,4.83,0,0,0-2,1.48,3.47,3.47,0,0,0-.74,2.16,3.83,3.83,0,0,0,1.22,2.72,17.6,17.6,0,0,0,3.32,2.23,20.81,20.81,0,0,1,3.05,2.07l.13.1.08.06c.59.47,1,.8.93,1.4-.06,1.32-1.21,2.21-2.87,2.21a4.77,4.77,0,0,1-3.89-2.39L33.42,19l-2.62,1.2.34.47a14.5,14.5,0,0,0,1.33,1.63A6.05,6.05,0,0,0,34,23.44a8.07,8.07,0,0,0,3.58,1,7.25,7.25,0,0,0,2.26-.33,7,7,0,0,0,1.87-1A3.88,3.88,0,0,0,43,21.4Z">
+</path>
+<polygon points="80.62 6.83 76.17 13.01 76.11 12.94 71.49 6.83 67.69 6.87 74.47 15.81 74.47 24.42 77.73 24.42 77.73 15.8 84.34 6.87 80.62 6.83">
+</polygon>
+<polygon points="88.63 9.87 92.96 9.87 92.96 24.49 96.44 24.49 96.44 9.87 100.76 9.87 100.76 6.75 88.63 6.75 88.63 9.87">
+</polygon>
+<polygon points="109.59 17.21 115.44 17.21 115.44 14.01 109.59 14.01 109.59 9.92 117.11 9.92 117.11 6.75 106.49 6.75 106.49 24.49 117.42 24.49 117.42 21.11 109.59 21.11 109.59 17.21">
+</polygon>
+<polygon points="172.76 18.59 164.75 6.68 161.45 6.68 161.45 24.49 164.86 24.49 164.86 12.56 172.86 24.49 176.16 24.49 176.16 6.68 172.76 6.68 172.76 18.59">
+</polygon>
+<polygon points="151.83 13.74 145.24 13.74 145.24 6.75 141.7 6.75 141.7 24.49 145.24 24.49 145.24 17.2 151.83 17.2 151.83 24.49 155.31 24.49 155.31 6.75 151.83 6.75 151.83 13.74">
+</polygon>
+<path d="M134.27,20a5.67,5.67,0,1,1-3.6-10,5.63,5.63,0,0,1,3.53,1.24l.38.31,2.19-2.34-.43-.36a8.87,8.87,0,1,0,0,13.59l.42-.36-2.15-2.37Z">
+</path>
+<path d="M189.6,6.74a8.87,8.87,0,1,0,8.87,8.86A8.87,8.87,0,0,0,189.6,6.74Zm5.73,8.88a5.72,5.72,0,1,1-5.72-5.72A5.73,5.73,0,0,1,195.33,15.62Z">
+</path>
+<path d="M56.64,6.74a8.87,8.87,0,1,0,8.87,8.86A8.87,8.87,0,0,0,56.64,6.74Zm5.72,8.88A5.72,5.72,0,1,1,56.65,9.9,5.72,5.72,0,0,1,62.36,15.62Z">
+</path>
+<path d="M23.88,24.35V14.83l-2.54-2.54L22.68,11a1.5,1.5,0,0,0,.73.2,1.6,1.6,0,1,0-1.6-1.6,1.7,1.7,0,0,0,.2.74l-1.32,1.32-2-2,4-4a1.58,1.58,0,1,0-.88-1.41,1.59,1.59,0,0,0,.21.75l-4,4-4-4a1.59,1.59,0,1,0-1.4.85,1.61,1.61,0,0,0,.73-.19L23,15.22v9.13A1.59,1.59,0,1,0,25,25.86,1.58,1.58,0,0,0,23.88,24.35Z">
+</path>
+<path d="M20.27,22.43V16.61L8.53,4.88a1.57,1.57,0,0,0,.2-.74,1.6,1.6,0,1,0-1.6,1.6,1.57,1.57,0,0,0,.74-.2l6.74,6.75-2.95,3L8.53,12.12a1.57,1.57,0,0,0,.2-.74A1.6,1.6,0,1,0,7.13,13a1.57,1.57,0,0,0,.74-.2L11,15.9,7.87,19a1.57,1.57,0,0,0-.74-.2,1.6,1.6,0,1,0,1.6,1.6,1.57,1.57,0,0,0-.2-.74L15.27,13,17.33,15l-7,7v2.31a1.6,1.6,0,1,0,.94,0V22.43L18,15.66,19.33,17v5l-2.42,2.42a1.5,1.5,0,0,0-.73-.2,1.6,1.6,0,1,0,1.6,1.6,1.66,1.66,0,0,0-.2-.74Z">
+</path>
+</g></defs></svg>
+
+<a class="skip" href="#stage">Saltar a la presentación</a>
+<div class="viewport">
+<main class="stage" id="stage" tabindex="-1" aria-label="SoyTechno, la revista · presentación de propuesta">
+
+  <div class="backdrop" aria-hidden="true"><div class="wall-spot"></div><div class="floor"></div><div class="pool"></div></div>
+
+  <!-- ESCENA: la revista, un solo objeto que viaja entre las pantallas 1 y 2 -->
+  <div class="scene" id="scene">
+    <div class="shadow shadow-soft" id="sh-soft" aria-hidden="true"></div>
+    <div class="shadow shadow-contact" id="sh-contact" aria-hidden="true"></div>
+    <div class="book" id="book" role="group" tabindex="-1" aria-label="Revista SoyTechno, Edición 01. Se hojea con clic, flechas o arrastre.">
+      <div class="base" aria-hidden="true"><div class="edge-block"></div></div>
+      <i id="spine" aria-hidden="true" style="position:absolute;left:0;top:50%;width:0;height:0"></i>
+
+      <!-- Hoja 0 · anverso: C1 portada · reverso: página 02 -->
+      <div class="leaf" data-i="0">
+        <div class="face front" data-pg="C1">
+          <div class="pg cover odd" style="--cover-img:url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000&q=80&auto=format')">
+            <div class="cv-ext"></div>
+            <div class="cv-photo"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000&q=80&auto=format" width="1000" height="1250" fetchpriority="high" alt="Retrato de una persona con luz azul sobre fondo azul lavanda. Imagen de referencia." decoding="async"></div>
+            <div class="cv-veil"></div>
+            <svg class="cv-logo" viewBox="30.40 0 168.45 30.80" role="img" aria-label="SoyTechno"><use href="#st-g"/></svg>
+            <div class="cv-band"><span>Edición 01 · Enero-febrero 2027</span><span>Una publicación de SoyTechno</span></div>
+            <h3 class="cv-h">Tecnología que ordena el año</h3>
+            <ul class="cv-calls"><li>Tres categorías a prueba</li><li>Cuotas con plataformas aliadas</li><li>Calendario de torneos 2027</li></ul>
+            <span class="cv-cred t-cred">Imagen de referencia</span>
+          </div>
+          <i class="shade"></i><i class="cast"></i>
+        </div>
+        <div class="face back" data-pg="02">
+          <div class="pg even">
+            <span class="tab" style="--k:1"></span>
+            <div class="box">
+              <h3 class="sec-h">SUMARIO</h3>
+              <ol class="idx">
+                <li><span class="pn">04</span><span><span class="nm">Pulso Techno</span><span class="ds">Tendencias, software y novedades en tiendas</span></span></li>
+                <li><span class="pn">08</span><span><span class="nm">Bajo el Lente</span><span class="ds">Telefonía; televisión, audio y hogar; cómputo portátil</span></span></li>
+                <li><span class="pn">16</span><span><span class="nm">Reportaje Central</span><span class="ds">La inteligencia artificial cambia de escala</span></span></li>
+                <li><span class="pn">20</span><span><span class="nm">En Primera Fila</span><span class="ds">Entrevista central y perfiles</span></span></li>
+                <li><span class="pn">28</span><span><span class="nm">ADN Gamer</span><span class="ds">El puesto de juego, pieza por pieza</span></span></li>
+                <li><span class="pn">36</span><span><span class="nm">Espacio Business</span><span class="ds">Infraestructura y gestión para pymes</span></span></li>
+                <li><span class="pn">40</span><span><span class="nm">Conexión en Vivo</span><span class="ds">Crónica del lanzamiento</span></span></li>
+                <li><span class="pn">44</span><span><span class="nm">Ruta Inteligente</span><span class="ds">Selección por perfil, cuotas y Club SoyTechno</span></span></li>
+                <li><span class="pn">48</span><span><span class="nm">Última Página</span><span class="ds">El futuro tecnológico, en una columna</span></span></li>
+              </ol>
+            </div>
+            <span class="folio">02 · SUMARIO</span>
+          </div>
+          <i class="shade"></i><i class="cast"></i>
+        </div>
+      </div>
+
+      <!-- Hoja 1 · anverso: página 03 · reverso: página 16 -->
+      <div class="leaf" data-i="1">
+        <div class="face front" data-pg="03">
+          <div class="pg odd">
+            <span class="tab" style="--k:1"></span>
+            <div class="box">
+              <h4 class="carta-h">Carta editorial</h4>
+              <div class="carta t-body">
+                <p>Cada edición de SoyTechno parte de una pregunta práctica: qué tecnología resuelve mejor una necesidad concreta y cómo se accede a ella. La respuesta se construye con pruebas de uso real de al menos cinco días, fichas contrastadas con la documentación de cada fabricante y veredictos sin intervención de las marcas.</p>
+                <p>La revista no publica precios: el precio vigente, la disponibilidad y las condiciones de financiamiento se consultan mediante el código QR de cada pieza. La etiqueta NFC de la contraportada interior da acceso a la edición digital, al pódcast y a los beneficios del Club SoyTechno.</p>
+              </div>
+              <p class="firma">Dirección Editorial · SoyTechno</p>
+              <div class="manch">
+                <span>Editor: SoyTechno</span><span>Dirección Editorial</span><span>Redacción y especialistas</span><span>Arte y maquetación</span>
+                <span>Fotografía y audiovisual</span><span>Depósito legal e ISSN: en trámite</span><span>Tiraje: 5.000 ejemplares</span><span>Una publicación de SoyTechno</span>
+              </div>
+              <div class="inter">
+                <h4>Interacción</h4>
+                <div class="it"><svg class="qr" viewBox="0 0 25 25" shape-rendering="crispEdges" aria-hidden="true" data-qr="soytechno.com/r/e01p03a"></svg><div><b>QR</b><p>Acceso a ficha, precio vigente y video</p></div></div>
+                <div class="it"><div class="nfc"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.4" stroke-dasharray="2.2 1.8"/><circle cx="20" cy="20" r="12.5"/></svg></div><div><b>NFC</b><p>Zona de contacto en la contraportada interior</p></div></div>
+              </div>
+            </div>
+            <span class="folio">03 · SUMARIO</span>
+          </div>
+          <i class="shade"></i><i class="cast"></i>
+        </div>
+        <div class="face back" data-pg="16">
+          <div class="pg even rc">
+            <div class="rc-wrap"><img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=1400&q=80&auto=format" width="1400" height="1050" alt="" decoding="async"></div>
+            <div class="rc-veil"></div>
+            <p class="rc-ante t-ante">Reportaje Central · Tendencias</p>
+            <h3 class="rc-h">La inteligencia artificial cambia de escala</h3>
+            <p class="rc-ent t-ent">Del centro de datos al teléfono: los asistentes y las funciones de inteligencia artificial pasan a ejecutarse en el propio dispositivo, con efectos en la autonomía, la privacidad y la elección del próximo equipo.</p>
+            <p class="rc-firma">Texto: Redacción SoyTechno · Imagen de referencia</p>
+            <div class="rc-cols t-body">
+              <p>El procesamiento local de modelos de lenguaje y de imagen exige unidades neuronales dedicadas, más memoria y una gestión térmica distinta. En la decisión de compra, la consecuencia es concreta: la memoria y el procesador pesan tanto como la cámara.</p>
+              <p class="t-lad">Qué cambia en la ficha técnica</p>
+              <p>La guía de esta edición compara tres perfiles de uso (estudio, trabajo y creación de contenido) y señala qué especificaciones conviene priorizar en cada caso.</p>
+            </div>
+          </div>
+          <i class="shade"></i><i class="cast"></i>
+        </div>
+      </div>
+
+      <!-- Hoja 2 · anverso: página 17 · reverso: página 28 -->
+      <div class="leaf" data-i="2">
+        <div class="face front" data-pg="17">
+          <div class="pg odd rc">
+            <span class="tab" style="--k:4"></span>
+            <div class="rc-wrap"><img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=1400&q=80&auto=format" width="1400" height="1050" alt="Teléfono sostenido en una mano frente a un túnel de luz azul. Imagen de referencia." decoding="async"></div>
+            <div class="rc-veil"></div>
+            <blockquote class="rc-dest t-dest">«La pregunta ya no es si un equipo tiene inteligencia artificial, sino dónde se ejecuta.»</blockquote>
+          </div>
+          <i class="shade"></i><i class="cast"></i>
+        </div>
+        <div class="face back" data-pg="28">
+          <div class="pg even dark">
+            <span class="tab" style="--k:6"></span>
+            <div class="box">
+              <h3 class="sec-h">ADN GAMER</h3>
+              <h4 class="ag-h">El puesto de juego, pieza por pieza</h4>
+              <p class="ag-ent t-ent">Pantalla, periféricos y mobiliario definen el rendimiento tanto como el procesador gráfico. Guía de configuración por nivel de exigencia.</p>
+              <div class="ag-ficha">
+                <h5>Puesto de referencia · nivel competitivo</h5>
+                <ul>
+                  <li>Pantalla · <span>27&nbsp;in, 165&nbsp;Hz o más</span></li>
+                  <li>Respuesta · <span>1&nbsp;ms (GtG)</span></li>
+                  <li>Resolución · <span>2.560 × 1.440</span></li>
+                  <li>Ratón · <span>8.000&nbsp;dpi o más</span></li>
+                  <li>Silla · <span>ajuste lumbar y de brazos</span></li>
+                  <li>Gama · <span>media o alta</span></li>
+                </ul>
+              </div>
+            </div>
+            <span class="folio">28 · ADN GAMER</span>
+          </div>
+          <i class="shade"></i><i class="cast"></i>
+        </div>
+      </div>
+
+      <!-- Hoja 3 · anverso: página 29 · reverso: sin uso en la secuencia mínima -->
+      <div class="leaf" data-i="3">
+        <div class="face front" data-pg="29">
+          <div class="pg odd dark">
+            <span class="tab" style="--k:6"></span>
+            <div class="box">
+              <figure class="ag-photo"><img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=1000&q=80&auto=format" width="1000" height="667" alt="Jugador en penumbra azul frente a su puesto de juego. Imagen de referencia." decoding="async"></figure>
+              <p class="ag-pie t-pie">Puesto de juego con iluminación ambiental. Imagen de referencia.</p>
+              <div class="ag-qr"><div class="inner"><svg class="qr" viewBox="0 0 25 25" shape-rendering="crispEdges" aria-hidden="true" data-qr="soytechno.com/r/e01p28a"></svg><div><p class="micro">Acceso a ficha, precio vigente y video</p><p class="url">soytechno.com/r/e01p28a</p></div></div></div>
+            </div>
+            <span class="folio">29 · ADN GAMER</span>
+          </div>
+          <i class="shade"></i><i class="cast"></i>
+        </div>
+        <div class="face back" data-pg="30">
+          <div class="pg even"><div class="box"></div></div>
+          <i class="shade"></i><i class="cast"></i>
+        </div>
+      </div>
+    </div><!-- /book -->
+  </div><!-- /scene -->
+
+  <!-- Cabecera fija: lockup oficial en blanco + contador discreto -->
+  <header class="chrome">
+    <a class="mark" href="?pantalla=1" id="home" aria-label="SoyTechno, ir a la apertura"><svg viewBox="0 0 204 30" aria-hidden="true" focusable="false"><use href="#st-g"/></svg></a>
+    <nav class="counter" aria-label="Pantallas de la presentación">
+      <a href="?pantalla=1" data-go="1" aria-label="Ir a la pantalla 1 de 3, apertura">01</a><span class="sep" aria-hidden="true">/</span>
+      <a href="?pantalla=2" data-go="2" aria-label="Ir a la pantalla 2 de 3, la revista">02</a><span class="sep" aria-hidden="true">/</span>
+      <a href="?pantalla=3" data-go="3" aria-label="Ir a la pantalla 3 de 3, ciclo y compuertas">03</a>
+    </nav>
+  </header>
+
+  <!-- PANTALLA 1 · apertura -->
+  <section class="screen is-active" id="screen-1" data-screen="1" aria-label="Pantalla 1 de 3, apertura">
+    <div class="s1-text">
+      <p class="eyebrow" data-reveal>Proyecto editorial · Propuesta para evaluación</p>
+      <h1 id="h1-main"><span class="ln">SoyTechno,</span> <span class="ln">la revista</span></h1>
+      <p class="bajada" data-reveal>Medio propio de SoyTechno, gratuito y bimestral: la exhibición de productos convertida en contenido informativo, estilístico y aspiracional, con acceso a la compra mediante QR y NFC.</p>
+      <p class="lema" data-reveal>Tecnología explicada, probada y accesible.</p>
+      <div class="cta-row" data-reveal>
+        <button type="button" class="btn" id="cta-open">Abrir la revista<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="respaldo">Documento Rector, Índice Maestro y 18 documentos de aplicación, vigentes desde el 18-oct-2026</p>
+      </div>
+    </div>
+    <ul class="figures" aria-label="Cifras clave">
+      <li class="fig" data-reveal><span class="num">6</span><span class="unit">ediciones al año</span></li>
+      <li class="fig" data-reveal><span class="num">52</span><span class="unit">páginas por edición</span></li>
+      <li class="fig" data-reveal><span class="num">5.000</span><span class="unit">ejemplares en la Edición 01</span></li>
+      <li class="fig fig-qr" data-reveal><span class="num">QR + NFC</span><span class="unit">un código por pieza, una etiqueta por ejemplar</span></li>
+      <li class="fig fig-hero" id="fig-hero" data-reveal><span class="num" id="hero-num">19:30</span><span class="unit">hora cero de la revelación, <span style="white-space:nowrap">21-ene-2027</span></span></li>
+    </ul>
+    <div class="ignite" id="ignite" aria-hidden="true"><span class="num" id="ig-num">19:30</span><span class="note" id="ig-note">hora cero de la revelación, 21-ene-2027</span></div>
+  </section>
+
+  <!-- PANTALLA 2 · la revista (el objeto vive en la escena; aquí solo el indicador y los controles) -->
+  <section class="screen" id="screen-2" data-screen="2" aria-label="Pantalla 2 de 3, la revista">
+    <h2 class="sr-only">La revista, pliego a pliego</h2>
+    <div class="pager">
+      <div class="folio-wrap" data-reveal>
+        <div class="folio-big" id="folio-big">C1</div>
+        <div class="folio-name" id="folio-name">Portada</div>
+        <p class="hint">Clic, flechas o arrastre para hojear</p>
+      </div>
+      <div class="pg-ctrl" data-reveal>
+        <button type="button" class="gridbtn" id="gridbtn" aria-pressed="false" aria-label="Mostrar la retícula de 12 columnas y la línea base">Retícula</button>
+        <button type="button" class="pgbtn" id="pg-prev" aria-label="Página anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <ol class="stops" id="stops" aria-label="Posición en la revista">
+          <li><button type="button" class="stop" data-spread="0" aria-label="C1 · Portada"><b>C1</b>Portada</button></li>
+          <li><button type="button" class="stop" data-spread="1" aria-label="02-03 · Sumario y créditos"><b>02-03</b>Sumario y créditos</button></li>
+          <li><button type="button" class="stop" data-spread="2" aria-label="16-17 · Reportaje Central"><b>16-17</b>Reportaje Central</button></li>
+          <li><button type="button" class="stop" data-spread="3" aria-label="28-29 · ADN Gamer"><b>28-29</b>ADN Gamer</button></li>
+        </ol>
+        <button type="button" class="pgbtn" id="pg-next" aria-label="Página siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANTALLA 3 · ocho semanas, seis compuertas -->
+  <section class="screen" id="screen-3" data-screen="3" aria-label="Pantalla 3 de 3, ciclo de ocho semanas y compuertas">
+    <div class="s3" id="s3">
+      <svg class="trace" id="trace" aria-hidden="true" focusable="false"></svg>
+      <h2 class="s3-title" id="h1-s3"><span class="ln">Ocho semanas por edición.</span> <span class="ln">Seis compuertas de control.</span></h2>
+      <p class="s3-bajada" data-reveal>Cada edición avanza solo cuando la compuerta anterior queda firmada. Toda la producción impresa ocurre en la semana 7; la revelación, el jueves de la semana 8.</p>
+
+      <div class="gates" id="gates" role="group" aria-label="Seis compuertas de control. Al seleccionar una, se muestran sus criterios.">
+        <button type="button" class="gate" data-g="0" aria-pressed="true" aria-controls="gate-panel" data-reveal><span class="gid num">G0</span><span class="gday">viernes de S1</span></button>
+        <button type="button" class="gate" data-g="1" aria-pressed="false" aria-controls="gate-panel" data-reveal><span class="gid num">G1</span><span class="gday">viernes de S4</span></button>
+        <button type="button" class="gate" data-g="2" aria-pressed="false" aria-controls="gate-panel" data-reveal><span class="gid num">G2</span><span class="gday">viernes de S6</span></button>
+        <button type="button" class="gate" data-g="3" aria-pressed="false" aria-controls="gate-panel" aria-label="G3, viernes de S6" data-reveal><span class="gid num">G3</span><span class="gday sh" aria-hidden="true">viernes de S6</span></button>
+        <button type="button" class="gate" data-g="4" aria-pressed="false" aria-controls="gate-panel" data-reveal><span class="gid num">G4</span><span class="gday">martes de S7</span></button>
+        <button type="button" class="gate" data-g="5" aria-pressed="false" aria-controls="gate-panel" data-reveal><span class="gid num">G5</span><span class="gday">D+1</span></button>
+      </div>
+
+      <ol class="phases" id="phases" aria-label="Fases del ciclo">
+        <li class="ph" data-reveal><span class="ph-tag">S1</span><h3 class="ph-name">Planificación</h3><p>eje temático, personaje de portada, mapa de paginación, pauta y evento</p></li>
+        <li class="ph" data-reveal><span class="ph-tag">S2-S4</span><h3 class="ph-name">Producción</h3><p>pruebas, entrevistas, sesión de portada con video y pódcast, redacción</p></li>
+        <li class="ph" data-reveal><span class="ph-tag">S5-S6</span><h3 class="ph-name">Diseño y edición</h3><p>maquetación, QR y NFC, corrección, validación comercial y legal</p></li>
+        <li class="ph ph-s7" data-reveal><span class="ph-tag">S7</span><h3 class="ph-name">Pre-prensa e impresión</h3><p>ferro, impresión, encuadernación, etiquetas NFC</p>
+          <ul class="days" aria-label="Semana 7">
+            <li><b>Lunes</b> · archivos, ferro y pruebas</li><li><b>Martes</b> · G4 e impresión</li><li><b>Miércoles</b> · laminado y barniz UV</li><li><b>Jueves</b> · encuadernación PUR</li><li><b>Viernes</b> · NFC, control 1/50 y sellado</li>
+          </ul></li>
+        <li class="ph ph-s8" data-reveal><span class="ph-tag">S8</span><h3 class="ph-name">Lanzamiento</h3><p>revelación, evento, edición digital y sedes</p>
+          <ul class="days" aria-label="Semana 8">
+            <li><b>Lunes</b> · almacén</li><li><b>Miércoles</b> · despacho</li><li class="dd"><b>Jueves</b> · Día D, revelación <span style="white-space:nowrap">a las 19:30</span></li><li><b>Viernes</b> · sedes y Club SoyTechno</li>
+          </ul></li>
+      </ol>
+
+      <div class="gate-panel" id="gate-panel" role="region" aria-live="polite" aria-label="Criterios de la compuerta seleccionada" data-reveal>
+        <div class="gp-id num" id="gp-id">G0</div>
+        <div><p class="gp-meta" id="gp-meta">viernes de S1 · Consejo Editorial</p><p class="gp-crit" id="gp-crit">Eje temático, personaje de portada, mapa de paginación, pauta comprometida, tiraje y evento.</p></div>
+      </div>
+
+      <ol class="dates" aria-label="Edición 01, fechas">
+        <li data-reveal><span class="dv dh">Edición 01</span></li>
+        <li data-reveal><span class="dl">S1</span><span class="dv">16-nov-2026</span></li>
+        <li data-reveal><span class="dl">G0</span><span class="dv">20-nov-2026</span></li>
+        <li data-reveal><span class="dl">G1</span><span class="dv">11-dic-2026</span></li>
+        <li data-reveal><span class="dl">pausa</span><span class="dv"><span style="white-space:nowrap">21-dic-2026</span> a <span style="white-space:nowrap">03-ene-2027</span></span></li>
+        <li data-reveal><span class="dl">G2 y G3</span><span class="dv">08-ene-2027</span></li>
+        <li data-reveal><span class="dl">G4</span><span class="dv">12-ene-2027</span></li>
+        <li data-reveal><span class="dl">Día D</span><span class="dv">21-ene-2027</span></li>
+      </ol>
+
+      <p class="glos" id="glos" data-reveal><span data-s="CE"><i>CE</i> Consejo Editorial</span> · <span data-s="DE"><i>DE</i> Dirección Editorial</span> · <span data-s="EC"><i>EC</i> Cierre y Corrección</span> · <span data-s="CC"><i>CC</i> Comercial y Alianzas</span> · <span data-s="EV"><i>EV</i> Eventos y Creadores</span> · <span data-s="DA"><i>DA</i> Arte y Maquetación</span> · <span data-s="PD"><i>PD</i> Digital y Datos</span></p>
+    </div>
+  </section>
+
+  <button type="button" class="edge edge-prev" id="edge-prev" aria-label="Pantalla anterior" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4l-8 8 8 8"/></svg></button>
+  <button type="button" class="edge edge-next" id="edge-next" aria-label="Pantalla siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8"/></svg></button>
+  <div class="sr-only" id="live" role="status" aria-live="polite"></div>
+</main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script>
+/* ==========================================================================
+   SoyTechno, la revista · Dirección A «Escenario» (Black Big-Number Stage)
+   GSAP 3.13.0 + SplitText. Física del libro: muelle críticamente amortiguado
+   en gsap.ticker (interrumpible, hereda la velocidad del gesto).
+   ========================================================================== */
+(function(){
+'use strict';
+var html=document.documentElement;
+if(!window.gsap){html.className='no-anim';return;}
+if(window.SplitText){gsap.registerPlugin(SplitText);}
+var qs=new URLSearchParams(location.search);
+if(qs.get('qa')==='1')gsap.ticker.lagSmoothing(0);   /* solo revisión: el reloj virtual de Chrome sin interfaz no debe recortarse */
+var CAPTURE=qs.get('captura')==='1';
+var RMQ=window.matchMedia('(prefers-reduced-motion: reduce)');
+var PORTRAIT=window.matchMedia('(max-aspect-ratio: 1/1)');
+var HOVERQ=window.matchMedia('(hover: hover) and (pointer: fine)');
+function animOn(){return html.classList.contains('anim')&&!RMQ.matches&&!CAPTURE;}
+function $(s,r){return (r||document).querySelector(s);}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));}
+function clamp(v,a,b){return Math.min(b,Math.max(a,v));}
+function lerp(a,b,t){return a+(b-a)*t;}
+function smooth(p){return p*p*(3-2*p);}
+function smoothR(a,b,x){return smooth(clamp((x-a)/(b-a),0,1));}
+
+var stage=$('#stage'),scene=$('#scene'),book=$('#book'),wallSpot=$('.wall-spot'),pool=$('.pool'),live=$('#live');
+var shSoft=$('#sh-soft'),shContact=$('#sh-contact');
+var screens=[null,$('#screen-1'),$('#screen-2'),$('#screen-3')];
+var SECT=[{f:'C1',n:'Portada'},{f:'02-03',n:'Sumario y créditos'},{f:'16-17',n:'Reportaje Central'},{f:'28-29',n:'ADN Gamer'}];
+var NL=4,E=.9;                       /* hojas y separación en z (px) para evitar z-fighting */
+var W=0,H=0,PW=0,PH=0;               /* escenario y página (px) */
+var cur=1,spread=0,trans=null,dirty=true;
+function syncURL(){try{var u=new URL(location.href);u.searchParams.set('pantalla',String(cur));if(cur===2||spread>0)u.searchParams.set('pliego',String(spread));else u.searchParams.delete('pliego');history.replaceState(null,'',u);}catch(_){}}
+var L=$$('.leaf',book).map(function(el){
+  var f=$('.face.front',el),b=$('.face.back',el);
+  return {el:el,f:f,b:b,fs:$('.shade',f),fc:$('.cast',f),bs:$('.shade',b),bc:$('.cast',b)};
+});
+var P=[0,0,0,0],V=[0,0,0,0],T=[0,0,0,0];       /* progreso (0 cerrada · 1 girada), velocidad (1/s), objetivo */
+var pose={X:0,Y:0,s:1,yawC:-20,yawO:-3,px:0,py:0,alpha:1,bright:1,sx:.5,spot:1};
+var par={tx:0,ty:0};
+function mark(){dirty=true;}
+
+/* ---------- QR genérico (patrón de módulos, no escaneable) ---------- */
+function drawQR(svg,seed){
+  var n=25,g=[],i,j,h=2166136261;
+  for(i=0;i<seed.length;i++){h^=seed.charCodeAt(i);h=Math.imul(h,16777619)>>>0;}
+  function rnd(){h^=h<<13;h>>>=0;h^=h>>>17;h^=h<<5;h>>>=0;return h/4294967296;}
+  for(i=0;i<n;i++){g.push([]);for(j=0;j<n;j++)g[i].push(rnd()>.52?1:0);}
+  function finder(r,c){for(i=-1;i<=7;i++)for(j=-1;j<=7;j++){var y=r+i,x=c+j;if(y<0||x<0||y>=n||x>=n)continue;
+    var on=(i>=0&&i<=6&&j>=0&&j<=6)&&(i===0||i===6||j===0||j===6||(i>=2&&i<=4&&j>=2&&j<=4));g[y][x]=on?1:0;}}
+  finder(0,0);finder(0,n-7);finder(n-7,0);
+  for(i=8;i<n-8;i++){g[6][i]=i%2===0?1:0;g[i][6]=i%2===0?1:0;}
+  for(i=-2;i<=2;i++)for(j=-2;j<=2;j++){g[18+i][18+j]=(Math.max(Math.abs(i),Math.abs(j))!==1)?1:0;}
+  var d='';for(i=0;i<n;i++)for(j=0;j<n;j++)if(g[i][j])d+='M'+j+' '+i+'h1v1h-1z';
+  svg.innerHTML='<path d="'+d+'" fill="#0D0E12"/>';
+}
+$$('svg[data-qr]').forEach(function(s){drawQR(s,s.getAttribute('data-qr'));});
+
+/* ---------- medidas y poses por pantalla ---------- */
+function measure(){
+  W=stage.clientWidth;H=stage.clientHeight;PW=book.offsetWidth;PH=book.offsetHeight;
+}
+function poseFor(n){
+  var p=PORTRAIT.matches;
+  if(n===1){
+    var ty=(26/32)*W-14,ch=Math.max(110,Math.min(.27*H,ty-92));      /* vertical: la portada se asienta justo sobre el bloque de texto */
+    return p?{X:.5*W,Y:ty,s:ch/PH,yawC:-18,yawO:-3,alpha:1,sx:.5,spot:1}
+            :{X:.745*W,Y:.738*H,s:.34*W/PH,yawC:-20,yawO:-3,alpha:1,sx:.745,spot:1};
+  }
+  if(n===2){
+    return p?{X:.5*W,Y:.46*H,s:.9*W/(2*PW),yawC:-14,yawO:-2,alpha:1,sx:.5,spot:1}
+            :{X:.5*W,Y:.832*H,s:.95,yawC:-10,yawO:-3,alpha:1,sx:.5,spot:1};
+  }
+  return p?{X:.5*W,Y:.62*H,s:.9*W/(2*PW),yawC:-24,yawO:-8,alpha:0,sx:.5,spot:.3}
+          :{X:.18*W,Y:.832*H,s:.62,yawC:-28,yawO:-8,alpha:0,sx:.5,spot:.35};
+}
+function setPose(t){for(var k in t)pose[k]=t[k];mark();}
+
+/* ---------- aplicar pose y sombras ---------- */
+function openness(){return smoothR(.22,1,P[0]);}
+function applyPose(){
+  var o=openness(),cx=(1-o)*PW/2;
+  var yaw=lerp(pose.yawC,pose.yawO,o)+pose.px*2.4;pose.yawE=yaw;
+  book.style.transform='translate3d('+pose.X.toFixed(2)+'px,'+(pose.Y-PH).toFixed(2)+'px,0) rotateX('+(pose.py*-1.4).toFixed(3)+'deg) rotateY('+yaw.toFixed(3)+'deg) scale('+pose.s.toFixed(4)+') translate3d('+(-cx).toFixed(2)+'px,0,0)';
+  scene.style.opacity=pose.alpha.toFixed(3);
+  var lift=0,i;for(i=0;i<NL;i++)lift=Math.max(lift,Math.sin(Math.PI*P[i]));
+  var rad=yaw*Math.PI/180,wid=PW*(1+o)*pose.s*Math.max(.8,Math.cos(rad));
+  var cw=wid*1.05,ch=Math.max(14,PH*pose.s*.055);
+  shContact.style.width=cw.toFixed(1)+'px';shContact.style.height=ch.toFixed(1)+'px';
+  shContact.style.transform='translate3d('+(pose.X-cw/2).toFixed(1)+'px,'+(pose.Y-ch*.22).toFixed(1)+'px,0)';
+  shContact.style.opacity=(.92-.18*lift).toFixed(3);
+  var sw=wid*1.4*(1+.1*lift),sh=Math.max(30,PH*pose.s*.17);
+  shSoft.style.width=sw.toFixed(1)+'px';shSoft.style.height=sh.toFixed(1)+'px';
+  shSoft.style.transform='translate3d('+(pose.X-sw/2).toFixed(1)+'px,'+(pose.Y-sh*.18).toFixed(1)+'px,0)';
+  shSoft.style.opacity=(.8+.2*lift).toFixed(3);
+  var sx=(pose.sx-.5)*W;
+  wallSpot.style.transform='translate3d('+sx.toFixed(1)+'px,0,0)';wallSpot.style.opacity=pose.spot.toFixed(3);
+  pool.style.transform='translate3d('+sx.toFixed(1)+'px,'+(pose.Y-.74*H).toFixed(1)+'px,0)';pool.style.opacity=pose.spot.toFixed(3);
+}
+
+/* ---------- hojas: giro 3D real alrededor del lomo ---------- */
+function renderLeaf(i){
+  var p=P[i],o=L[i],z=lerp((NL-i)*E,(i+1)*E,smooth(p));
+  o.el.style.transform='translate3d(0,0,'+z.toFixed(2)+'px) rotateY('+(-p*180).toFixed(3)+'deg)';
+  var sh=.46*Math.pow(Math.sin(Math.PI*p),1.25),dim=(1-pose.bright)*.97;   /* sombra propia al girar de canto + regulador de luz sobre el papel (sin filtros) */
+  sh=Math.max(sh,dim);
+  o.fs.style.opacity=p<.5?sh.toFixed(3):0;o.bs.style.opacity=p>.5?sh.toFixed(3):0;
+  var cf=i>0?Math.pow(Math.sin(Math.PI*P[i-1]),1.1):0;             /* sombra proyectada por la hoja que se levanta */
+  var cb=i<NL-1?Math.pow(Math.sin(Math.PI*P[i+1]),1.1):0;
+  o.fc.style.opacity=(p<.5?cf:0).toFixed(3);o.fc.style.transform='scaleX('+(.45+.55*cf).toFixed(3)+')';
+  o.bc.style.opacity=(p>.5?cb:0).toFixed(3);o.bc.style.transform='scaleX('+(.45+.55*cb).toFixed(3)+')';
+}
+function renderAll(){for(var i=0;i<NL;i++)renderLeaf(i);applyPose();}
+function ariaPages(){
+  L.forEach(function(o,i){o.f.setAttribute('aria-hidden',i===spread?'false':'true');o.b.setAttribute('aria-hidden',i===spread-1?'false':'true');});
+}
+
+/* Muelle críticamente amortiguado (ζ = 1, respuesta ≈ 0,62 s): nunca rebota, siempre retoma desde el valor y la velocidad vivos */
+var OMEGA=2*Math.PI/.62;
+function stepLeaf(i,h){
+  if(drag&&drag.idx===i&&drag.moved)return false;
+  var x=P[i],v=V[i],t=T[i],w=OMEGA,a;
+  if(x===t&&v===0)return false;
+  a=-w*w*(x-t)-2*w*v;v+=a*h;x+=v*h;
+  if(x<0){x=0;v=0;}else if(x>1){x=1;v=0;}
+  if(Math.abs(x-t)<.0007&&Math.abs(v)<.012){x=t;v=0;}
+  P[i]=x;V[i]=v;return true;
+}
+var drag=null;
+gsap.ticker.add(function(time,delta){
+  var dt=Math.min(delta/1000,.05),n=Math.max(1,Math.ceil(dt/.008)),h=dt/n,i,k,moving=false;
+  for(i=0;i<NL;i++){
+    if(RMQ.matches||CAPTURE){if(P[i]!==T[i]){P[i]=T[i];V[i]=0;moving=true;}continue;}
+    for(k=0;k<n;k++){if(stepLeaf(i,h))moving=true;}
+  }
+  if(HOVERQ.matches&&animOn()&&(cur===1||cur===2)){
+    var f=1-Math.exp(-dt*5);
+    var nx=pose.px+(par.tx-pose.px)*f,ny=pose.py+(par.ty-pose.py)*f;
+    if(Math.abs(nx-pose.px)>.0004||Math.abs(ny-pose.py)>.0004){pose.px=nx;pose.py=ny;moving=true;}
+  }
+  if(moving||dirty){renderAll();dirty=false;}
+});
+
+/* ---------- indicador de posición ---------- */
+var folioBig=$('#folio-big'),folioName=$('#folio-name'),stops=$$('.stop'),btnPrev=$('#pg-prev'),btnNext=$('#pg-next');
+var ready=false;
+function announce(t){if(!ready)return;live.textContent='';setTimeout(function(){live.textContent=t;},40);}
+function updateSpreadUI(animate){
+  var s=SECT[spread],els=[folioBig,folioName];
+  stops.forEach(function(b,i){b.setAttribute('aria-current',i===spread?'true':'false');});
+  btnPrev.setAttribute('aria-disabled',String(spread===0));btnNext.setAttribute('aria-disabled',String(spread===3));
+  function put(){folioBig.textContent=s.f;folioName.textContent=s.n;}
+  gsap.killTweensOf(els);
+  if(animate&&animOn()){
+    gsap.to(els,{autoAlpha:0,y:-10,duration:.14,ease:'power2.in',onComplete:function(){put();gsap.fromTo(els,{autoAlpha:0,y:12},{autoAlpha:1,y:0,duration:.35,ease:'expo.out',stagger:.04});}});
+  }else{put();gsap.set(els,{autoAlpha:1,y:0});}
+  ariaPages();announce(s.f+' · '+s.n);
+}
+function setSpread(n,instant){
+  n=clamp(n,0,3);var i,ch=n!==spread;
+  for(i=0;i<NL;i++)T[i]=i<n?1:0;                    /* la hoja 3 no gira en la secuencia mínima */
+  spread=n;
+  if(instant){for(i=0;i<NL;i++){P[i]=T[i];V[i]=0;}}
+  mark();updateSpreadUI(ch&&!instant);if(!instant)syncURL();
+}
+function flip(dir){var n=spread+dir;if(n<0||n>3)return false;setSpread(n);return true;}
+function settled(){for(var i=0;i<NL;i++){if(Math.abs(P[i]-T[i])>.02||Math.abs(V[i])>.06)return false;}return true;}
+
+/* ---------- escenas: revelación y pantallas ---------- */
+function cleanSplit(el){if(el&&el._sp){el._sp.revert();el._sp=null;}}
+function splitReveal(el,tl,at){
+  cleanSplit(el);
+  if(!window.SplitText||!el)return;
+  var sp=SplitText.create(el,{type:'chars',charsClass:'ch'});el._sp=sp;
+  tl.from(sp.chars,{yPercent:60,autoAlpha:0,duration:.6,ease:'expo.out',stagger:.015},at);
+  tl.add(function(){cleanSplit(el);},at+.6+.015*sp.chars.length+.05);
+}
+function drawTrace(tl,at){
+  var rail=$('#rail'),parts=$$('#trace .tick, #trace .cn, #trace .nd');
+  if(rail)tl.fromTo(rail,{strokeDasharray:1,strokeDashoffset:1},{strokeDashoffset:0,duration:.9,ease:'expo.inOut',onComplete:function(){rail.style.strokeDasharray='none';}},at);
+  if(parts.length)tl.fromTo(parts,{autoAlpha:0},{autoAlpha:1,duration:.35,ease:'expo.out',stagger:.04},at+.25);
+}
+function revealScreen(n,tl,at,skip){
+  var items=$$('[data-reveal]',screens[n]);
+  if(skip)items=items.filter(function(e){return skip.indexOf(e)<0;});
+  if(n===1)splitReveal($('#h1-main'),tl,at);
+  if(n===3)splitReveal($('#h1-s3'),tl,at);
+  if(items.length)tl.fromTo(items,{autoAlpha:0,y:12},{autoAlpha:1,y:0,duration:.35,ease:'expo.out',stagger:.05},at+.12);
+  if(n===3)drawTrace(tl,at+.3);
+}
+function updateChrome(n){
+  $$('.counter a').forEach(function(b){b.setAttribute('aria-current',String(+b.getAttribute('data-go')===n));});
+  $('#edge-prev').hidden=n===1;$('#edge-next').hidden=n===3;
+}
+function go(n,o){
+  o=o||{};n=clamp(n,1,3);
+  if(n===cur&&!o.force)return;
+  var from=cur,dir=n>from?1:-1,tgt=poseFor(n),inst=!!o.instant||!animOn();
+  cur=n;updateChrome(n);if(from)announce('Pantalla '+n+' de 3');
+  book.style.pointerEvents=n===3?'none':'auto';
+  if(n===1&&spread>0)setSpread(0,inst);          /* al volver a la apertura la revista se cierra sobre su portada */
+  syncURL();
+  if(trans){trans.kill();trans=null;}
+  skipIntro();
+  screens.forEach(function(s,i){if(i)s.classList.toggle('is-active',i===n);});
+  if(inst){
+    screens.forEach(function(s,i){if(i)gsap.set(s,{autoAlpha:i===n?1:0,y:0});});
+    gsap.set($$('[data-reveal]',screens[n]),{autoAlpha:1,y:0});
+    gsap.killTweensOf(pose);setPose(tgt);pose.bright=1;mark();
+    if(n===3)layoutTrace();
+    return;
+  }
+  var next=screens[n];
+  trans=gsap.timeline({onComplete:function(){trans=null;}});
+  screens.forEach(function(s,i){
+    if(!i||i===n)return;
+    if(+gsap.getProperty(s,'autoAlpha')>.001)trans.to(s,{autoAlpha:0,y:-12*dir,duration:.5,ease:'expo.inOut',overwrite:true},0);   /* salida más rápida */
+  });
+  trans.fromTo(next,{autoAlpha:0,y:12*dir},{autoAlpha:1,y:0,duration:.8,ease:'expo.inOut',overwrite:true},.14);
+  trans.to(pose,{X:tgt.X,Y:tgt.Y,s:tgt.s,yawC:tgt.yawC,yawO:tgt.yawO,alpha:tgt.alpha,sx:tgt.sx,spot:tgt.spot,duration:.8,ease:'expo.inOut',onUpdate:mark,overwrite:true},0);
+  if(n===3)layoutTrace();
+  revealScreen(n,trans,.42);
+  if(n===2&&o.open)trans.add(function(){if(spread===0)flip(1);},.62);
+  return trans;
+}
+
+/* Apertura: «19:30» solo en negro, vuela a su casilla y se enciende el foco sobre la portada */
+var introTL=null,introDone=true;
+function skipIntro(){
+  if(introDone)return;
+  introDone=true;
+  if(introTL){introTL.progress(1);introTL=null;}
+  gsap.killTweensOf($('#ig-num'));
+  gsap.set('#fig-hero',{autoAlpha:1,y:0});$('#ignite').classList.add('done');
+  cleanSplit($('#h1-main'));cleanSplit($('#ig-num'));
+  pose.bright=1;pose.spot=1;mark();
+}
+function playIntro1(){
+  var igNum=$('#ig-num'),igNote=$('#ig-note'),ign=$('#ignite'),heroNum=$('#hero-num'),heroLi=$('#fig-hero');
+  var t1=poseFor(1),items=$$('[data-reveal]',screens[1]).filter(function(e){return e!==heroLi;});
+  introDone=false;
+  var spI=window.SplitText?SplitText.create(igNum,{type:'chars',charsClass:'ch',aria:'none'}):null;igNum._sp=spI;
+  var spH=window.SplitText?SplitText.create('#h1-main',{type:'chars',charsClass:'ch'}):null;$('#h1-main')._sp=spH;
+  gsap.set(heroLi,{autoAlpha:0});gsap.set(items,{autoAlpha:0});
+  pose.bright=.04;pose.spot=0;pose.Y=t1.Y+12;mark();
+  function slot(){var a=igNum.getBoundingClientRect(),b=heroNum.getBoundingClientRect();return{a:a,b:b};}
+  var tl=gsap.timeline({onComplete:function(){introDone=true;introTL=null;ign.classList.add('done');cleanSplit(igNum);cleanSplit($('#h1-main'));}});
+  introTL=tl;
+  if(spI)tl.from(spI.chars,{yPercent:55,autoAlpha:0,duration:.6,ease:'expo.out',stagger:.015},.1);
+  else tl.from(igNum,{autoAlpha:0,y:12,duration:.35,ease:'expo.out'},.1);
+  tl.from(igNote,{autoAlpha:0,y:12,duration:.35,ease:'expo.out'},.45);
+  tl.to(igNum,{
+    x:function(){var r=slot();return (r.b.left+r.b.width/2)-(r.a.left+r.a.width/2);},
+    y:function(){var r=slot();return (r.b.top+r.b.height/2)-(r.a.top+r.a.height/2);},
+    scale:function(){var r=slot();return r.b.width/r.a.width;},
+    color:'#1B6BD6',duration:.9,ease:'expo.inOut',
+    onComplete:function(){gsap.set(heroLi,{autoAlpha:1});gsap.set(ign,{autoAlpha:0});}
+  },1.5);
+  tl.to(igNote,{autoAlpha:0,duration:.3,ease:'power2.in'},1.5);
+  tl.to(pose,{spot:1,duration:1.8,ease:'power2.inOut',onUpdate:mark},1.95);          /* el foco sube como un regulador de teatro */
+  tl.to(pose,{bright:1,duration:2,ease:'power2.inOut',onUpdate:mark},1.95);
+  tl.to(pose,{Y:t1.Y,duration:1.5,ease:'expo.out',onUpdate:mark},1.95);
+  if(spH)tl.from(spH.chars,{yPercent:60,autoAlpha:0,duration:.6,ease:'expo.out',stagger:.015},2.1);
+  tl.fromTo(items,{autoAlpha:0,y:12},{autoAlpha:1,y:0,duration:.35,ease:'expo.out',stagger:.06},2.3);
+  tl.fromTo(heroLi.querySelector('.unit'),{autoAlpha:0,y:12},{autoAlpha:1,y:0,duration:.35,ease:'expo.out'},2.4);
+}
+function entrance(n){
+  var tl=gsap.timeline();
+  pose.bright=.12;pose.spot=n===2?0:pose.spot;mark();
+  if(n===2){tl.to(pose,{bright:1,spot:1,duration:1.4,ease:'power2.inOut',onUpdate:mark},0);}
+  else{pose.bright=1;mark();}
+  revealScreen(n,tl,.1);
+}
+
+/* ---------- pantalla 3 · compuertas seleccionables y trazo de circuito ---------- */
+var GATES=[
+  {id:'G0',day:'viernes de S1',own:'Consejo Editorial',sg:['CE'],crit:'Eje temático, personaje de portada, mapa de paginación, pauta comprometida, tiraje y evento.'},
+  {id:'G1',day:'viernes de S4',own:'DE',sg:['DE'],crit:'Textos firmados; fotografía, video y pódcast entregados; autorizaciones archivadas.'},
+  {id:'G2',day:'viernes de S6',own:'DE · EC',sg:['DE','EC'],crit:'Páginas con doble corrección; cifras verificadas; QR y NFC configurados.'},
+  {id:'G3',day:'viernes de S6',own:'CC · EV',sg:['CC','EV'],crit:'Pauta aprobada; cero precios impresos; revisión legal; patrocinio del evento ≥\u00a070\u00a0% del costo.'},
+  {id:'G4',day:'martes de S7',own:'DE · DA · EV',sg:['DE','DA','EV'],crit:'Ferro y color aprobados; QR y NFC verificados; plan del evento cerrado.'},
+  {id:'G5',day:'D+1',own:'PD · CC · EV',sg:['PD','CC','EV'],crit:'Portada revelada; edición digital y pódcast publicados; ejemplares en sedes.'}
+];
+var NODE_FR=[[0,.9],[1,.965],[2,.95],[2,.95],[3,.3],[4,.88]];   /* [columna de fase, posición dentro de ella] */
+var gSel=0;
+function updateTraceSel(g){
+  $$('#trace .cn').forEach(function(c){c.classList.toggle('on',+c.getAttribute('data-g')===g);});
+  $$('#trace .nd').forEach(function(n){n.classList.toggle('on',n.getAttribute('data-g').split(',').indexOf(String(g))>-1);});
+}
+function layoutTrace(){
+  var svg=$('#trace'),s3=$('#s3'),gates=$$('.gate'),i;
+  if(PORTRAIT.matches||!s3||!s3.clientWidth){if(svg)svg.innerHTML='';gates.forEach(function(g){g.style.left='';});return;}
+  var Wp=s3.clientWidth,Hp=s3.clientHeight,ph=$('#phases'),gw=$('#gates');
+  var col=$$('.ph',ph).map(function(c){return{x:ph.offsetLeft+c.offsetLeft,w:c.offsetWidth};});
+  var nx=NODE_FR.map(function(f){return col[f[0]].x+f[1]*col[f[0]].w;}),cx=nx.slice(),sep=Wp*.029;
+  cx[2]=nx[2]-sep;cx[3]=nx[3]+sep;
+  gates.forEach(function(g,k){g.style.left=cx[k].toFixed(1)+'px';});
+  var yT=ph.offsetTop,yB=gw.offsetTop+gates.reduce(function(m,g){return Math.max(m,g.offsetHeight);},0)+4;
+  var x0=ph.offsetLeft,x1=x0+ph.offsetWidth,h='';
+  svg.setAttribute('viewBox','0 0 '+Wp+' '+Hp);
+  h+='<line class="rail" id="rail" pathLength="1" x1="'+x0+'" y1="'+yT+'" x2="'+x1+'" y2="'+yT+'"/>';
+  for(i=1;i<5;i++){var bx=(col[i-1].x+col[i-1].w+col[i].x)/2;h+='<line class="tick" x1="'+bx.toFixed(1)+'" y1="'+(yT-7)+'" x2="'+bx.toFixed(1)+'" y2="'+(yT+7)+'"/>';}
+  for(i=0;i<6;i++)h+='<line class="cn" data-g="'+i+'" x1="'+cx[i].toFixed(1)+'" y1="'+yB+'" x2="'+nx[i].toFixed(1)+'" y2="'+(yT-8)+'"/>';
+  var seen={};
+  for(i=0;i<6;i++){var key=Math.round(nx[i]);if(seen[key])continue;seen[key]=1;
+    h+='<circle class="nd" data-g="'+i+(i===2?',3':'')+'" cx="'+nx[i].toFixed(1)+'" cy="'+yT+'" r="7"/>';}
+  svg.innerHTML=h;updateTraceSel(gSel);
+}
+function selectGate(g,instant){
+  g=clamp(g,0,5);var d=GATES[g],idEl=$('#gp-id'),meta=$('#gp-meta'),crit=$('#gp-crit'),els=[idEl,meta,crit];
+  $$('.gate').forEach(function(b){b.setAttribute('aria-pressed',String(+b.getAttribute('data-g')===g));});
+  $$('#glos span').forEach(function(sp){sp.classList.toggle('on',d.sg.indexOf(sp.getAttribute('data-s'))>-1);});
+  updateTraceSel(g);
+  function put(){idEl.textContent=d.id;meta.textContent=d.day+' · '+d.own;crit.textContent=d.crit;}
+  gSel=g;gsap.killTweensOf(els);
+  if(instant||!animOn()){put();gsap.set(els,{autoAlpha:1,y:0});return;}
+  gsap.to(els,{autoAlpha:0,y:-8,duration:.12,ease:'power2.in',stagger:.02,onComplete:function(){put();gsap.fromTo(els,{autoAlpha:0,y:12},{autoAlpha:1,y:0,duration:.35,ease:'expo.out',stagger:.045});}});
+}
+$$('.gate').forEach(function(b){b.addEventListener('click',function(){selectGate(+b.getAttribute('data-g'));});});
+
+/* ---------- gesto: pasar página arrastrando, con clic o con teclado ---------- */
+function spineX(){var r=$('#spine').getBoundingClientRect();return r.left;}
+book.addEventListener('pointerdown',function(e){
+  if(e.pointerType==='mouse'&&e.button!==0)return;
+  skipIntro();
+  var sx=spineX(),side=e.clientX>=sx?1:-1;
+  var rad=(pose.yawE||0)*Math.PI/180,pwPx=Math.max(60,PW*pose.s*Math.max(.55,Math.cos(rad)));
+  var idx=cur===2?(side>0?spread:spread-1):-1;
+  if(idx<0||idx>2)idx=-1;
+  drag={id:e.pointerId,x0:e.clientX,t0:performance.now(),side:side,idx:idx,pw:pwPx,f:clamp(Math.abs(e.clientX-sx)/pwPx,.25,1),moved:false,hist:[]};
+  try{book.setPointerCapture(e.pointerId);}catch(_){}
+});
+book.addEventListener('pointermove',function(e){
+  if(!drag||e.pointerId!==drag.id)return;
+  var dx=e.clientX-drag.x0;
+  if(!drag.moved){if(Math.abs(dx)<7)return;drag.moved=true;book.classList.add('is-dragging');}
+  if(drag.idx<0)return;
+  var c=clamp((drag.side>0?-dx:dx)/(drag.f*drag.pw),0,2),th=Math.acos(1-c)/Math.PI,p=drag.side>0?th:1-th,now=performance.now();
+  drag.hist.push({t:now,p:p});while(drag.hist.length>1&&now-drag.hist[0].t>110)drag.hist.shift();
+  P[drag.idx]=p;V[drag.idx]=0;mark();
+});
+function endDrag(e,cancel){
+  if(!drag||(e&&e.pointerId!==drag.id))return;
+  var d=drag;drag=null;book.classList.remove('is-dragging');
+  try{book.releasePointerCapture(d.id);}catch(_){}
+  if(!d.moved){
+    if(cancel)return;
+    if(cur===1){go(2,{open:true});return;}
+    if(d.idx>=0)flip(d.side>0?1:-1);
+    return;
+  }
+  if(d.idx<0)return;
+  var h=d.hist,v=0,p=P[d.idx];
+  if(h.length>1){var a=h[0],b=h[h.length-1];v=(b.p-a.p)/Math.max(1,b.t-a.t)*1000;}   /* velocidad del gesto en 1/s */
+  var flipped=cancel?d.side<0:(p+v*.16)>.5;                                           /* proyección de la inercia */
+  setSpread(flipped?d.idx+1:d.idx);V[d.idx]=v;mark();
+}
+book.addEventListener('pointerup',function(e){endDrag(e,false);});
+book.addEventListener('pointercancel',function(e){endDrag(e,true);});
+stage.addEventListener('pointermove',function(e){
+  if(e.pointerType!=='mouse')return;
+  var r=stage.getBoundingClientRect();par.tx=((e.clientX-r.left)/r.width-.5)*2;par.ty=((e.clientY-r.top)/r.height-.5)*2;
+});
+/* deslizar con el dedo fuera de la revista = cambiar de pantalla */
+(function(){
+  var sx=0,sy=0,on=false;
+  stage.addEventListener('pointerdown',function(e){on=e.pointerType==='touch'&&!book.contains(e.target)&&!e.target.closest('button');sx=e.clientX;sy=e.clientY;});
+  stage.addEventListener('pointerup',function(e){
+    if(!on)return;on=false;var dx=e.clientX-sx,dy=e.clientY-sy;
+    if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.6)go(cur+(dx<0?1:-1));
+  });
+})();
+
+/* ---------- capa de retícula ---------- */
+(function(){
+  $$('.pg').forEach(function(pg){
+    if(pg.classList.contains('cover')||pg.classList.contains('rc'))return;
+    var ov=document.createElement('div');ov.className='gridov '+(pg.classList.contains('odd')?'odd':'even');ov.setAttribute('aria-hidden','true');
+    ov.innerHTML=new Array(13).join('<i></i>');pg.appendChild(ov);
+  });
+})();
+function toggleGrid(){var on=!html.classList.contains('show-grid');html.classList.toggle('show-grid',on);$('#gridbtn').setAttribute('aria-pressed',String(on));}
+$('#gridbtn').addEventListener('click',toggleGrid);
+if(qs.get('reticula')==='1')toggleGrid();
+
+/* ---------- controles ---------- */
+function plain(e){return !(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button>0);}
+$$('[data-go]').forEach(function(b){b.addEventListener('click',function(e){if(!plain(e))return;e.preventDefault();go(+b.getAttribute('data-go'));});});
+$('#edge-prev').addEventListener('click',function(){go(cur-1);});
+$('#edge-next').addEventListener('click',function(){go(cur+1);});
+$('#home').addEventListener('click',function(e){if(!plain(e))return;e.preventDefault();go(1);});
+$('#cta-open').addEventListener('click',function(){go(2,{open:true});});
+btnPrev.addEventListener('click',function(){flip(-1);});
+btnNext.addEventListener('click',function(){flip(1);});
+stops.forEach(function(b){b.addEventListener('click',function(){setSpread(+b.getAttribute('data-spread'));});});
+document.addEventListener('keydown',function(e){
+  if(e.altKey||e.ctrlKey||e.metaKey)return;
+  var k=e.key;
+  if(k==='ArrowRight'||k==='ArrowLeft'){
+    e.preventDefault();skipIntro();
+    var d=k==='ArrowRight'?1:-1;
+    if(cur===2){if(flip(d)||!settled())return;}
+    go(cur+d);return;
+  }
+  if(k==='PageDown'){e.preventDefault();go(cur+1);return;}
+  if(k==='PageUp'){e.preventDefault();go(cur-1);return;}
+  if(k==='Home'){e.preventDefault();go(1);return;}
+  if(k==='End'){e.preventDefault();go(3);return;}
+  if(cur===3&&/^[0-5]$/.test(k)){selectGate(+k);return;}
+  if(cur===2&&(k==='g'||k==='G')){toggleGrid();return;}
+});
+window.addEventListener('pointerdown',function(){skipIntro();},true);
+
+/* ---------- arranque ---------- */
+function relayout(){
+  measure();layoutTrace();
+  if(!trans&&introDone){var t=poseFor(cur);gsap.killTweensOf(pose);setPose(t);}
+  mark();
+}
+if(window.ResizeObserver)new ResizeObserver(relayout).observe(stage);else window.addEventListener('resize',relayout);
+if(PORTRAIT.addEventListener)PORTRAIT.addEventListener('change',relayout);
+(function init(){
+  var n=parseInt(qs.get('pantalla'),10),pl=qs.get('pliego');
+  if(!(n>=1&&n<=3))n=(pl!==null?2:1);
+  measure();cur=0;
+  setSpread(clamp(parseInt(pl,10)||0,0,3),true);
+  var gi=parseFloat(qs.get('giro'));                       /* revisión: congela la hoja siguiente a medio giro (0–1) */
+  if(gi>0&&gi<1&&spread<3){T[spread]=gi;P[spread]=gi;V[spread]=0;}
+  selectGate(0,true);
+  go(n,{instant:true,force:true});
+  renderAll();
+  var started=false;
+  function start(){
+    if(started)return;started=true;
+    measure();layoutTrace();setPose(poseFor(cur));mark();
+    if(!animOn())return;
+    if(cur===1)playIntro1();else entrance(cur);
+  }
+  ready=true;
+  var guard=setTimeout(start,2600);
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){clearTimeout(guard);start();});
+  window.addEventListener('load',function(){measure();layoutTrace();mark();});
+})();
+})();
+</script>
+</body>
+</html>

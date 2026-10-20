@@ -1,0 +1,316 @@
+
+ SoyTechno · Proyecto EditorialDirectriz estratégica y operativa
+ Documento Rector · Revista Corporativa SoyTechno
+ CódigoDIR-ED-ST-2026-01
+ Versión · fecha1.0 · 18 de octubre de 2026
+ ClasificaciónUso interno · confidencial
+ PropietarioDirección Editorial
+ AprobaciónConsejo Editorial de SoyTechno
+ Objeto: propósito, arquitectura editorial y comercial, arte, imprenta y phygital, paginación, gobernanza, cronograma y lanzamiento de la revista corporativa SoyTechno. Alcance: aplicación obligatoria al Consejo Editorial, al equipo editorial, a los proveedores y a las personas invitadas; prevalencia sobre todo documento derivado; desviaciones con aprobación escrita de la Dirección Editorial. Vigencia: desde la aprobación, con revisión anual tras la Edición 06. Estructura: cinco unidades documentales, una por página; referencias internas con el símbolo §.
+## Unidad 1Estrategia y audiencia
+## 1.1Ecosistema comercial
+Operación en el mercado venezolano bajo esquema de red minorista especializada en electrónica de consumo, equipamiento corporativo y entretenimiento digital: sedes de alto tráfico en la región capital (Sambil Chacao, City Market) y comercio electrónico nacional. Núcleo comercial de la revista en cinco ejes:
+| Movilidad y telecomunicaciones | Teléfonos inteligentes de gama de entrada, media y alta y accesorios: Apple, Samsung (Zona Samsung), Xiaomi, Honor, Tecno, Infinix. | 
+| Cómputo y Zona Business | Portátiles de alto rendimiento y soluciones corporativas para productividad, arquitectura y diseño: ASUS, HP, Dell, Lenovo, Acer, Compaq. | 
+| Hogar y línea blanca | Televisores QLED, OLED y 4K, audio inmersivo y electrodomésticos: Samsung, LG, TCL. | 
+| Zona Gamer | Consolas de última generación, portátiles ROG y TUF, periféricos de precisión y mobiliario ergonómico. | 
+| Fidelización y facilidades de compra | Club SoyTechno (acumulación y canje de puntos, beneficios por nivel), financiamiento por cuotas con plataformas aliadas como Cashea y promociones de inicial cero con fabricantes. | 
+## 1.2Propósito y definición del producto
+| Propósito | Transformación de la exhibición transaccional de productos en contenido informativo, estilístico y aspiracional; puente entre fabricantes globales, cultura tecnológica local, sus protagonistas y las facilidades de acceso de SoyTechno. | 
+| Naturaleza | Medio propietario de SoyTechno, multimarca, gratuito y bimestral: seis ediciones por año. | 
+| Formato | 48 páginas interiores más cubiertas, con QR y etiqueta NFC; edición digital interactiva en la hora cero del lanzamiento. | 
+| Extensiones | Pódcast, video detrás de cámaras y piezas para redes; revelación de portada y evento de networking en cada edición (§5.3, §5.4). | 
+| Promesa editorial | Tecnología explicada, probada y accesible: novedades del piso de venta, rendimiento en uso real, protagonistas y adquisición con inteligencia financiera. | 
+## 1.3Universo temático
+Tecnología como eje, con extensión a todos los ámbitos de su influencia y sin limitación a los productos ni a las marcas del catálogo.
+| Tecnología de consumo | Telefonía, cómputo, televisión y audio, hogar inteligente, línea blanca, dispositivos vestibles, fotografía y accesorios. | 
+| Innovación y tendencias | Inteligencia artificial, conectividad, energía y respaldo, ciberseguridad, movilidad eléctrica, ciencia aplicada y lanzamientos globales. | 
+| Finanzas y economía digital | Finanzas personales y empresariales, presupuesto tecnológico, pagos digitales, financiamiento responsable, fidelización y tecnología financiera. | 
+| Negocios y emprendimiento | Pymes y transformación digital, productividad, trabajo remoto, comercio electrónico, emprendimiento tecnológico y liderazgo. | 
+| Entretenimiento y cultura digital | Plataformas de streaming, cine, series, música, redes sociales, pódcast y economía de creadores. | 
+| Gaming y deportes electrónicos | Videojuegos, equipos para jugar, competencias, equipos profesionales y comunidades. | 
+| Estilo de vida y bienestar | Salud digital, deporte y tecnología, diseño, viajes, hogar y sostenibilidad. | 
+| Educación y futuro del trabajo | Habilidades digitales, formación en línea, empleo tecnológico e inclusión digital. | 
+Personas y voces: creadores de contenido, influencers, streamers, podcasters, atletas de deportes electrónicos, artistas, empresarios, emprendedores, ejecutivos, desarrolladores y especialistas (§2.3).
+Criterio de pertinencia: vínculo explícito con la tecnología o con el ecosistema SoyTechno; prioridad del catálogo SoyTechno en los contenidos de producto; ausencia de restricción de marca en tendencias, finanzas, cultura y personas.
+Exclusiones: catálogo de precios, folleto monomarca, vida privada ajena al tema tratado y contenido político partidista. Ofertas y promociones reservadas a tiendas, comercio electrónico y redes sociales, con remisión desde la revista solo mediante QR y NFC (§3.6).
+## 1.4Objetivos e indicadores
+| Objetivo | Indicadores y metas del primer año | 
+| Posicionamiento | Alcance de la revelación de portada a 72 h y lecturas digitales únicas: línea base en la Edición 01 y crecimiento del 10 % por edición. | 
+| Activación comercial | Distribución efectiva ≥ 85 % · escaneo QR ≥ 5 % de ejemplares · conversión phygital ≥ 60 % de sesiones · ventas atribuidas con reporte por edición. | 
+| Fidelización | Activación NFC ≥ 10 % de ejemplares etiquetados · afiliaciones y activaciones atribuidas al Club SoyTechno con crecimiento del 10 % por edición. | 
+| Comunidad y relaciones | Asistencia ≥ 75 % de confirmados · contactos de negocio con reporte por edición · audiencia del pódcast a 30 días con crecimiento del 10 % por edición. | 
+| Relación con fabricantes | Satisfacción de marcas con pauta o patrocinio ≥ 4 sobre 5, con medición semestral. | 
+| Sostenibilidad | Ingresos de pauta y patrocinio ≥ 50 % del costo de edición y evento en el primer año y ≥ 70 % desde el segundo. | 
+| Calidad y cumplimiento | Erratas posteriores a la impresión ≤ 3 por edición · seis de seis Días D en fecha. | 
+Consolidación de indicadores en el informe de edición, en la semana 4 del ciclo siguiente (§4.2); ratificación o ajuste de metas en la revisión anual.
+## 1.5Perfiles de audiencia
+| Perfil | Edad | Necesidad editorial | Secciones ancla | 
+| Entusiasta y gamer | 18 a 30 | Especificaciones de alto rendimiento, hardware gráfico, periféricos, puestos de juego y torneos de deportes electrónicos. | ADN Gamer · Bajo el Lente · Conexión en Vivo | 
+| Profesional y ejecutivo (Zona Business) | 28 a 50 | Productividad móvil, automatización, inteligencia artificial aplicada, equipamiento de oficina, finanzas para la empresa y opciones de financiamiento. | Espacio Business · Reportaje Central · Ruta Inteligente | 
+| Hogar y estilo de vida | 25 a 55 | Entretenimiento doméstico, domótica, ecosistema móvil familiar y beneficios del Club SoyTechno. | Bajo el Lente · Ruta Inteligente · En Primera Fila | 
+Audiencias secundarias: comunidades digitales de las personas participantes, vía principal de captación de lectores nuevos; fabricantes y aliados, como vitrina de marca; fuerza de ventas, como herramienta de argumentación en piso de venta.
+## Unidad 2Arquitectura editorial y comercial
+## 2.1Pilares temáticos
+ P1 · Innovación, hardware y tendenciasAnálisis técnico-práctico de lanzamientos disponibles en piso de venta o con llegada confirmada; tendencias tecnológicas globales y locales.
+ P2 · Personas, liderazgo y creadoresEntrevistas, perfiles y pódcast con personalidades de la tecnología, los negocios, el entretenimiento y la cultura digital.
+ P3 · Cultura digital, entretenimiento y eventosStreaming, música, cine, series y economía de creadores; crónica del lanzamiento, activaciones, torneos, alianzas deportivas y ferias.
+ P4 · Finanzas, negocios y economía digitalFinanzas personales y empresariales, pagos digitales, emprendimiento, pymes; presupuesto tecnológico con el Club SoyTechno y cuotas con plataformas aliadas.
+Presencia obligatoria de los cuatro pilares en cada edición; ningún pilar por encima del 40 % de las páginas editoriales; exclusión del formato de catálogo de precios.
+## 2.2Secciones fijas
+| Sección | Págs. | Pilar | Contenido y tratamiento | 
+| Sumario y créditos | 02-03 | — | Índice visual por bloques, mancheta con equipo y datos legales, carta editorial e instrucciones de interacción QR y NFC. | 
+| Pulso Techno | 04-07 | P1 · P3 | Tendencias globales, software, hitos de la industria, adopción digital, cultura digital, creadores y novedades en tiendas; breves e infografías a 3 y 4 columnas. | 
+| Bajo el Lente | 08-13 | P1 | Reseñas de tres categorías: telefonía (08-09); televisión, audio y hogar (10-11); cómputo portátil (12-13); bodegón, ficha en monoespaciada, veredicto conforme a §2.4 y QR por pieza. | 
+| Reportaje Central | 16-19 | P1 · P3 · P4 | Macrotendencia con ángulo local en cualquier área del universo temático; apertura a doble página y texto a 2 columnas. | 
+| En Primera Fila | 20-25 | P2 | Entrevista central con sesión fotográfica exclusiva (20-23) y perfiles de emprendedores, creadores o influencers (24-25); ampliación en el pódcast. | 
+| ADN Gamer | 28-35 | P1 · P2 · P3 | Modo oscuro: hardware extremo y consolas, periféricos y puestos de juego, títulos competitivos, deportes electrónicos, voces de streamers y calendario de torneos. | 
+| Espacio Business | 36-39 | P1 · P4 | Infraestructura y gestión para pymes: flujo de trabajo, respaldo de datos, Wi-Fi 7, ergonomía, cobro digital y casos de éxito. | 
+| Conexión en Vivo | 40-43 | P3 | Crónica visual del lanzamiento anterior, inauguraciones, torneos, patrocinios deportivos y responsabilidad social. | 
+| Ruta Inteligente | 44-47 | P4 | Matriz de selección por perfil de uso, guía de financiamiento por cuotas con plataformas aliadas, beneficios del Club SoyTechno y directorio de sedes. | 
+| Última Página | 48 | P3 | Columna firmada sobre el futuro tecnológico, QR de suscripción digital y adelanto de la siguiente edición. | 
+## 2.3Personas, entrevistas y pódcast
+- Formatos: entrevista central (una por edición), perfiles (de dos a cuatro), voces de especialistas en secciones, pódcast de 30 a 45 minutos en audio y video grabado en la sesión de portada, episodio en vivo del evento, video detrás de cámaras y piezas para redes sociales.
+- Selección: relevancia temática, trayectoria verificable, audiencia real contrastada con métricas de plataforma, reputación sin conflictos vigentes, coherencia con los valores de SoyTechno y disponibilidad para sesión, pódcast y evento; verificación previa documentada en la ficha de participante.
+- Independencia: entrevista editorial sin pago ni cobro; texto final sin aprobación de la persona entrevistada, salvo verificación de citas textuales.
+- Colaboraciones retribuidas: contrato separado del contenido editorial; declaración con la etiqueta de colaboración pagada de cada plataforma y rotulado «Publicidad» en la revista.
+- Equilibrio anual: diversidad de sectores, géneros y generaciones; alternancia de personas y productos en portada.
+## 2.4Protocolo de pruebas
+- Reseña exclusiva de productos disponibles en piso de venta o con llegada confirmada por Compras para la ventana de la edición.
+- Evaluación mínima de cinco días de uso real por especialista designado, con ficha común por categoría: rendimiento, pantalla o imagen, autonomía, construcción, software y experiencia de uso.
+- Especificaciones depuradas y contrastadas con la documentación oficial del fabricante; declaración del origen del equipo evaluado.
+- Veredicto bajo responsabilidad exclusiva de Redacción y Dirección Editorial, sin revisión por las marcas.
+- Comparativas entre productos del catálogo SoyTechno; productos externos solo como referencia identificada.
+## 2.5Política comercial y de precios
+- Cuota de pauta: máximo de 10 páginas por edición, cubiertas incluidas; base de 7 en C2-01, 14-15, 26-27 y C4 (§4.1).
+- Rotulado: «Publicidad» o «Contenido patrocinado» en toda página pagada; plantilla propia para publirreportajes.
+- Independencia: aprobación de piezas y activos a cargo de cada marca titular; sin intervención de marcas en selección de productos, textos ni veredictos.
+- Portada: espacio editorial no comercializable.
+- Concentración: máximo del 35 % de las páginas pagadas por fabricante; exclusividad de categoría solo en la doble página premium.
+- Separación: mínimo de cuatro páginas entre la pauta de una marca y la reseña de un producto propio o de un competidor directo.
+- Cero precios impresos: gama en la ficha y precio vigente mediante QR o NFC; leyenda de vigencia en toda mención de descuentos, cuotas o beneficios; certificación de condiciones en G3 (§4.3).
+## 2.6Normativa lingüística
+- Registro impersonal en toda la publicación: estructuras nominales, infinitivos y construcciones con «se»; sin primera ni segunda persona ni apelaciones coloquiales.
+- Carta editorial y Última Página: redacción institucional impersonal con firma del cargo directivo.
+- Entrevistas y pódcast: preguntas y conducción en forma impersonal; respuestas en cita textual de la persona entrevistada.
+- Microtextos: formulación nominal o en infinitivo, como «Acceso a ficha, precio vigente y video» o «Zona de contacto NFC».
+- Neutralidad comercial: valor demostrado con datos de rendimiento, materiales, casos de uso y especificaciones verificables; exclusión de «el mejor», «increíble», «imperdible», «revolucionario» y «oferta», salvo cita textual.
+- Extranjerismos: cursiva sin equivalente de uso general (hardware, software, router, streaming, influencer, networking); equivalente español disponible (pantalla, portátil, teléfono inteligente, en línea, configuración, detrás de cámaras); redonda en adaptaciones y siglas (pódcast, QLED, OLED, 4K, Wi-Fi 7, IA, NFC, QR).
+- Cifras y marcas: unidades del Sistema Internacional (8 GB, 120 Hz, 5.000 mAh), coma decimal y punto de millares; grafía oficial de fabricantes; denominaciones «Club SoyTechno», «Zona Gamer», «Zona Business» y «Zona Samsung».
+- Firmas y verificación: firma en todo artículo y crédito en toda fotografía; contraste de cifras con fuente identificable antes de G2; inteligencia artificial solo como apoyo, nunca como autoría.
+## Unidad 3Arte, imprenta y phygital
+## 3.1Especificación de producción impresa
+| Formato | 210 × 280 mm vertical, abierto 420 × 280 mm; estética de libro coleccionable (bookazine). | 
+| Paginación | 48 páginas interiores y 4 de cubierta en tres pliegos de 16; ampliaciones en múltiplos de 8. | 
+| Cubierta | Estucado mate de 250 g/m², 4/4, laminado mate exterior y barniz UV sectorizado en logotipo y elemento central. | 
+| Tripa | Estucado mate de 115 g/m², 4/4, para fidelidad cromática sin deslumbramiento. | 
+| Encuadernación | Rústica fresada con cola PUR; lomo cuadrado de 3 mm en color plano, sin texto; maqueta en blanco aprobada antes de la Edición 01. | 
+| Zona del lomo | Texto, rostros, logotipos y códigos a 10 mm o más; compensación de 3 mm por lado en imágenes a doble página. | 
+| Color | CMYK con perfil ISO Coated v2 (FOGRA39) o el de la imprenta; cobertura máxima del 300 %; texto 100 K con sobreimpresión; fondos en negro enriquecido C60 M40 Y40 K100. | 
+| Imagen | 300 ppp a tamaño final, con mínimo admisible de 240 ppp; logotipos, filetes y códigos en vector. | 
+| Archivos y pruebas | PDF/X-4 en páginas sueltas, sangrado de 3 mm, marcas de corte y fuentes incrustadas; ferro digital contractual y prueba física de cubierta y de dos pliegos, uno de ADN Gamer. | 
+## 3.2Retícula y maquetación
+| Márgenes | Interior 18 mm, exterior 15 mm, superior 15 mm, inferior 20 mm; sangrado perimetral de 3 mm. | 
+| Retícula | Caja de 177 × 245 mm; 12 columnas de 11,08 mm con medianil de 4 mm; 2 columnas en ensayos, 3 en reseñas y 4 en breves y fichas; línea base de 12,5 pt. | 
+| Espacio y elementos fijos | Área libre mínima del 25 % por doble página; folio y nombre de sección en el margen inferior exterior. | 
+## 3.3Tipografía
+| Rol | Familia y pesos | Cuerpo | Ajustes | 
+| Titulares | Archivo Bold y Black | 24 a 60 pt | Tracking −15 desde 24 pt; mayúsculas solo en cabeceras. | 
+| Cuerpo | Source Serif 4 Regular, Italic y Semibold | 9,5/12,5 pt | Justificado con partición controlada a 2 columnas; bandera izquierda a 3 y 4; sin viudas ni huérfanas. | 
+| Datos | JetBrains Mono Regular y Medium | 8/10 pt, mín. 7,5 | Fichas, tablas y códigos; cifras tabulares. | 
+| Pies y folios | Source Serif 4 Italic · Archivo Medium | 7,5/9,5 · 7 pt | Créditos en versalitas de 6,5 pt; folios en mayúsculas. | 
+Familias de licencia abierta (SIL OFL), incrustables sin licenciamiento adicional; mancheta y logotipos conforme al manual de identidad corporativa.
+## 3.4Color
+| Color | Uso | Hex | CMYK | 
+| Blanco Puro | Estilo de vida, negocios y servicio | #FFFFFF | 0/0/0/0 | 
+| Gris Platino | Fondos secundarios, tablas y fichas | #F4F5F7 | 3/2/2/0 | 
+| Negro Carbón | Fondo de ADN Gamer y texto | #0D0E12 | 60/40/40/100 | 
+| Azul Profundo | Bloques y filetes de ADN Gamer | #0B1F3A | 100/85/35/40 | 
+| Azul SoyTechno | Navegación, folios y llamados | Manual de identidad corporativa | 
+| Gris Texto | Texto secundario y créditos | #5B6472 | 0/0/0/75 | 
+Contraste mínimo de 4,5:1 en texto corrido y 3:1 en titulares; modo oscuro exclusivo de ADN Gamer y su pauta contigua, con texto claro desde 9,5 pt; acento excluido de texto corrido y fondos completos; CMYK calibrado en la prueba de color de la Edición 01.
+## 3.5Fotografía, audiovisual y portada
+- Tratamiento: producto en contexto de uso, bodegón con iluminación dramática y retrato con profundidad de campo reducida; recortes de catálogo solo en Pulso Techno y pauta, con crédito.
+- Requisitos: captura en RAW; TIFF o JPEG en Adobe RGB a 300 ppp, con 3.500 px mínimos en doble página; conversión a CMYK en pre-prensa.
+- Retoque e IA: sin alteración de color, proporciones, pantallas ni rasgos; imágenes generadas por IA solo como ilustración conceptual identificada.
+- Audiovisual: video detrás de cámaras y pódcast registrados en la sesión de portada, con iluminación y sonido de calidad de emisión.
+- Portada: producto insignia o personaje de cualquier ámbito del universo temático; logotipo, titular, hasta tres llamados, número de edición, bimestre y leyenda «Una publicación de SoyTechno»; confidencialidad hasta la revelación (§5.3).
+- Derechos: cesión de derechos y autorización de imagen y voz (§4.4); crédito en toda página con fotografía.
+## 3.6Integración phygital: códigos QR y etiqueta NFC
+| Aspecto | Código QR · acceso por pieza | Etiqueta NFC · acceso por ejemplar | 
+| Función | Ficha de compra con precio vigente, video, afiliación al Club SoyTechno o condiciones de financiamiento, junto a cada reseña, cobertura, ficha y autopromoción. | Edición digital, pódcast y detrás de cámaras; activación del ejemplar en el Club SoyTechno con beneficio canjeable una vez; contenido exclusivo; dinámicas del evento; destino programable. | 
+| Tecnología | QR dinámico de la plataforma de enlaces de SoyTechno; un código por pieza, sin reutilización entre ediciones. | NTAG213 o equivalente NFC Forum Tipo 2, en etiqueta adhesiva de papel de 25 mm y espesor inferior a 0,2 mm, con réplica del identificador único y del contador de lecturas. | 
+| Medición | utm_source=revista · utm_medium=qr · utm_campaign=ed<n> · utm_content=p<pág>-<sección>-<pieza> | Identificador por ejemplar y codificación por lote de canal y sede. | 
+| Composición | Lado mínimo de 18 mm; silencio de cuatro módulos; corrección M, o Q sobre fondo oscuro con recuadro claro; microtexto «Acceso a ficha, precio vigente y video» y dirección corta de respaldo. | Zona de contacto de 40 × 40 mm en C3, a 30 mm o más del lomo y 20 mm o más de los cortes; símbolo N del NFC Forum, rótulo «Zona de contacto NFC» y QR equivalente adyacente; sin tintas metálicas ni estampados en caliente sobre el área. | 
+| Control | Destino editable tras la impresión; prueba en dos dispositivos iOS y dos Android sobre el ferro impreso; revisión semanal de destinos. | Bloqueo permanente de escritura; ausencia de datos personales; codificación y verificación al 100 % por el proveedor; aplicación posterior a la encuadernación con muestreo de uno por cada cincuenta. | 
+| Implantación | Todas las piezas desde la Edición 01, con página común de edición en soytechno.com/revista. | 2.000 ejemplares en las Ediciones 01 y 02 (evento, Club SoyTechno, aliados, prensa y sedes Sambil Chacao y City Market); tiraje completo desde la Edición 03 con activación acumulada ≥ 10 %; compra para dos ediciones. | 
+## 3.7Tiraje, distribución y edición digital
+- Tiraje: 5.000 ejemplares en la Edición 01, con ajuste máximo del 20 % por edición según la distribución efectiva.
+- Reparto: 58 % sedes VIP · 15 % compras de alto valor · 12 % Club SoyTechno de mayor nivel · 6 % evento · 6 % aliados, fuerza de ventas y entrevistados · 3 % archivo y depósito legal.
+- Sedes VIP: dos criterios como mínimo entre tráfico en el cuartil superior, zona de marca o categoría y ticket superior a la media; inclusión fija de Sambil Chacao y City Market; exhibición desde D+1 con reposición y acta semanal de conteo.
+- Edición digital: publicación en la hora cero en HTML5 interactivo con analítica, PDF ligero de hasta 25 MB y artículos en soytechno.com; texto real, descripciones alternativas y contraste de §3.4; envío al Club en D+1 con consentimiento.
+## Unidad 4Flatplan y gobernanza
+## 4.1Mapa de paginación
+C1Portada
+C2Pauta
+1Pauta
+2Sumario
+3Sumario
+4Pulso
+5Pulso
+6Pulso
+7Pulso
+8Lente
+9Lente
+10Lente
+11Lente
+12Lente
+13Lente
+14Pauta
+15Pauta
+16Report.
+17Report.
+18Report.
+19Report.
+20P. Fila
+21P. Fila
+22P. Fila
+23P. Fila
+24P. Fila
+25P. Fila
+26Pauta
+27Pauta
+28Gamer
+29Gamer
+30Gamer
+31Gamer
+32Gamer
+33Gamer
+34Gamer
+35Gamer
+36Business
+37Business
+38Business
+39Business
+40Conexión
+41Conexión
+42Conexión
+43Conexión
+44Ruta
+45Ruta
+46Ruta
+47Ruta
+48Última
+C3Autopr.
+C4Pauta
+PortadaPautaAutopromociónSumarioPulso TechnoBajo el LenteReportaje CentralEn Primera FilaADN GamerEspacio BusinessConexión en VivoRuta InteligenteÚltima Página
+Posiciones fijas: C1 portada editorial, no comercializable · C2-01 doble premium del patrocinante principal, con exclusividad de categoría y paquete del evento · 14-15 pauta I, con afinidad de movilidad, cómputo o televisión · 26-27 pauta II, con afinidad gamer o de alto rendimiento · C3 autopromoción con la zona de contacto NFC · C4 marca aliada de línea blanca o televisión.
+52 páginas · 44 editoriales · 7 de pauta (13,5 %) · 1 de autopromoción.
+- Aperturas y pliegos: doble página real o página impar; pliegos 1-16, 17-32 y 33-48, con ADN Gamer entre el segundo y el tercero.
+- Sustitución y ampliación: pauta no vendida cubierta con autopromoción o pieza de reserva; ampliación en pliegos de 8 o 16 con pauta inferior al 25 %.
+- Cambios: mapa aprobado en G0; modificaciones posteriores con aprobación de la Dirección Editorial y registro en el acta de cierre.
+## 4.2Consejo Editorial, roles y matriz de responsabilidades
+Consejo Editorial: Dirección Editorial (presidencia), Gerencia de Mercadeo, Coordinación Comercial y Alianzas y Gerencia de Compras o Categorías, con invitados según el tema; aprobación de eje temático, personaje y portada, mapa de paginación, pauta, tiraje, evento, presupuesto, indicadores y calendario anual; sesiones en la semana 1 de cada ciclo y en G4.
+| Rol | Responsabilidad principal | 
+| DE · Dirección Editorial | Eje temático, pauta, portada, presidencia del Consejo y validación final. | 
+| CR · Redacción y Especialistas | Pruebas, entrevistas, conducción del pódcast y redacción. | 
+| DA · Arte y Maquetación | Sistema visual, diagramación, color, PDF/X-4 y piezas del evento. | 
+| PF · Fotografía y Audiovisual | Sesiones, portada con video y pódcast, cobertura del evento. | 
+| CC · Comercial y Alianzas | Pauta, patrocinios, aliados, certificación de condiciones y distribución. | 
+| EC · Cierre y Corrección | Edición, corrección de estilo y verificación de datos. | 
+| PD · Digital y Datos | QR, NFC, edición digital, pódcast, analítica e informe de edición. | 
+| EV · Eventos y Creadores | Evento, invitados, revelación, verificación de participantes y citas. | 
+Un único responsable por entregable; externalización admisible de PF, EC, PD y EV, con iguales deberes de confidencialidad.
+| Actividad | CE | DE | CR | DA | PF | CC | EC | PD | EV | 
+| Eje temático, portada y paginación | A | R | C | C | I | C | I | I | C | 
+| Pauta y patrocinios | A | C | I | C | I | R | I | I | C | 
+| Pruebas, textos, entrevistas y pódcast | I | A | R | I | C | I | C | C | C | 
+| Fotografía, video y retoque | I | I | C | A | R | I | I | I | I | 
+| Diseño, maquetación e infografías | I | A | C | R | I | I | C | I | I | 
+| Corrección y cierre editorial | I | A | C | C | I | I | R | I | I | 
+| Validación comercial y legal | I | A | I | I | I | R | C | I | C | 
+| Pre-prensa, imprenta y etiquetas NFC | I | A | I | R | I | I | C | C | I | 
+| QR, destinos NFC y edición digital | I | A | I | C | I | C | I | R | I | 
+| Revelación de portada y evento | A | C | C | C | C | C | I | C | R | 
+| Distribución y reposición | I | A | I | I | I | R | I | C | I | 
+| Informe de edición e indicadores | I | A | C | I | I | C | I | R | C | R responsabilidad · A aprobación · C consulta · I información · CE Consejo Editorial.
+## 4.3Compuertas de aprobación y criterios de verificación
+| Puerta | Momento | Criterios de paso | Firma | 
+| G0 | Semana 1 | Eje temático, personaje de portada, pauta de contenidos, mapa de paginación, pauta publicitaria comprometida por escrito, tiraje, y fecha, sede y presupuesto del evento. | Consejo Editorial | 
+| G1 | Fin de S4 | Textos definitivos firmados; fotografías, video detrás de cámaras y pódcast entregados; autorizaciones de imagen y voz archivadas; fichas de prueba completas. | DE | 
+| G2 | Fin de S6 | Páginas maquetadas con doble corrección; cifras y nombres verificados; sumario coincidente con títulos y páginas; mancheta completa; QR y destinos NFC configurados (§3.6); materiales de pauta recibidos; invitaciones enviadas. | DE · EC | 
+| G3 | Semana 6 | Piezas de pauta aprobadas por escrito; rotulado y separación verificados; ausencia de precios impresos; condiciones de financiamiento certificadas; revisión legal (§4.4); patrocinios del evento ≥ 70 % del costo; acuerdos de participación y confidencialidad firmados. | CC · EV | 
+| G4 | Semana 7 | Ferro y pruebas de color aprobados; cumplimiento de §3.1 y §3.2 en el archivo de imprenta; QR verificados sobre el ferro y muestra NFC verificada; plan del evento cerrado con sede, permisos, póliza, seguridad, acreditación y ensayo programados. | DE · DA · EV | 
+| G5 | Semana 8 | Portada revelada y evento realizado; edición digital y pódcast publicados; ejemplares en sedes desde D+1 con acta de distribución; campaña de difusión activa; informe de alcance a 72 h asignado. | PD · CC · EV | 
+## 4.4Marco legal y cumplimiento
+- Registro: depósito legal e ISSN ante la Biblioteca Nacional de Venezuela antes de la Edición 01, con editor responsable, imprenta, tiraje y leyenda «Una publicación de SoyTechno» en la mancheta.
+- Derechos: cesión de derechos de autores, fotógrafos, videógrafos y participantes del pódcast para impreso, digital y redes; autorización de imagen y voz de toda persona identificable; menores solo con autorización de su representante.
+- Participación: acuerdo con el personaje de portada y los creadores sobre sesión, confidencialidad, asistencia, publicaciones y retribución, en su caso.
+- Publicidad: activos de marca conforme a sus guías; rotulado de §2.5; etiqueta de colaboración pagada en redes; vigencia y aprobación del aliado en menciones de financiamiento o beneficios.
+- Datos personales: uso limitado a fines consentidos; NFC sin datos personales; identificación del lector solo por registro voluntario en el Club SoyTechno.
+## 4.5Gestión documental y documentos derivados
+Repositorio por edición: 00_Planificacion · 01_Textos · 02_Fotografia · 03_Diseno · 04_Pauta · 05_PrePrensa · 06_Digital · 07_Lanzamiento · 08_Cierre; nomenclatura ST-RV-E<ed>_<págs>_<sección>_v<n>, con vFinal en G4.
+Conservación de abiertos, originales y autorizaciones durante cinco años; archivos de imprenta y edición digital, de forma permanente; veinte ejemplares de archivo por edición.
+Documentos derivados: catálogo, codificación, responsables y fechas conforme al Índice Maestro IND-ED-ST-2026-01.
+## Unidad 5Cronograma y lanzamiento
+## 5.1Ciclo de producción de ocho semanas
+| Sem. | Fase y actividades | Puerta | 
+| 1 | Planificación: Consejo Editorial, eje temático, personaje de portada, productos, entrevistas, pauta y sede del evento. | G0 | 
+| 2-4 | Producción: pruebas, entrevistas, sesión de portada con video y pódcast, redacción; reserva de fecha a invitados en S4. | G1 | 
+| 5-6 | Diseño y edición: maquetación, QR y NFC, corrección, validación comercial y legal; invitaciones en S5; expectativa desde S6. | G2 · G3 | 
+| 7 | Pre-prensa: ferros, impresión, encuadernación, etiquetas NFC, edición digital y confirmación de invitados. | G4 | 
+| 8 | Lanzamiento: ensayo; Día D (jueves) con revelación, evento y publicación digital; D+1 en sedes y Club; apertura del ciclo siguiente. | G5 | 
+S1
+S2
+S3
+S4
+S5
+S6
+S7
+S8
+Planificación
+Producción
+Diseño y edición
+Pre-prensa
+Convocatoria
+Expectativa
+Día D y sedes
+Compuertas
+Ciclo siguiente
+Solapamiento de ciclos en la semana 8; cuatro semanas anuales de holgura en dos pausas, sin desplazamiento de los Días D.
+## 5.2Calendario editorial anual
+| Ed. | Bimestre | Día D de referencia | Ventana comercial | Foco temático de referencia | Evento | 
+| 01 | Enero-febrero | 3.ª semana de enero | Inicio de año; tendencias globales; San Valentín | Novedades del año en piso de venta; productividad, finanzas personales y organización. | Estándar | 
+| 02 | Marzo-abril | 2.ª semana de marzo | Semana Santa y viajes | Movilidad, fotografía móvil, dispositivos vestibles y creadores de viaje y estilo de vida. | Estándar | 
+| 03 | Mayo-junio | Última semana de abril | Día de la Madre y Día del Padre | Hogar: televisión, audio, línea blanca, domótica y entretenimiento familiar. | Estándar | 
+| 04 | Julio-agosto | 1.ª semana de julio | Vacaciones escolares | Universo gamer, deportes electrónicos, streaming y cultura digital. | Estándar | 
+| 05 | Septiembre-octubre | Última semana de agosto | Regreso a clases; lanzamientos de telefonía | Cómputo, educación, emprendimiento, pymes y productividad. | Estándar | 
+| 06 | Noviembre-diciembre | 1.ª semana de noviembre | Temporada de fin de año | Guía de regalos, financiamiento responsable, balance y personalidades del año. | Gala | 
+Edición 01 en enero de 2027; fechas exactas aprobadas en el último trimestre del año anterior, con cada Día D al menos diez días antes de la fecha comercial principal de su ventana; circulación de cada edición hasta el Día D siguiente.
+## 5.3Revelación de portada
+| S1 · S2-4 | Selección del personaje o producto de portada con acuerdo de participación y confidencialidad · sesión con fotografía, video detrás de cámaras y pódcast. | 
+| S6-7 | Campaña de expectativa en cuentas de SoyTechno y del personaje, sin mostrar la portada; ejemplares en cajas selladas y acceso restringido a los archivos. | 
+| Día D · 19:30 | Hora cero: descubrimiento en escena, en gran formato y con el personaje; transmisión en directo; cinco minutos después, publicación colaborativa simultánea, edición digital, pódcast, video detrás de cámaras y activación de QR y NFC. | 
+| D+1 a D+7 | Exhibición en sedes, envío al Club SoyTechno, publicaciones de creadores, clips del evento e informe de alcance a 72 h. | 
+| Confidencialidad | Acuerdos con personaje, equipo, imprenta y proveedores; pruebas con marca de agua; ejemplares del evento entregados tras la hora cero; ante filtración, adelanto controlado de la revelación digital y mantenimiento de la fecha del evento. | 
+## 5.4Evento de lanzamiento y networking
+| Formato | Un evento por edición, el Día D de 18:00 a 22:00: 150 a 200 invitados en sede SoyTechno o espacio aliado (Ediciones 01 a 05); gala de 250 a 300 con balance del año y reconocimientos (Edición 06). | 
+| Acceso | Invitación nominativa y acreditación con el QR de la invitación; sin venta de entradas. | 
+| Invitados | 30 % clientes de alto valor y Club SoyTechno · 20 % empresas · 20 % marcas y proveedores · 20 % creadores, influencers y prensa · 10 % personaje, entrevistados, equipo e institucionales. | 
+| Agenda | 18:00 acreditación y zonas de experiencia · 18:45 networking en mesas de afinidad con anfitrión · 19:30 revelación · 19:45 conversación en escena grabada como pódcast en vivo · 20:20 rueda de negocios y demostraciones · 21:00 entrega de ejemplares con NFC y sorteos · 22:00 cierre y encuesta. | 
+| Relación | Credencial por grupo con nombre, empresa e interés; directorio digital con consentimiento durante dos semanas; citas de diez minutos preagendadas según intereses; seguimiento en la semana siguiente. | 
+| Patrocinio | Presentación por el patrocinante principal en paquete con C2-01; de tres a cinco zonas de experiencia con guion aprobado; portada, conversación en escena y contenido editorial sin patrocinio; sin venta en el evento; confirmación en G3 con ≥ 70 % del costo cubierto o formato reducido de 80 a 100 invitados. | 
+| Producción | Plan del evento en G0 y cierre en G4; reserva de fecha en S4, invitación en S5, sobreinvitación del 30 % en la Edición 01; aforo certificado, seguridad, primeros auxilios, póliza y permisos; accesibilidad; ensayo técnico; contingencias por ausencia del personaje, fallo eléctrico o de red y lluvia. | 
+## 5.5Riesgos principales
+| Riesgo | Nivel | Mitigación | 
+| Variación de precios o condiciones de financiamiento | Alto | Cero precios impresos y destinos QR y NFC editables (§2.5, §3.6). | 
+| Retraso de materiales o aprobaciones de marcas | Alto | Fecha límite contractual en G3; autopromoción o pieza de reserva (§4.1). | 
+| Filtración de portada, ausencia o crisis de reputación del personaje | Alto | Confidencialidad (§5.3), verificación previa (§2.3), cláusula de terminación y contenido de reserva. | 
+| Costo de papel e impresión | Alto | Cotización anual con dos imprentas; reserva de papel para tres ediciones; ajuste de tiraje antes que de paginación. | 
+| Patrocinio insuficiente o baja asistencia | Medio | Umbral de G3; formato reducido; sobreinvitación y recordatorios. | 
+| Saturación del equipo por solapamiento de ciclos | Medio | Holguras del calendario; reserva de contenidos; suplente designado por rol. | 
+| Baja proporción de teléfonos con NFC | Medio | QR equivalente adyacente e implantación por fases (§3.6). | 
+ ElaboraciónNombre, cargo y fecha
+ RevisiónNombre, cargo y fecha
+ AprobaciónConsejo Editorial · fecha
+

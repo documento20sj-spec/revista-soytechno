@@ -1,0 +1,27 @@
+# Especificación · PRO-PR-ST-2026-01 · Protocolo de Laboratorio, Pruebas de Hardware y Fotografía
+
+- Archivo de salida: `/Users/germanjaraba/Proyectos/Revista Carelis/02_Corpus_Documental/B1_Corpus_Permanente/PRO-PR-ST-2026-01_Protocolo_de_Laboratorio_y_Fotografia/PRO-PR-ST-2026-01_Protocolo_de_Laboratorio_y_Fotografia_v1.md`
+- Línea de tipo: SoyTechno · Proyecto Editorial · Protocolo
+- Clasificación: Uso interno
+- Responsable: CR · Coordinación de Redacción y Especialistas Tech · Colaboración: PF · Producción Fotográfica y Audiovisual; CC · Coordinación Comercial y Alianzas · Aprobación: DE · Dirección Editorial
+- Base en el rector: §2.4, §3.5
+- Extensión: 4.000 a 5.000 palabras
+
+## Ficha del índice (alcance obligatorio)
+
+Evaluación objetiva de dispositivos del catálogo SoyTechno y su tratamiento visual en estudio. Solicitud, recepción y custodia de equipos con Compras (entrega, estado, seguro y devolución) y declaración de su origen; matriz de evaluación de cinco días por categoría (telefonía, cómputo, televisión y audio, gaming) y plantilla de ficha de prueba (DOC-E-07); criterios de depuración de fichas técnicas; iluminación de bodegones tecnológicos y retratos en contexto; revelado RAW a TIFF a 300 ppp en Adobe RGB, sin alteración de pantallas ni proporciones.
+
+## Estructura y contenidos mínimos
+
+1. **Principios de evaluación.** Productos disponibles en piso de venta o con llegada confirmada por Compras; cinco días de uso real como mínimo; especialista designado; veredicto exclusivo de Redacción y DE sin revisión de marcas; comparativas dentro del catálogo SoyTechno; productos externos solo como referencia identificada; declaración del origen del equipo.
+2. **Solicitud, recepción, custodia y devolución de equipos.** Solicitud en DOC-E-02 durante S1; entrega por Compras al inicio de S2; acta de recepción (modelo, código de variante, número de serie o IMEI, estado con fotografías, accesorios, versión de *software*); custodia en armario de laboratorio con registro de entradas y salidas; cobertura del seguro de inventario de SoyTechno; restablecimiento de fábrica y devolución en los cinco días hábiles posteriores a G1; acta de devolución; fórmula de declaración de origen en la reseña («Unidad facilitada por SoyTechno para evaluación» o «Unidad de prensa del fabricante»).
+3. **Plan de cinco días.** Secuencia diaria común: día 1, recepción, configuración y mediciones base; día 2, rendimiento; día 3, pantalla o imagen y sonido; día 4, autonomía o consumo; día 5, uso real, *software* y cierre de ficha.
+4. **Matriz de evaluación por categoría.** Una subsección por categoría (telefonía; cómputo; televisión y audio; gaming) con pruebas, métricas y condiciones de medición (brillo, autonomía en bucle de video y navegación, temperatura y ruido, latencia de entrada, rendimiento sostenido, cámara en escenas tipo) y ponderación de los seis criterios comunes (rendimiento, pantalla o imagen, autonomía o consumo, construcción, *software*, experiencia de uso) sumando 100 por categoría. Herramientas de medición descritas de forma genérica y con versión fija durante el año.
+5. **Escala y veredicto.** Puntuación de 1 a 10 por criterio con un decimal; puntuación global ponderada; franjas de veredicto con denominación neutra; perfil de uso idóneo; fortalezas y limitaciones; prohibición de superlativos comerciales.
+6. **Ficha de prueba (DOC-E-07).** Campos de la plantilla: identificación, origen, fechas, condiciones, mediciones, puntuaciones, ponderación, global, perfil de uso idóneo, veredicto, firma del especialista, visado de CR y aprobación de DE; plazo en G1.
+7. **Depuración de fichas técnicas.** Contraste con la documentación oficial del fabricante y con la unidad evaluada; solo datos verificables; unidades del Sistema Internacional; variante y código de modelo; gama sin precio; formato en monoespaciada conforme a MAN-ID; exclusión de afirmaciones publicitarias.
+8. **Fotografía de bodegón tecnológico.** Esquemas de iluminación (principal, relleno, contraluz, difusión para superficies brillantes, polarización para pantallas); fondos (Gris Platino; Negro Carbón en ADN Gamer); ángulos (tres cuartos frontal, perfil, detalle); pantallas encendidas y capturadas en cámara; limpieza digital de polvo sin alteración del producto; escala coherente entre productos.
+9. **Retrato en contexto.** Localización, iluminación, profundidad de campo reducida, dirección, vestuario, margen superior libre de al menos el 20 % en tomas de portada, autorizaciones de imagen conforme a REG-LG archivadas en DOC-E-11.
+10. **Flujo técnico de imagen.** Captura RAW con carta de color por sesión; revelado a TIFF de 16 bits o JPEG de máxima calidad en Adobe RGB a 300 ppp; 3.500 px mínimos en doble página; metadatos de crédito y derechos; nomenclatura del rector §4.5; copia de seguridad en tres soportes, uno externo; entrega en DOC-E-10 en G1; conversión a CMYK en pre-prensa conforme a GUI-PP.
+11. **Registro audiovisual en la sesión de portada.** Video detrás de cámaras y pódcast de 30 a 45 minutos con calidad de emisión: resolución mínima de 3.840 × 2.160 o 1.920 × 1.080 px según la pieza, audio a 48 kHz y 24 bits con micrófonos de solapa y de cañón, dos cámaras como mínimo, iluminación continua; guion en DOC-E-08; máster en DOC-E-10.
+12. **Control del documento.** Fuente única del método de pruebas y del tratamiento fotográfico de producto; remisiones a MAN-ID (ficha gráfica), GUI-PP (conversión), REG-LG (autorizaciones); revisión anual y ante nueva categoría de producto; firmas.

@@ -1,0 +1,19 @@
+# Carpeta de investigación (excluida del repo)
+04_Investigacion/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Claude/AI configs (local)
+.claude/
+
+# Thumbnails
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~

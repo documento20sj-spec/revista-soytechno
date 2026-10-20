@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Revista SoyTechno · sistema de página conforme a MAN-ID-ST-2026-01
+   Unidades: 1 mm = 100cqw/210 dentro de cada página (formato 210 × 280 mm).
+   ========================================================================== */
+:root{
+  --blanco:#FFFFFF; --platino:#F4F5F7; --carbon:#0D0E12; --profundo:#0B1F3A;
+  --azul:#0057A6; --azul-luz:#1B6BD6; --noche:#001433; --gris:#5B6472;
+  --f-titular:"Archivo",system-ui,sans-serif;
+  --f-texto:"Source Serif 4","Source Serif Pro",Georgia,serif;
+  --f-datos:"JetBrains Mono",ui-monospace,monospace;
+}
+.pg{position:relative;aspect-ratio:210/280;container-type:inline-size;overflow:hidden;background:var(--blanco);color:var(--carbon);
+  font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+.pg .lz{position:absolute;inset:0;--mm:calc(100cqw/210);--pt:calc(100cqw/210*.35278);--lb:calc(100cqw/210*4.41)}
+/* Caja de texto 177 × 245 mm; márgenes interior 18, exterior 15, superior 15, inferior 20 */
+.pg .caja{position:absolute;top:calc(var(--mm)*15);height:calc(var(--mm)*245);width:calc(var(--mm)*177);
+  display:grid;grid-template-columns:repeat(12,1fr);column-gap:calc(var(--mm)*4);align-content:start}
+.pg.verso .caja{left:calc(var(--mm)*15)}
+.pg.recto .caja{left:calc(var(--mm)*18)}
+.pg.oscuro{background:var(--carbon);color:var(--blanco)}
+.pg.platino{background:var(--platino)}
+/* Columnas útiles */
+.c1-12{grid-column:1/13}.c1-6{grid-column:1/7}.c7-12{grid-column:7/13}.c1-4{grid-column:1/5}.c5-8{grid-column:5/9}.c9-12{grid-column:9/13}
+.c1-3{grid-column:1/4}.c4-6{grid-column:4/7}.c7-9{grid-column:7/10}.c10-12{grid-column:10/13}.c1-8{grid-column:1/9}.c9-12b{grid-column:9/13}
+.c1-9{grid-column:1/10}.c4-12{grid-column:4/13}.c5-12{grid-column:5/13}.c1-2{grid-column:1/3}.c3-12{grid-column:3/13}
+
+/* --- Estilos ST- (MAN-ID §3.2) --- */
+.pg .st-antetitulo{font:500 calc(var(--pt)*9)/var(--lb) var(--f-titular);letter-spacing:.02em}
+.pg .st-titular{font-family:var(--f-titular);font-weight:800;letter-spacing:-.015em;text-wrap:balance;margin:0}
+.pg .st-titular.negra{font-weight:900}
+.pg .t24{font-size:calc(var(--pt)*24);line-height:calc(var(--lb)*2)}
+.pg .t36{font-size:calc(var(--pt)*36);line-height:calc(var(--lb)*3)}
+.pg .t48{font-size:calc(var(--pt)*48);line-height:calc(var(--lb)*4)}
+.pg .t60{font-size:calc(var(--pt)*60);line-height:calc(var(--lb)*5)}
+.pg .st-entradilla{font:600 calc(var(--pt)*13)/calc(var(--lb)*1.5) var(--f-texto);margin:0}
+.pg .st-cuerpo{font:400 calc(var(--pt)*9.5)/var(--lb) var(--f-texto);margin:0;hyphens:auto;-webkit-hyphens:auto}
+.pg .st-cuerpo p{margin:0;text-indent:calc(var(--mm)*4)}
+.pg .st-cuerpo p:first-child,.pg .st-cuerpo .ladillo+p{text-indent:0}
+.pg .dos-col{column-count:2;column-gap:calc(var(--mm)*4);text-align:justify}
+.pg .st-ladillo{font:600 calc(var(--pt)*9.5)/var(--lb) var(--f-texto);margin:var(--lb) 0 0;text-indent:0;break-after:avoid}
+.pg .st-destacado{font:italic 400 calc(var(--pt)*18)/calc(var(--lb)*2) var(--f-texto);margin:0;text-wrap:balance}
+.pg .st-pie{font:italic 400 calc(var(--pt)*7.5)/calc(var(--pt)*9.5) var(--f-texto);color:var(--gris);margin:0}
+.pg .st-credito{font:400 calc(var(--pt)*6.5)/calc(var(--pt)*9.5) var(--f-texto);font-variant:small-caps;letter-spacing:.04em;color:var(--gris);margin:0}
+.pg .st-datos{font:400 calc(var(--pt)*8)/calc(var(--pt)*10) var(--f-datos);font-variant-numeric:tabular-nums;margin:0}
+.pg .st-datos b{font-weight:500}
+.pg.oscuro .st-pie,.pg.oscuro .st-credito{color:var(--platino);font-size:calc(var(--pt)*9.5);line-height:var(--lb)}
+/* Cabecera de sección: Archivo Black 24/25 en mayúsculas, filete de 1 pt en Azul SoyTechno */
+.pg .st-cabecera{font:900 calc(var(--pt)*24)/calc(var(--pt)*25) var(--f-titular);text-transform:uppercase;letter-spacing:-.01em;margin:0;
+  padding-bottom:calc(var(--mm)*2);border-bottom:calc(var(--pt)*1) solid var(--azul)}
+/* Folio: margen inferior exterior, línea base a 12 mm del corte; Archivo Medium 7 pt */
+.pg .folio{position:absolute;bottom:calc(var(--mm)*10.5);font:500 calc(var(--pt)*7)/1 var(--f-titular);letter-spacing:.08em;text-transform:uppercase;color:var(--azul);white-space:nowrap}
+.pg.verso .folio{left:calc(var(--mm)*15)}
+.pg.recto .folio{right:calc(var(--mm)*15)}
+.pg.oscuro .folio{color:var(--blanco);font-size:calc(var(--pt)*9.5)}
+/* Pestaña de navegación 3 × 24 mm a sangre, escalonada por sección (0 a 9) */
+.pg .pestana{position:absolute;width:calc(var(--mm)*3);height:calc(var(--mm)*24);background:var(--azul);top:calc(var(--mm)*(15 + var(--i,0)*24.56))}
+.pg.verso .pestana{left:0}
+.pg.recto .pestana{right:0}
+/* Rótulo de pauta: centrado, línea base a 10 mm del corte superior */
+.pg .rotulo-pauta{position:absolute;top:calc(var(--mm)*7.5);left:0;right:0;text-align:center;font:500 calc(var(--pt)*7)/1 var(--f-titular);letter-spacing:.12em;text-transform:uppercase;z-index:3}
+.pg .rotulo-pauta span{background:var(--blanco);color:var(--carbon);padding:calc(var(--mm)*1) calc(var(--mm)*2)}
+/* Imagen a sangre (3 mm) */
+.pg .sangre{position:absolute;inset:calc(var(--mm)*-3);background-size:cover;background-position:center}
+.pg .foto{display:block;width:100%;height:100%;object-fit:cover}
+/* Bloque QR: QR sobre 2 columnas (26,16 mm) + microtexto Archivo Medium 7 pt + dirección corta en Datos */
+.pg .qr{display:grid;grid-template-columns:calc(var(--mm)*26.16) 1fr;column-gap:calc(var(--mm)*4);align-items:end}
+.pg .qr .cod{width:calc(var(--mm)*26.16);aspect-ratio:1;background:var(--blanco)}
+.pg .qr .cod svg{display:block;width:100%;height:100%}
+.pg .qr .micro{font:500 calc(var(--pt)*7)/calc(var(--pt)*9) var(--f-titular);margin:0 0 calc(var(--mm)*1)}
+.pg .qr .url{font:400 calc(var(--pt)*8)/calc(var(--pt)*10) var(--f-datos);margin:0}
+.pg.oscuro .qr .cod{padding:calc(var(--mm)*2);background:var(--platino)}
+/* Ficha técnica en recuadro */
+.pg .ficha{background:var(--platino);padding:calc(var(--mm)*4)}
+.pg.oscuro .ficha{background:var(--profundo);color:var(--blanco)}
+.pg .ficha .fila{display:flex;justify-content:space-between;gap:calc(var(--mm)*2);border-top:calc(var(--pt)*.5) solid rgba(91,100,114,.35);padding:calc(var(--mm)*1.2) 0}
+.pg.oscuro .ficha .fila{border-top-color:rgba(244,245,247,.18)}
+.pg .ficha .fila:first-of-type{border-top:0}
+/* Tablas vectoriales: filetes de 0,5 pt, encabezado Archivo Medium 8 pt, cebrado Gris Platino */
+.pg table.tb{width:100%;border-collapse:collapse;font:400 calc(var(--pt)*8)/calc(var(--pt)*10) var(--f-datos)}
+.pg table.tb th{font:500 calc(var(--pt)*8)/calc(var(--pt)*10) var(--f-titular);text-align:left;padding:calc(var(--mm)*1.4) calc(var(--mm)*1.6);border-bottom:calc(var(--pt)*.5) solid var(--carbon)}
+.pg table.tb td{padding:calc(var(--mm)*1.4) calc(var(--mm)*1.6);border-bottom:calc(var(--pt)*.5) solid rgba(91,100,114,.3);vertical-align:top}
+.pg table.tb tr:nth-child(even) td{background:var(--platino)}
+.pg .vineta{display:inline-block;width:.55em;height:.55em;background:var(--azul);margin-right:.45em;transform:translateY(-.08em)}
+/* Capa de retícula activable (12 columnas, línea base, caja) */
+.revista.reticula .pg .guia{display:block}
+.pg .guia{display:none;position:absolute;inset:0;pointer-events:none;z-index:20}
+.pg .guia .cols{position:absolute;top:calc(var(--mm)*15);height:calc(var(--mm)*245);width:calc(var(--mm)*177);display:grid;grid-template-columns:repeat(12,1fr);column-gap:calc(var(--mm)*4)}
+.pg.verso .guia .cols{left:calc(var(--mm)*15)} .pg.recto .guia .cols{left:calc(var(--mm)*18)}
+.pg .guia .cols i{background:rgba(27,107,214,.10);outline:calc(var(--pt)*.4) solid rgba(27,107,214,.35)}
+.pg .guia .base{position:absolute;inset:calc(var(--mm)*15) 0 calc(var(--mm)*20);background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--lb) - var(--pt)*.4),rgba(27,107,214,.28) calc(var(--lb) - var(--pt)*.4),rgba(27,107,214,.28) var(--lb))}
+.pg .nota{position:absolute;z-index:21;font:500 calc(var(--pt)*7.5)/1.25 var(--f-datos);background:var(--azul);color:var(--blanco);padding:calc(var(--mm)*1) calc(var(--mm)*1.6);white-space:nowrap;display:none;pointer-events:none}
+.revista.reticula .pg .nota{display:block}

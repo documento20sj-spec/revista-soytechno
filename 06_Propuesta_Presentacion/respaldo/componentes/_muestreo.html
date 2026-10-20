@@ -1,0 +1,19 @@
+<!doctype html><meta charset=utf-8><title>m</title><pre id="o">esperando</pre>
+<script>
+const fotos = {A05:'1534528741775-53994a69daeb', X11:'1560253023-3ec5d502959f', X09:'1512499617640-c74ae3a79d37', A07:'1506794778202-cad84cf45f1d', A16:'1519085360753-af0119f7cbe7'};
+const out = [];
+let pend = Object.keys(fotos).length;
+for (const [k,id] of Object.entries(fotos)) {
+  const im = new Image(); im.crossOrigin = 'anonymous';
+  im.onload = () => {
+    const c = document.createElement('canvas'); c.width = im.naturalWidth; c.height = im.naturalHeight;
+    const g = c.getContext('2d'); g.drawImage(im,0,0);
+    const hx = (x,y) => { const d = g.getImageData(Math.min(c.width-1,Math.round(x)),Math.min(c.height-1,Math.round(y)),1,1).data; return '#'+[d[0],d[1],d[2]].map(v=>v.toString(16).padStart(2,'0')).join(''); };
+    const filas = [0.005, 0.05, 0.12].map(f => f+': '+[0.02,0.25,0.5,0.75,0.98].map(p => hx(p*c.width, f*c.height)).join(' '));
+    out.push(k+' '+c.width+'x'+c.height+'\n  '+filas.join('\n  '));
+    if (--pend === 0) document.getElementById('o').textContent = out.join('\n');
+  };
+  im.onerror = () => { out.push(k+' error'); if (--pend === 0) document.getElementById('o').textContent = out.join('\n'); };
+  im.src = 'https://images.unsplash.com/photo-'+id+'?w=800&q=80&fm=jpg';
+}
+</script>

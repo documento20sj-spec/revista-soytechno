@@ -1,0 +1,385 @@
+
+## Sección 1Convenciones de codificación, roles y arquitectura del sistema
+## 1.1Codificación
+| Estructura | TIPO-ÁREA-ST-AAAA-NN: tipo documental, área, SoyTechno, año y correlativo; año de vigencia en documentos anuales (CAL, PLA) y año de emisión en el resto. | 
+| Tipos | DIR directriz · IND índice · MAN manual · GUI guía · PRO protocolo · KIT kit comercial · REG compendio normativo · CAL calendario · PLA plan · PLI pliego · EXP expediente. | 
+| Áreas | ED editorial · ID identidad · PP pre-prensa · PR pruebas · CO comercial · LG legal · RP revelación de portada · EV evento · NW networking · CR creadores · EX experiencias de marca · FI finanzas · OR organización · MD medición · CM canales · DI distribución · PV proveedores. | 
+| Expediente por edición | Plantilla maestra PLT-DOC-NN; documento de cada edición DOC-E<ed>-NN, por ejemplo DOC-E01-06; forma abreviada DOC-E-NN en este índice. | 
+| Archivos | <CÓDIGO>_<Titulo>_v<n> en documentos de dirección y gestión; ST-RV-E<ed>_DOC-NN_<Titulo>_v<n> en documentos de edición; patrón de §4.5 del rector en archivos de producción. | 
+## 1.2Estados, responsabilidad y roles
+| Vigente | Documento emitido y de aplicación: DIR-ED-ST-2026-01 e IND-ED-ST-2026-01. | 
+| Programado | Documento en desarrollo conforme a la ruta de implementación por fases (sección 6), con responsable y fecha meta. | 
+| R · C · A | Responsable único del documento (§4.2), colaboración y aprobación. | 
+| Fechas meta | Calendario de la Edición 01: inicio de S1 el 16 de noviembre de 2026, pausa operativa del 21 de diciembre de 2026 al 3 de enero de 2027 y Día D el 21 de enero de 2027. | 
+| Código | Rol | 
+| CE | Consejo Editorial | 
+| DE | Dirección Editorial | 
+| CR | Coordinación de Redacción y Especialistas Tech | 
+| DA | Dirección de Arte y Maquetación | 
+| PF | Producción Fotográfica y Audiovisual | 
+| CC | Coordinación Comercial y Alianzas | 
+| EC | Edición de Cierre y Corrección | 
+| PD | Producción Digital y Datos | 
+| EV | Eventos, Comunidad y Creadores | 
+| Asesoría Legal | Asesoría Legal de SoyTechno, rol institucional consultado | 
+## 1.3Arquitectura del sistema documental
+Organización en tres niveles, de la dirección del sistema a la ejecución de cada número.
+Nivel 1 · Dirección del sistema
+Documentos de dirección2 documentos vigentes · 00_Indice_Documental y 01_Documento_Rector
+- DIR-ED-ST-2026-01 · Documento Rector: constitución del proyecto
+- IND-ED-ST-2026-01 · Índice Maestro: registro, codificación y catálogo
+Desarrollo normativo
+Nivel 2 · Corpus documental
+Bloque I · Documentos rectores y manuales transversales6 manuales y el Documento Rector · B1_Corpus_Permanente
+- MAN-ID-ST-2026-01 · Manual de Identidad Editorial, Retícula y Estilo Lingüístico
+- GUI-PP-ST-2026-01 · Guía Técnica de Pre-prensa, Impresión e Integración Phygital
+- PRO-PR-ST-2026-01 · Protocolo de Laboratorio, Pruebas de Hardware y Fotografía
+- KIT-CO-ST-2026-01 · Kit Comercial, Tarifario Co-op y Paquetes de Patrocinio
+- REG-LG-ST-2026-01 · Compendio Legal, Propiedad Intelectual y Mancheta
+- CAL-ED-ST-2027-01 · Calendario Editorial Anual y Matriz de Holguras
+Bloque II · Revelación de portada, eventos y networking5 documentos · B2_Programa_de_Lanzamiento
+- PRO-RP-ST-2026-01 · Protocolo de Revelación de Portada y Gestión de Confidencialidad
+- MAN-EV-ST-2026-01 · Manual de Producción del Evento de Lanzamiento (Estándar y Gala)
+- GUI-NW-ST-2026-01 · Guía Operativa de Networking, Mesas de Afinidad y Rueda de Negocios
+- GUI-CR-ST-2026-01 · Guía de Relación con Creadores, Influencers y Personaje de Portada
+- MAN-EX-ST-2026-01 · Manual de Zonas de Experiencia de Marca y Activaciones en Evento
+Bloque III · Documentos de gestión del programa7 documentos · B3_Gestion_del_Programa
+- EXP-ID-ST-2026-01 · Expediente de Nombre, Cabecera y Registro de Marca
+- PLA-FI-ST-2027-01 · Plan Económico Anual y Presupuesto del Programa
+- MAN-OR-ST-2026-01 · Manual de Organización y Reglamento del Consejo Editorial
+- MAN-MD-ST-2026-01 · Manual de Medición, Indicadores y Atribución
+- PLA-CM-ST-2027-01 · Plan de Canales Digitales y Difusión
+- PLA-DI-ST-2027-01 · Plan Anual de Distribución y Red de Sedes VIP
+- PLI-PV-ST-2026-01 · Pliegos de Contratación de Proveedores
+Aplicación en cada edición
+Nivel 3 · Ejecución por edición
+Bloque IV · Expediente operativo por edición28 documentos por edición · 168 al año · 03_Ediciones
+- 00_Planificacion · Planificación · DOC-E-01 a DOC-E-05
+- 01_Textos · Textos · DOC-E-06 a DOC-E-09
+- 02_Fotografia · Fotografía · DOC-E-10 a DOC-E-11
+- 03_Diseno · Diseño · DOC-E-12
+- 04_Pauta · Pauta · DOC-E-13 a DOC-E-14
+- 05_PrePrensa · Pre-prensa · DOC-E-15 a DOC-E-17
+- 06_Digital · Digital · DOC-E-18 a DOC-E-20
+- 07_Lanzamiento · Lanzamiento · DOC-E-21 a DOC-E-23
+- 08_Cierre · Cierre · DOC-E-24 a DOC-E-28
+
+
+## Sección 5 · Bloque IVExpediente operativo por edición
+Documentos de ejecución y control con generación, cumplimentación y firma en cada número (E01 a E06), a partir de las plantillas maestras y en las nueve carpetas del repositorio de la edición (§4.3, §4.5, §5.1).
+Planificación · 00_Planificacion
+DOC-E-01Acta de inicio y aprobación G0
+- RDE
+- CTodos los roles
+- ACE
+- CompuertaG0 · S1Aprobación del Consejo Editorial: eje temático, personaje de portada, tiraje, presupuesto, pauta inicial comprometida y sede del evento.
+DOC-E-02Pauta de contenidos y equipos
+- RDE
+- CCR, CC
+- ACE
+- CompuertaG0 · S1Asignación de artículos por sección, perfiles a entrevistar y orden de solicitud de dispositivos de prueba a Compras.
+DOC-E-03Mapa de paginación (flatplan)
+- RDE
+- CDA, CC
+- ACE
+- CompuertaG0 · S1Asignación página a página de los tres pliegos de 16 páginas y de las cuatro cubiertas, con secciones y pautas por afinidad; cambios posteriores en DOC-E-05.
+DOC-E-04Presupuesto y control de costos de la edición
+- RDE
+- CCC
+- ACE
+- CompuertaG0 · G3Presupuesto de edición y evento aprobado en G0, actualización en G3 y costo real en DOC-E-26.
+DOC-E-05Registro de compuertas, cambios e incidencias
+- RDE
+- CTodos los roles
+- ACE
+- CompuertaG0 a G5Firmas de G0 a G5, cambios posteriores a G2 e incidencias del ciclo.
+Textos · 01_Textos
+DOC-E-06Compendio de textos editoriales
+- RCR
+- CEC
+- ADE
+- CompuertaG1 · G2Artículos definitivos de las diez secciones en registro impersonal, firmados, con doble corrección y fuentes verificadas, más dos piezas de reserva.
+DOC-E-07Fichas de laboratorio y veredictos
+- RCR
+- CPF
+- ADE
+- CompuertaG1 · S4Registros estandarizados tras cinco días de prueba real por equipo, tablas depuradas y declaración del origen del equipo.
+DOC-E-08Guion de pódcast y escena
+- RCR
+- CEV, PF
+- ADE
+- CompuertaG1 · S4Cuestionario impersonal y escaleta del episodio de estudio (30 a 45 minutos) y de la conversación en vivo del Día D.
+DOC-E-09Registro de verificación y fe de erratas
+- REC
+- CCR
+- ADE
+- CompuertaG2 · posteriorContraste de cifras y nombres con su fuente antes de G2; erratas posteriores a la impresión para el indicador de calidad.
+Fotografía · 02_Fotografia
+DOC-E-10Catálogo fotográfico y audiovisual
+- RPF
+- CDA
+- ADE
+- CompuertaG1 · S4Activos finales en TIFF y Adobe RGB a 300 ppp, máster del episodio de pódcast y video detrás de cámaras de la portada.
+DOC-E-11Expediente de derechos de imagen
+- RPF
+- CEV, CC
+- ADE
+- CompuertaG1 · G3Cesiones y autorizaciones firmadas por personaje de portada, entrevistados, creadores y terceros identificables.
+Diseño · 03_Diseno
+DOC-E-12Pliegos maquetados e infografías
+- RDA
+- CEC
+- ADE
+- CompuertaG2 · S6Archivos nativos alineados a la retícula maestra, tablas vectoriales, reserva de la zona NFC en C3 y artes gráficas del evento.
+Pauta · 04_Pauta
+DOC-E-13Expediente de pauta y patrocinios
+- RCC
+- CEV
+- ADE
+- CompuertaG2 · G3Contratos firmados con cobertura del evento igual o superior al 70 %, artes finales aprobados por cada marca y verificación de rótulos «Publicidad».
+DOC-E-14Certificación financiera y legal G3
+- RCC
+- CAsesoría Legal
+- ADE
+- CompuertaG3 · S6Aval escrito de condiciones vigentes del Club SoyTechno y de las plataformas de cuotas aliadas, sin precios impresos, con visado legal.
+Pre-prensa · 05_PrePrensa
+DOC-E-15Archivos de imprenta y cubiertas
+- RDA
+- CPD
+- ADE
+- CompuertaG4 · S7PDF/X-4 definitivo de tripa y cubiertas C1 a C4, con plancha independiente de barniz UV y lomo plano de 3 mm.
+DOC-E-16Acta de ferro, color y lectura QR
+- RDA
+- CPD
+- ADE
+- CompuertaG4 · S7Validación del ferro digital y de las pruebas físicas de color, prueba de lectura QR en cuatro equipos iOS y Android y verificación de la muestra de etiquetas NFC.
+DOC-E-17Acta de recepción y control de calidad del tiraje
+- RDA
+- CPD, CC
+- ADE
+- CompuertaS7 · previa a G5Conteo de ejemplares, control de encuadernación, muestreo NFC de uno por cada cincuenta y sellado de cajas por canal y sede.
+Digital · 06_Digital
+DOC-E-18Matriz maestra de enlaces QR y NFC
+- RPD
+- CCC
+- ADE
+- CompuertaG2 · G4Control de direcciones cortas, parámetros utm_content, lotes de etiquetas NTAG213 por sede y canal y estado de bloqueo de escritura.
+DOC-E-19Paquete de publicación de la hora cero
+- RPD
+- CDA
+- ADE
+- CompuertaG4 · G5Edición interactiva HTML5, PDF ligero de hasta 25 MB con atributos de accesibilidad y recortes verticales para redes.
+DOC-E-20Plan de difusión y calendario de publicaciones
+- RPD
+- CEV, CC
+- ADE
+- CompuertaG2 a G5Publicaciones propias y colaborativas desde la campaña de expectativa hasta D+7, envíos al Club y canales, conforme a PLA-CM.
+Lanzamiento · 07_Lanzamiento
+DOC-E-21Plan operativo del evento y la revelación
+- REV
+- CCC, PF
+- ACE
+- CompuertaG0 · G4Documento ejecutivo del Día D: plano de sede, montaje de zonas de marca, escaleta de revelación a las 19:30, seguridad, póliza y ensayo.
+DOC-E-22Fichas de participantes y acuerdos de confidencialidad
+- REV
+- CCC
+- ADE
+- CompuertaG1 · G3Verificación previa de creadores e invitados y acuerdos firmados por personaje, imprenta y proveedores.
+DOC-E-23Padrón de invitados y rueda de negocios
+- REV
+- CCC
+- ADE
+- CompuertaG4 · G5Listado nominativo por cuotas (30/20/20/20/10 %), control de acreditaciones QR, agenda de citas de diez minutos y directorio autorizado.
+Cierre · 08_Cierre
+DOC-E-24Plan y actas de conteo de distribución
+- RCC
+- CPD
+- ADE
+- CompuertaG5 · circulaciónAsignación por canal (58/15/12/6/6/3 %) conforme a PLA-DI, entrega en cajas selladas y actas semanales de reposición en sedes VIP durante la circulación.
+DOC-E-25Reporte rápido de alcance (72 horas)
+- RPD
+- CEV
+- ADE
+- CompuertaD+3Medición en D+3 conforme a MAN-MD: reproducciones de la revelación, publicaciones colaborativas, asistencia efectiva y toques NFC del Día D.
+DOC-E-26Informe consolidado de edición
+- RPD
+- CCC, EV
+- ADE
+- CompuertaS4 del ciclo siguienteEvaluación de los indicadores (§1.4), contactos de la rueda de negocios, encuesta de aliados y balance económico frente a DOC-E-04.
+DOC-E-27Acta de cierre de edición
+- RDE
+- CTodos los roles
+- ACE
+- CompuertaTras G5Cierre formal: cambios registrados, incidencias, lecciones aprendidas y archivo de las versiones vFinal.
+DOC-E-28Certificado de cumplimiento para aliados
+- RCC
+- CPD
+- ADE
+- CompuertaS4 del ciclo siguienteEvidencia de ejecución por marca: página publicada, ubicación, tiraje y distribución, métricas QR y NFC por pieza y registro de zonas de experiencia.
+
+
+## Sección 6Insumos institucionales y ruta de implementación por fases
+## 6.1Insumos institucionales
+Documentos y datos de SoyTechno, de sus aliados y de terceros institucionales, con responsable de obtención y fecha meta.
+Manual de identidad corporativa de SoyTechno: azul institucional en Pantone y CMYK, logotipo y usos
+- OrigenMercadeo SoyTechno
+- DestinoMAN-ID, KIT-CO
+- RDA
+- Fecha meta30-oct-2026
+Calendario de lanzamientos y disponibilidad de equipos de prueba
+- OrigenCompras y Categorías
+- DestinoCAL-ED, PRO-PR, DOC-E-02
+- RCR
+- Fecha meta30-oct-2026 y cada S1
+Requisitos de depósito legal e ISSN
+- OrigenBiblioteca Nacional de Venezuela
+- DestinoREG-LG, EXP-ID
+- RCC
+- Fecha meta30-oct-2026
+Guías de marca y lineamientos de fondos cooperativos de los fabricantes
+- OrigenFabricantes aliados
+- DestinoKIT-CO, MAN-EX, DOC-E-13, DOC-E-28
+- RCC
+- Fecha meta06-nov-2026
+Perfil cuantitativo y base consentida de miembros del Club SoyTechno
+- OrigenCRM SoyTechno
+- DestinoKIT-CO, PLA-CM, DOC-E-24
+- RPD
+- Fecha meta06-nov-2026
+Disponibilidad y condiciones de sedes para eventos
+- OrigenCentros comerciales y Operaciones de tiendas
+- DestinoMAN-EV, DOC-E-21
+- REV
+- Fecha meta13-nov-2026
+Reglamento del Club SoyTechno y condiciones de beneficios
+- OrigenClub SoyTechno
+- DestinoGUI-PP, REG-LG, DOC-E-14
+- RCC
+- Fecha meta27-nov-2026
+Perfil ICC, formato PDF/X y especificaciones de la imprenta seleccionada
+- OrigenImprenta
+- DestinoGUI-PP, DOC-E-15
+- RDA
+- Fecha meta27-nov-2026
+Lineamientos de cuentas oficiales y colaboraciones en redes
+- OrigenMercadeo SoyTechno
+- DestinoPRO-RP, PLA-CM
+- RPD
+- Fecha meta18-dic-2026
+Datos de tráfico, ticket promedio y zonas de marca por sede
+- OrigenOperaciones de tiendas
+- DestinoPLA-DI, DOC-E-24
+- RCC
+- Fecha meta08-ene-2027
+Condiciones vigentes de plataformas de cuotas aliadas
+- OrigenAliados financieros
+- DestinoDOC-E-14
+- RCC
+- Fecha metaG3 de cada edición
+## 6.2Calendario de la Edición 01
+| Semana | Fechas | Compuerta | 
+| S1 | 16 a 22 de noviembre de 2026 | G0 | 
+| S2 | 23 a 29 de noviembre de 2026 | — | 
+| S3 | 30 de noviembre a 6 de diciembre de 2026 | — | 
+| S4 | 7 a 13 de diciembre de 2026 | G1 | 
+| S5 | 14 a 20 de diciembre de 2026 | — | 
+| Pausa operativa | 21 de diciembre de 2026 a 3 de enero de 2027 | — | 
+| S6 | 4 a 10 de enero de 2027 | G2 · G3 | 
+| S7 | 11 a 17 de enero de 2027 | G4 | 
+| S8 | 18 a 24 de enero de 2027 | G5 · Día D jueves 21 | 
+## 6.3Ruta de implementación por fases
+Elaboración ordenada y sin solapamientos, con disponibilidad de cada documento antes de su fase de uso en la Edición 01.
+## Fase 0 · Decisiones de baseFecha meta 30-oct-2026
+- EXP-ID-ST-2026-01 · Nombre y cabecera · 30-oct
+- PLA-FI-ST-2027-01 · Plan económico · 30-oct
+- CAL-ED-ST-2027-01 · Calendario editorial 2027 · 30-octDependencia determinante: Nombre de la cabecera para el ISSN y la portada; estructura de costos para las tarifas; fechas de ciclo y compuertas.
+## Fase 1 · Comercial, legal y contrataciónFechas meta 06 a 13-nov-2026
+- KIT-CO-ST-2026-01 · Kit comercial · 06-nov
+- MAN-EX-ST-2026-01 · Zonas de experiencia · 06-nov
+- REG-LG-ST-2026-01 · Compendio legal · 06-nov
+- PLI-PV-ST-2026-01 · Pliegos de proveedores · 06-nov
+- MAN-OR-ST-2026-01 · Organización y Consejo Editorial · 13-novDependencia determinante: Pauta y patrocinio comprometidos en G0; modelos contractuales para personaje, imprenta y proveedores; equipo completo en S1.
+## Fase 2 · Talento e identidadFechas meta 13 a 20-nov-2026
+- GUI-CR-ST-2026-01 · Creadores y personaje de portada · 13-nov
+- MAN-EV-ST-2026-01 · Producción del evento · 13-nov; completo 07-dic
+- MAN-ID-ST-2026-01 · Identidad y estilo · 20-nov
+- PRO-PR-ST-2026-01 · Laboratorio y fotografía · 20-novDependencia determinante: Personaje de portada y sede en S1; sesión de portada y pruebas de equipos desde S2.
+## Fase 3 · Técnica y mediciónFechas meta 27-nov a 04-dic-2026
+- GUI-PP-ST-2026-01 · Pre-prensa e integración phygital · 27-nov; completo 14-dic
+- MAN-MD-ST-2026-01 · Medición e indicadores · 04-dicDependencia determinante: Pedido de etiquetas NFC con seis semanas de anticipación; parámetros de medición antes de G2.
+## Fase 4 · Lanzamiento y canalesFechas meta 11-dic-2026 a 08-ene-2027
+- GUI-NW-ST-2026-01 · Networking y rueda de negocios · 11-dic
+- PRO-RP-ST-2026-01 · Revelación de portada · 18-dic
+- PLA-CM-ST-2027-01 · Canales digitales y difusión · 18-dic
+- PLA-DI-ST-2027-01 · Distribución y sedes VIP · 08-eneDependencia determinante: Invitaciones en S5; campaña de expectativa desde S6; distribución en S8.
+## Fase 5 · Plantillas de ediciónFechas meta 13-nov-2026 a 15-ene-2027
+- PLT-DOC-01 a 05 · Planificación · 13-nov
+- PLT-DOC-06 a 11 · Textos y fotografía · 20-nov
+- PLT-DOC-21 a 23 · Lanzamiento · 04-dic
+- PLT-DOC-12 a 14 · Diseño y pauta · 11-dic
+- PLT-DOC-15 a 20 · Pre-prensa y digital · 18-dic
+- PLT-DOC-24 a 28 · Cierre · 15-eneDependencia determinante: Disponibilidad de cada plantilla antes de su fase de uso en la Edición 01.
+
+
+## Sección 7Estructura del repositorio, matriz de fuente única y reglas de control documental
+## 7.1Estructura del repositorio
+- SoyTechno_Proyecto_Editorial/
+- 00_Indice_Documental/ · IND-ED-ST-2026-01
+- 01_Documento_Rector/ · DIR-ED-ST-2026-01
+- 02_Corpus_Documental/
+- B1_Corpus_Permanente/ · MAN-ID, GUI-PP, PRO-PR, KIT-CO, REG-LG, CAL-ED
+- B2_Programa_de_Lanzamiento/ · PRO-RP, MAN-EV, GUI-NW, GUI-CR, MAN-EX
+- B3_Gestion_del_Programa/ · EXP-ID, PLA-FI, MAN-OR, MAN-MD, PLA-CM, PLA-DI, PLI-PV
+- 03_Ediciones/
+- 00_Plantillas_Maestras/ · PLT-DOC-01 a PLT-DOC-28 en las nueve carpetas de fase
+- ST-RV-E01_2027-01/ · DOC-E01-01 a DOC-E01-28
+- 00_Planificacion/ · 01_Textos/ · 02_Fotografia/
+- 03_Diseno/ · 04_Pauta/ · 05_PrePrensa/
+- 06_Digital/ · 07_Lanzamiento/ · 08_Cierre/
+## 7.2Matriz de fuente única
+Cada contenido normativo con un solo documento de origen; remisión desde los demás documentos, sin repetición del contenido.
+Modelos contractuales: confidencialidad, cesión, imagen y voz, participación, inserción, patrocinio y proveedores
+- Fuente únicaREG-LG
+- RemisiónPRO-RP, GUI-CR, KIT-CO, MAN-EX, PLI-PV, DOC-E-11, DOC-E-13, DOC-E-22
+Convocatoria, sobreinvitación, acreditación QR y escaleta
+- Fuente únicaMAN-EV
+- RemisiónGUI-NW, PRO-RP, DOC-E-21, DOC-E-23
+Cuotas del padrón, credenciales, mesas de afinidad y rueda de negocios
+- Fuente únicaGUI-NW
+- RemisiónMAN-EV, MAN-EX, DOC-E-23
+Especificación QR, parámetros UTM y etiqueta NFC
+- Fuente únicaGUI-PP
+- RemisiónKIT-CO, MAN-EX, MAN-MD, DOC-E-18
+Definición de indicadores y atribución
+- Fuente únicaMAN-MD
+- RemisiónKIT-CO, DOC-E-25, DOC-E-26
+Fechas de ciclo, compuertas y Días D
+- Fuente únicaCAL-ED
+- RemisiónPRO-RP, MAN-EV, DOC-E-01, DOC-E-05
+Reglas comerciales: cuota, concentración, separación y cero precios
+- Fuente únicaDocumento Rector §2.5
+- RemisiónKIT-CO, con reproducción admitida por su destinatario externo; MAN-EX; DOC-E-13
+Estilo lingüístico y glosario normativo
+- Fuente únicaMAN-ID
+- RemisiónTodos los textos; DOC-E-09
+Presupuesto y costos
+- Fuente únicaPLA-FI
+- RemisiónKIT-CO, MAN-EV, DOC-E-04
+Canales digitales y difusión
+- Fuente únicaPLA-CM
+- RemisiónPRO-RP, DOC-E-20
+Distribución anual y sedes VIP
+- Fuente únicaPLA-DI
+- RemisiónDOC-E-24
+## 7.3Reglas de control documental
+- Alta previa: registro de cada documento en este índice con código, responsable y estado antes de su primera versión.
+- Versión única: una sola versión vigente por documento en su carpeta, con versión y fecha en la cabecera de control.
+- Nomenclatura: códigos y nombres de archivo conforme a 1.1.
+- Plantillas e instancias: modificación de plantillas solo en 00_Plantillas_Maestras, con efecto desde la edición siguiente; habilitación de cada edición por copia de esa carpeta en su semana 1.
+- Fuente única: contenido normativo en su documento de origen, conforme a 7.2.
+- Precedencia: Documento Rector, documentos de los Bloques I a III y expediente por edición.
+- Conservación: plazos de §4.5 del Documento Rector.
+ElaboraciónNombre, cargo y fecha
+RevisiónNombre, cargo y fecha
+AprobaciónConsejo Editorial · fecha
+

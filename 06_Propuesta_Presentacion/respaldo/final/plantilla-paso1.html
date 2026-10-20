@@ -1,0 +1,1898 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SoyTechno, la revista · Propuesta del proyecto editorial</title>
+<meta name="description" content="Propuesta del proyecto editorial SoyTechno para Carelys Eljuri: la revista hojeable, el ciclo de ocho semanas, la hora cero, el evento, la economía en porcentajes y el sistema documental.">
+<meta name="theme-color" content="#FFFFFF">
+<script>
+/* Modo antes del primer pintado: movimiento (js-anim) o estados finales (is-static: ?captura=1 o movimiento reducido) */
+(function(){var d=document.documentElement,q=location.search,st=/[?&]captura=1/.test(q)||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+d.className+=st?' is-static':' js-anim';var m=q.match(/[?&]pantalla=([0-9]+)/);if(m&&/[?&]captura=1/.test(q))d.setAttribute('data-only',m[1]);setTimeout(function(){if(!window.gsap)d.classList.remove('js-anim')},4000)})();   /* red lenta: el contenido nunca queda oculto; el script principal decide el modo */
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* =====================================================================
+   DIRECCIÓN C · SISTEMA — estudio: Massimo Vignelli (manual de normas)
+   Una retícula, tres familias, anotación técnica como contenido,
+   diagrama de nodos a 0° / 45° / 90°. Cero adorno sin función.
+   ===================================================================== */
+:root{
+  /* Paleta · brand-spec §3 (no se añade ningún color) */
+  --blanco:#FFFFFF; --platino:#F4F5F7; --carbon:#0D0E12; --profundo:#0B1F3A;
+  --azul:#0057A6; --gris:#5B6472; --azul-luz:#1B6BD6; --noche:#001433;
+  /* Transparencias de esos mismos colores */
+  --tinta-14:rgba(13,14,18,.14); --tinta-08:rgba(13,14,18,.08); --tinta-22:rgba(13,14,18,.22);
+  --gris-35:rgba(91,100,114,.35); --gris-18:rgba(91,100,114,.18);
+  --azul-08:rgba(0,87,166,.08); --azul-16:rgba(0,87,166,.16); --azul-40:rgba(0,87,166,.4);
+  /* Escala de espaciado: 8 · 16 · 24 · 32 · 48 · 64 · 96 */
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:48px; --s6:64px; --s7:96px;
+  /* Retícula de 12 columnas */
+  --rail:192px; --m:48px; --g:24px;
+  /* Tipografías · MAN-ID §3 */
+  --f-d:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-t:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --f-m:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.23,1,.32,1);
+  --bar:56px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--blanco);color:var(--carbon);font-family:var(--f-t);font-size:18px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+ul,ol{margin:0;padding:0;list-style:none}
+p,h1,h2,h3,figure{margin:0}
+a{color:inherit}
+abbr[title]{text-decoration:none;cursor:help;border-bottom:1px dotted currentColor}
+:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
+::selection{background:var(--azul);color:var(--blanco)}
+a,button{touch-action:manipulation;-webkit-tap-highlight-color:rgba(0,87,166,.14)}
+.nw{white-space:nowrap}
+@media (pointer:fine){html{overscroll-behavior-y:none}}
+.sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:fixed;left:var(--s2);top:var(--s2);z-index:200;background:var(--carbon);color:var(--blanco);padding:var(--s1) var(--s2);
+  font:500 14px/20px var(--f-d);transform:translateY(-200%);text-decoration:none}
+.skip:focus{transform:none}
+
+/* ---------- Rótulos y anotaciones técnicas ---------- */
+.tag{font:400 12px/16px var(--f-m);letter-spacing:.02em;color:var(--gris)}
+.tag b{font-weight:500;color:var(--carbon)}
+.kicker{font:500 12px/16px var(--f-m);letter-spacing:.06em;text-transform:uppercase;color:var(--gris)}
+.eyebrow{font:500 16px/24px var(--f-d);color:var(--gris)}
+.display{font:900 clamp(52px,6.667vw,104px)/.96 var(--f-d);letter-spacing:-.015em}
+.lead{font:400 22px/32px var(--f-t);color:var(--carbon);max-width:36em;text-wrap:pretty}
+.promise{font:700 28px/32px var(--f-d);letter-spacing:-.015em;text-wrap:balance}
+.rule{border:0;border-top:2px solid var(--carbon);margin:0}
+
+/* ---------- Botones (rectos: la geometría es ortogonal) ---------- */
+.btn{display:inline-flex;align-items:center;gap:var(--s2);min-height:48px;padding:0 var(--s3);background:var(--azul);color:var(--blanco);
+  font:700 16px/24px var(--f-d);letter-spacing:.01em;text-decoration:none;border-radius:0;
+  transition:background-color .16s var(--ease),transform .12s var(--ease)}
+.btn:active{transform:scale(.97)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-line{background:transparent;color:var(--carbon);box-shadow:inset 0 0 0 2px var(--carbon);min-height:40px;padding:0 var(--s2);font-size:14px}
+.btn-line[disabled]{opacity:.35;pointer-events:none}
+.btn-line[aria-pressed="true"]{background:var(--carbon);color:var(--blanco)}
+
+/* ---------- Estructura ---------- */
+.shell{margin-left:var(--rail)}
+.ch{position:relative}
+.wrap{position:relative;z-index:1;padding:0 var(--m)}
+.grid-guide{position:absolute;z-index:0;top:0;bottom:0;left:var(--m);right:var(--m);display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);pointer-events:none}
+.grid-guide i{display:block;border-inline:1px solid var(--azul-08);transition:background-color .2s var(--ease),border-color .2s var(--ease)}
+.grid-guide::after{content:'';position:absolute;inset:0 calc(-1*var(--m));opacity:0;transition:opacity .2s var(--ease);
+  background-image:repeating-linear-gradient(to bottom,transparent 0 7px,var(--azul-08) 7px 8px)}
+html.grid-on .grid-guide i{background:var(--azul-08);border-color:var(--azul-16)}
+html.grid-on .grid-guide::after{opacity:1}
+.rv{will-change:transform,opacity}
+
+/* ---------- Riel de capítulos (escritorio) ---------- */
+.rail{position:fixed;inset:0 auto 0 0;width:var(--rail);z-index:60;background:var(--blanco);border-right:1px solid var(--tinta-14);
+  display:flex;flex-direction:column;padding:var(--s3)}
+.rail .logo{width:144px;height:auto;color:var(--azul)}
+.rail-nav{margin-top:var(--s4)}
+.rail-nav .kicker{margin-bottom:var(--s2)}
+.rail-list{position:relative;padding-left:var(--s3)}
+.rail-list::before,.rail-fill{content:'';position:absolute;left:5px;top:20px;bottom:20px;width:2px;background:var(--gris-18)}
+.rail-fill{background:var(--azul);bottom:auto;height:calc(100% - 40px);transform-origin:top;transform:scaleY(0)}
+.rail-list li{position:relative}
+.rail-list li::before{content:'';position:absolute;left:calc(-1*var(--s3));top:12px;width:12px;height:12px;border-radius:50%;
+  background:var(--blanco);box-shadow:inset 0 0 0 2px var(--gris-35);transition:background-color .2s var(--ease),box-shadow .2s var(--ease)}
+.rail-list li.on::before{background:var(--azul);box-shadow:0 0 0 4px var(--azul-16)}
+.rail-list a{display:block;padding:7px 0;text-decoration:none;color:var(--gris);transition:color .16s var(--ease)}
+.rail-list .n{display:block;font:400 12px/16px var(--f-m);letter-spacing:.04em}
+.rail-list .t{display:block;font:500 14px/18px var(--f-d)}
+.rail-list li.on a{color:var(--carbon)}
+.rail-list li.on .t{font-weight:800}
+.rail-foot{margin-top:auto;display:grid;gap:var(--s1)}
+.rail-foot .btn-line{justify-content:center;margin-top:var(--s1)}
+
+/* ---------- Barra superior (teléfono) ---------- */
+header.bar{display:none}
+
+/* =====================================================================
+   CAPÍTULO 1 · APERTURA
+   ===================================================================== */
+.c1{min-height:100vh;display:flex;flex-direction:column}
+.c1 .wrap{flex:1;display:flex;flex-direction:column;padding-bottom:0}
+.c1-top{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);padding-top:var(--s5);flex:1;align-content:start}
+.c1-text{grid-column:1/8;display:flex;flex-direction:column;align-items:flex-start;gap:var(--s3)}
+.c1-text .display{margin-top:var(--s1)}
+.c1-text .tag{margin-top:calc(-1*var(--s1))}
+.c1-text .promise{padding-top:var(--s2);border-top:2px solid var(--carbon);max-width:16em}
+.c1-aside{grid-column:8/13;justify-self:end;width:min(100%,calc((100vh - 316px)*.75));display:flex;flex-direction:column;gap:var(--s1)}
+.c1-cover{position:relative;perspective:1800px}
+.c1-cover .tilt{position:relative;aspect-ratio:3/4;transform-style:preserve-3d;will-change:transform}
+.c1-cover .tilt::before{content:'';position:absolute;inset:0;transform:translateZ(-1px);
+  box-shadow:0 36px 64px -20px var(--tinta-22),0 10px 22px -6px var(--tinta-22);pointer-events:none}
+.c1-aside .tag{display:flex;justify-content:space-between;gap:var(--s2)}
+.c1-band{background:var(--platino);margin:var(--s4) calc(-1*var(--m)) 0;padding:var(--s3) var(--m) var(--s3)}
+.figs{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);row-gap:var(--s3)}
+.fig{border-top:2px solid var(--carbon);padding-top:var(--s1);grid-column:span 2;min-width:0}
+.fig:nth-child(n+4){grid-column:span 3}
+.fig-n{font:900 48px/1 var(--f-d);letter-spacing:-.015em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.fig-l{font:400 16px/22px var(--f-t);color:var(--gris);margin-top:var(--s1)}
+.c1-band .tag{margin-top:var(--s3);display:flex;gap:var(--s3);justify-content:space-between;flex-wrap:wrap}
+.c1-band .backup{font:400 13px/20px var(--f-m);color:var(--gris);letter-spacing:.01em}
+
+/* =====================================================================
+   LA REVISTA SIMULADA · MAN-ID §2 a §9
+   Unidad base: 1 mm = .47619cqw (página de 210 mm) · 1 pt = .168cqw
+   ===================================================================== */
+.page{--mm:.47619cqw;--pt:.168cqw;position:relative;width:100%;height:100%;container-type:inline-size;overflow:hidden;
+  background:var(--blanco);color:var(--carbon);font-family:var(--f-t);font-size:calc(9.5*var(--pt));line-height:calc(12.5*var(--pt));
+  text-align:left;-webkit-font-smoothing:antialiased}
+.page.cover{overflow:visible;transform-style:preserve-3d}
+.page *{min-width:0}
+/* Retícula de página: 12 columnas de 11,08 mm, medianil 4 mm, caja 177 × 245 mm */
+.page::after{content:'';position:absolute;pointer-events:none;display:none;top:calc(15*var(--mm));bottom:calc(20*var(--mm));
+  outline:1px dashed var(--azul-40);
+  background:repeating-linear-gradient(to right,var(--azul-16) 0 calc(11.083*var(--mm)),transparent calc(11.083*var(--mm)) calc(15.083*var(--mm)))}
+.page.recto::after{left:calc(18*var(--mm));right:calc(15*var(--mm))}
+.page.verso::after{left:calc(15*var(--mm));right:calc(18*var(--mm))}
+.show-pgrid .page::after{display:block}
+.show-pgrid .pg .guia{display:block}
+.pg .nota{display:none!important}
+
+/* Estilos con prefijo ST- (MAN-ID §3.2) */
+.st-ante{font:500 calc(9*var(--pt))/calc(12.5*var(--pt)) var(--f-d)}
+.st-titular{font:700 calc(24*var(--pt))/calc(25*var(--pt)) var(--f-d);letter-spacing:-.015em}
+.st-entra{font:600 calc(13*var(--pt))/calc(18.75*var(--pt)) var(--f-t)}
+.st-cuerpo{font:400 calc(9.5*var(--pt))/calc(12.5*var(--pt)) var(--f-t)}
+.st-destacado{font:italic 400 calc(18*var(--pt))/calc(25*var(--pt)) var(--f-t)}
+.st-ladillo{font:600 calc(9.5*var(--pt))/calc(12.5*var(--pt)) var(--f-t)}
+.st-pie{font:italic 400 calc(7.5*var(--pt))/calc(9.5*var(--pt)) var(--f-t)}
+.st-credito{font:400 calc(6.5*var(--pt))/calc(9.5*var(--pt)) var(--f-t);font-variant-caps:all-small-caps;letter-spacing:.05em}
+.st-datos{font:400 calc(8*var(--pt))/calc(10*var(--pt)) var(--f-m);font-variant-numeric:tabular-nums}
+.st-folio{font:500 calc(7*var(--pt))/calc(7*var(--pt)) var(--f-d);text-transform:uppercase;letter-spacing:.02em;color:var(--azul);white-space:nowrap}
+.st-cabsec{font:900 calc(24*var(--pt))/calc(25*var(--pt)) var(--f-d);text-transform:uppercase;letter-spacing:-.015em}
+
+/* Elementos fijos de las páginas en tránsito */
+.page .folio{position:absolute;bottom:calc(11.4*var(--mm))}
+.page.recto .folio{right:calc(15*var(--mm))}
+.page.verso .folio{left:calc(15*var(--mm))}
+.hinge-r::before,.hinge-l::before{content:'';position:absolute;top:0;bottom:0;width:calc(14*var(--mm));pointer-events:none;z-index:5}
+.hinge-r::before{left:0;background:linear-gradient(to right,rgba(13,14,18,.22),rgba(13,14,18,.07) 38%,transparent)}
+.hinge-l::before{right:0;background:linear-gradient(to left,rgba(13,14,18,.22),rgba(13,14,18,.07) 38%,transparent)}
+/* Sombra de proyección de la hoja que gira (la mueve el script) */
+.cast{position:absolute;top:0;bottom:0;width:100%;opacity:0;pointer-events:none;z-index:6;transform:scaleX(0)}
+.recto .cast{left:0;transform-origin:left;background:linear-gradient(to right,rgba(13,14,18,.42),rgba(13,14,18,.16) 55%,rgba(13,14,18,0))}
+.verso .cast{right:0;transform-origin:right;background:linear-gradient(to left,rgba(13,14,18,.42),rgba(13,14,18,.16) 55%,rgba(13,14,18,0))}
+.shade{position:absolute;inset:0;opacity:0;pointer-events:none;z-index:7}
+.recto .shade{background:linear-gradient(to right,rgba(13,14,18,.05),rgba(13,14,18,.42))}
+.verso .shade{background:linear-gradient(to left,rgba(13,14,18,.05),rgba(13,14,18,.42))}
+
+/* ---------- C1 · Portada en capas (despiece) ---------- */
+.pg.cover{overflow:visible;transform-style:preserve-3d}
+.pg.cover .lz{transform-style:preserve-3d}
+.cover .ly{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  transform:translateZ(calc(var(--e,0)*var(--z,0px)*var(--k,1)));box-shadow:inset 0 0 0 calc(var(--r,0)*1.5px) var(--azul-40)}
+.ly-bg{--z:0px}.ly-ph{--z:34px}.ly-veil{--z:68px}.ly-mast{--z:102px}.ly-band{--z:136px}.ly-title{--z:170px}.ly-calls{--z:204px}.ly-credit{--z:238px}
+
+/* ---------- Páginas en tránsito: pauta ---------- */
+.gpauta{background:var(--platino)}
+.gpauta .rotulo{position:absolute;top:calc(10*var(--mm));left:0;right:0;text-align:center;font:500 calc(7*var(--pt))/calc(7*var(--pt)) var(--f-d);color:var(--gris)}
+.gpauta .slot{position:absolute;left:calc(18*var(--mm));right:calc(15*var(--mm));top:calc(15*var(--mm));bottom:calc(20*var(--mm));
+  border:1px dashed var(--gris);display:grid;place-items:center;text-align:center;color:var(--gris);padding:calc(8*var(--mm))}
+.verso.gpauta .slot{left:calc(15*var(--mm));right:calc(18*var(--mm))}
+.gpauta .slot span{font:400 calc(8*var(--pt))/calc(10*var(--pt)) var(--f-m)}
+.pg-dark.gpauta{background:var(--profundo)}
+.pg-dark.gpauta .rotulo,.pg-dark.gpauta .slot{color:var(--platino);border-color:rgba(244,245,247,.5)}
+
+/* ---------- Páginas en tránsito (estructura de retícula, sin texto inventado) ---------- */
+.gen .gh{position:absolute;top:calc(15*var(--mm));left:calc(15*var(--mm));right:calc(18*var(--mm))}
+.recto.gen .gh{left:calc(18*var(--mm));right:calc(15*var(--mm))}
+.gen .gh.st-cabsec{padding-bottom:calc(6.25*var(--pt));border-bottom:calc(1*var(--pt)) solid var(--azul)}
+.gen .blk{position:absolute;background:var(--platino)}
+.gen .bar{position:absolute;height:calc(1.6*var(--mm));background:var(--platino)}
+.pg-dark.gen .blk{background:var(--profundo)}
+.pg-dark.gen .bar{background:var(--profundo)}
+
+/* =====================================================================
+   CAPÍTULO 2 · LA REVISTA (objeto 3D, hojas con lomo, sombras, anotaciones)
+   ===================================================================== */
+.c2{background:var(--platino)}
+.c2-pin{--ph:min(calc(100vh - 224px),calc((100vw - var(--rail) - 2*var(--m))/1.5));position:relative;height:100vh;min-height:600px;background:var(--platino);overflow:hidden}
+.c2-wrap{height:100%;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;padding-top:var(--s3);padding-bottom:var(--s3);row-gap:var(--s1)}
+.c2-head,.c2-foot,.rules{position:relative;z-index:3}                                     /* la interfaz queda por encima de la hoja en tránsito */
+.c2-head{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--s3)}
+.c2-head .ind{font:900 32px/36px var(--f-d);letter-spacing:-.015em;margin-top:4px;min-height:36px;white-space:nowrap}
+.c2-tools{display:flex;gap:var(--s2);align-items:center;flex-wrap:nowrap;justify-content:flex-end}
+.c2-spec{text-align:right}
+.stage-box{position:relative;display:grid;place-items:center;min-height:0}
+.stage3d{position:relative;height:var(--ph);aspect-ratio:3/2;perspective:3200px;perspective-origin:50% 50%;touch-action:pan-y;
+  user-select:none;-webkit-user-select:none;cursor:grab}
+.stage3d.drag{cursor:grabbing}
+.rot,.pos,.book{position:absolute;inset:0;transform-style:preserve-3d}
+.rot,.pos{transform-origin:50% 50%;will-change:transform}
+.leaf{position:absolute;left:50%;top:0;width:50%;height:100%;transform-origin:0 50%;transform-style:preserve-3d;will-change:transform}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.face.back{transform:rotateY(180deg)}
+.leaf0 .face,.leaf0 .page{transform-style:preserve-3d}
+.under{position:absolute;top:0;width:50%;height:100%;pointer-events:none;background:var(--blanco);
+  box-shadow:0 calc(var(--ph)*.05) calc(var(--ph)*.1) calc(var(--ph)*-.012) rgba(13,14,18,.36),0 calc(var(--ph)*.012) calc(var(--ph)*.028) rgba(13,14,18,.26)}
+.under.r{left:50%}.under.l{left:0;opacity:0}
+/* Anotaciones técnicas con guía a 45° (motivo del isotipo) */
+.ann{position:absolute;inset:0;pointer-events:none;z-index:5}
+.ann svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.ann .halo{fill:none;stroke:var(--blanco);stroke-width:3.5;opacity:.9;stroke-linejoin:round}
+.ann .lead-l{fill:none;stroke:var(--azul);stroke-width:1.25;stroke-linejoin:round}
+.ann circle{fill:var(--blanco);stroke:var(--azul);stroke-width:1.5}
+.ann-g{position:absolute;inset:0;opacity:0;visibility:hidden}
+.chip{position:absolute;white-space:pre;background:var(--carbon);color:var(--blanco);font:500 12px/16px var(--f-m);letter-spacing:.02em;
+  padding:4px 8px;box-shadow:0 0 0 1px rgba(255,255,255,.3)}
+.chip em{font-style:normal;color:var(--platino);opacity:.78}
+/* Indicador de pliegos */
+.c2-foot{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;column-gap:var(--s5)}
+.steps{position:relative;display:grid;grid-template-columns:repeat(var(--ns,4),minmax(0,1fr))}
+.steps::before,.steps .fill{content:'';position:absolute;left:7px;right:7px;top:11px;height:2px;background:var(--gris-18)}
+.steps .fill{background:var(--azul);transform-origin:left;transform:scaleX(0);z-index:1}
+.step{position:relative;text-align:left;padding:var(--s4) var(--s1) 0 0;color:var(--gris);transition:color .16s var(--ease)}
+.step::before{content:'';position:absolute;left:0;top:4px;width:16px;height:16px;border-radius:50%;background:var(--platino);z-index:2;
+  box-shadow:inset 0 0 0 2px var(--gris-35);transition:background-color .2s var(--ease),box-shadow .2s var(--ease)}
+.step.done::before{background:var(--azul);box-shadow:none}
+.step.on::before{background:var(--azul);box-shadow:0 0 0 5px var(--azul-16)}
+.step span{display:block;font:500 12px/16px var(--f-m);letter-spacing:.02em;white-space:nowrap}
+.step b{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.step b{display:block;font:700 16px/20px var(--f-d)}
+.step.on{color:var(--carbon)}.step.on b{font-weight:900}
+.c2-nav{display:flex;gap:var(--s1);padding-bottom:2px}
+.rules{position:absolute!important;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* =====================================================================
+   CAPÍTULO 3 · CICLO DE OCHO SEMANAS · CIRCUITO DE NODOS
+   ===================================================================== */
+.c3{background:var(--blanco)}
+.c3-pin{position:relative;min-height:100vh;background:var(--blanco)}
+.c3-wrap{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr) auto;row-gap:var(--s2);padding-top:var(--s4);padding-bottom:var(--s3);min-height:100vh}
+.c3-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);align-items:end}
+.c3-head .t{grid-column:1/9}
+.c3-head .l{grid-column:9/13;font:400 18px/26px var(--f-t);color:var(--carbon)}
+.h2{font:900 40px/44px var(--f-d);letter-spacing:-.015em;margin-top:var(--s1)}
+.h2 .ln{display:block}
+.circuit{position:relative;width:100%;aspect-ratio:1152/322;margin-top:var(--s1)}
+.circuit.v{display:none}
+.circuit svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.tr-base,.tr-live{fill:none;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.tr-base{stroke:var(--gris-35)}
+.tr-live{stroke:var(--azul)}
+.tr-pause{stroke-dasharray:2 7;stroke-width:3}
+.tk{stroke:var(--gris-35);stroke-width:1}
+.nd .ring{fill:var(--blanco);stroke:var(--gris);stroke-width:2.5;transition:stroke .2s var(--ease),fill .2s var(--ease)}
+.nd .dot{fill:var(--gris-35);transition:fill .2s var(--ease)}
+.nd.hit .ring{stroke:var(--azul)}
+.nd.hit .dot{fill:var(--azul)}
+.nd.sel .ring{fill:var(--azul);stroke:var(--azul)}
+.nd.sel .dot{fill:var(--blanco)}
+.nd.sel .halo2{opacity:1;transform:scale(1)}
+.nd .halo2{fill:none;stroke:var(--azul-40);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.6);transition:opacity .2s var(--ease),transform .25s var(--ease)}
+.nd.ev .ring{stroke-width:3}
+.scan{stroke:var(--azul);stroke-width:1.5;opacity:0}
+.term{fill:var(--blanco);stroke:var(--gris-35);stroke-width:2.5}
+.gl.vr{transform:translate(0,-50%);text-align:left}
+.gl.vr b,.gl.vr small{display:inline-block;margin-right:var(--s1)}
+.gl.vr small{display:block;margin:0}
+.pband{position:absolute;top:0;height:46px;border-top:2px solid var(--carbon);padding:6px 6px 0 0;font:700 14px/18px var(--f-d);color:var(--gris);transition:color .2s var(--ease);overflow:hidden;white-space:nowrap}
+.pband small{display:block;font:400 12px/16px var(--f-m);letter-spacing:.04em;margin-bottom:0;color:var(--gris)}
+.pband.on{color:var(--carbon)}.pband.on small{color:var(--azul)}
+.wk{position:absolute;transform:translateX(-50%);font:400 12px/16px var(--f-m);color:var(--gris);letter-spacing:.04em;white-space:nowrap}
+.gl{position:absolute;transform:translate(-50%,0);text-align:center;white-space:nowrap;pointer-events:none;transition:color .2s var(--ease)}
+.gl b{display:block;font:900 18px/20px var(--f-d);letter-spacing:-.015em;color:var(--gris);transition:color .2s var(--ease)}
+.gl small{display:block;font:400 12px/16px var(--f-m);color:var(--gris);letter-spacing:.02em}
+.gl.hit b,.gl.sel b{color:var(--carbon)}
+.gl.sel b{color:var(--azul)}
+.gl.up{transform:translate(-50%,-100%)}
+.nb{position:absolute;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;z-index:3}
+.nb:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+.pause-l{position:absolute;transform:translateX(-50%);text-align:center;font:400 12px/16px var(--f-m);color:var(--gris);white-space:nowrap}
+.c3-low{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);align-items:start;min-height:0}
+.gate{grid-column:1/7;border-top:2px solid var(--carbon);padding-top:var(--s2);display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:var(--s3);row-gap:var(--s1);align-content:start}
+.gate .gp-k{grid-column:1/-1}
+.gp-code{font:900 88px/80px var(--f-d);letter-spacing:-.015em;color:var(--azul);font-variant-numeric:tabular-nums}
+.gp-meta{align-self:end;display:grid;gap:4px;padding-bottom:6px}
+.gp-meta .w{font:500 14px/20px var(--f-m);color:var(--carbon)}
+.gp-meta .r{font:500 14px/20px var(--f-m);color:var(--gris)}
+.gp-crit{grid-column:1/-1;font:400 22px/32px var(--f-t);color:var(--carbon);margin-top:var(--s1);text-wrap:pretty}
+.phases{grid-column:7/13;border-top:2px solid var(--carbon);padding-top:var(--s2)}
+.phases .kicker{margin-bottom:var(--s1)}
+.phases li{padding:5px 0;font:400 16px/22px var(--f-t);color:var(--gris);border-bottom:1px solid var(--tinta-08);transition:color .2s var(--ease)}
+.phases li b{font:700 16px/22px var(--f-d);color:var(--gris);transition:color .2s var(--ease)}
+.phases li.on,.phases li.on b{color:var(--carbon)}
+.phases li.on b{color:var(--azul)}
+/* Flujo inferior: secuencia de S7 y S8, fechas de la Edición 01, glosario */
+.c3-flow{background:var(--platino);padding:var(--s7) 0 var(--s6)}
+.c3-flow .wrap{display:grid;row-gap:var(--s6)}
+.wk-blk{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);row-gap:var(--s3)}
+.wk-blk .hd{grid-column:1/4;border-top:2px solid var(--carbon);padding-top:var(--s2)}
+.wk-blk .hd .h3{font:900 28px/32px var(--f-d);letter-spacing:-.015em;margin-top:var(--s1);text-wrap:balance}
+.wk-blk .strip{grid-column:4/13;position:relative}
+.days{position:relative;display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));column-gap:var(--s2)}
+.days::before,.days .live{content:'';position:absolute;left:11px;right:calc(100%/var(--n) - 11px);top:11px;height:3px;background:var(--gris-35);border-radius:2px}
+.days .live{background:var(--azul);transform-origin:left;transform:scaleX(0);z-index:1}
+.days li{position:relative;padding-top:var(--s5);font:400 16px/22px var(--f-t);color:var(--carbon)}
+.days li::before{content:'';position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--platino);z-index:2;box-shadow:inset 0 0 0 3px var(--gris);transition:box-shadow .2s var(--ease),background-color .2s var(--ease)}
+.days li.hit::before{box-shadow:inset 0 0 0 3px var(--azul);background:var(--azul-16)}
+.days li b{display:block;font:800 16px/22px var(--f-d)}
+.days li .sep{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.days li.zero::before{width:40px;height:40px;left:-8px;top:-8px;background:var(--azul);box-shadow:0 0 0 6px var(--azul-16)}
+.days li.zero{padding-top:calc(var(--s5) + var(--s1))}
+.days li.zero.pulse::before{animation:zero .9s var(--ease) 1}
+@keyframes zero{0%{box-shadow:0 0 0 6px var(--azul-16),0 0 0 0 var(--azul-40)}100%{box-shadow:0 0 0 6px var(--azul-16),0 0 0 28px rgba(0,87,166,0)}}
+.days li.zero .hz{display:block;font:900 56px/56px var(--f-d);letter-spacing:-.015em;color:var(--azul);margin-bottom:var(--s1)}
+.dates{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));column-gap:var(--g);row-gap:var(--s3)}
+.dates li{border-top:2px solid var(--carbon);padding-top:var(--s1)}
+.dates .k{display:block;font:400 12px/16px var(--f-m);color:var(--gris);letter-spacing:.04em}
+.dates .v{display:block;font:800 18px/24px var(--f-d);margin-top:4px}
+.glos{font:400 12px/20px var(--f-m);color:var(--gris);display:flex;flex-wrap:wrap;gap:0 var(--s2)}
+.glos span b{font-weight:500;color:var(--carbon)}
+.foot{margin-left:var(--rail);background:var(--carbon);color:var(--blanco);padding:var(--s4) var(--m);display:flex;gap:var(--s3);align-items:center;justify-content:space-between;flex-wrap:wrap}
+.foot .iso{height:32px;width:auto;color:var(--blanco);fill:currentColor}
+.foot p{font:400 16px/24px var(--f-d);color:var(--platino)}
+.foot a{font:500 16px/24px var(--f-d);color:var(--blanco);text-underline-offset:4px}
+
+/* ---------- Captura (?captura=1&pantalla=N): solo el capítulo pedido, sin desplazamiento ---------- */
+html[data-only] .foot{display:none}
+html[data-only]:not([data-only="1"]) #c1{display:none}html[data-only]:not([data-only="2"]) #c2{display:none}html[data-only]:not([data-only="3"]) #c3{display:none}html[data-only]:not([data-only="4"]) #c4{display:none}html[data-only]:not([data-only="5"]) #c5{display:none}html[data-only]:not([data-only="6"]) #c6{display:none}html[data-only]:not([data-only="7"]) #c7{display:none}html[data-only]:not([data-only="8"]) #c8{display:none}html[data-only]:not([data-only="9"]) #c9{display:none}html[data-only]:not([data-only="10"]) #c10{display:none}html[data-only]:not([data-only="11"]) #c11{display:none}
+
+/* ---------- Hover solo con puntero fino (en táctil quedaría pegado tras el toque) y respuesta inmediata al pulsar ---------- */
+@media (hover:hover) and (pointer:fine){
+  .btn:hover{background:var(--noche)}
+  .btn-line:hover{background:var(--carbon);color:var(--blanco)}
+  .rail-list a:hover{color:var(--carbon)}
+  .step:hover{color:var(--carbon)}
+  .nb:hover{background:var(--azul-16)}
+  .foot a:hover{text-decoration-thickness:2px}
+}
+.step:active{transform:scale(.98)}
+.nb:active{transform:scale(.9)}
+.step,.nb{transition:color .16s var(--ease),transform .12s var(--ease),background-color .16s var(--ease)}
+
+/* =====================================================================
+   CAPÍTULOS 3 A 11 · mismo sistema de la dirección C (retícula, filetes de 2 px, rótulos en monoespaciada)
+   ===================================================================== */
+.sec{padding:var(--s7) 0 var(--s7)}
+.sec.alt{background:var(--platino)}
+.sec .l{font:400 20px/30px var(--f-t);color:var(--carbon);max-width:40em;text-wrap:pretty}
+.sec .h3{font:900 28px/32px var(--f-d);letter-spacing:-.015em;margin-top:var(--s1);text-wrap:balance}
+.sec-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);row-gap:var(--s2);margin-bottom:var(--s5)}
+.sec-head .kicker{grid-column:1/-1}
+.sec-head .h2{grid-column:1/10;font-size:clamp(34px,3.4vw,52px);line-height:1.05;text-wrap:balance}
+.sec-head .l{grid-column:1/9}
+.bloque-c{margin-top:var(--s6)}
+.bloque-c>.kicker{margin-bottom:var(--s2)}
+i{font-style:italic}
+/* 03 · ficha del producto, ejes, perfiles, pilares */
+.fp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--g);row-gap:var(--s3);margin:0}
+.fp>div{border-top:2px solid var(--carbon);padding-top:var(--s2)}
+.fp dd{margin:var(--s1) 0 0;font:400 18px/26px var(--f-t)}
+.ejes,.pilares,.reglas,.metas,.eds,.kpi,.roles,.pasos,.perfiles,.ev-rel,.agenda,.posic,.paq{list-style:none;margin:0;padding:0}
+.ejes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));column-gap:var(--g)}
+.ejes li{border-top:2px solid var(--carbon);padding-top:var(--s2);display:flex;flex-direction:column;gap:var(--s1)}
+.ejes .n,.pilares .n,.eds .n{font:500 12px/16px var(--f-m);color:var(--gris);letter-spacing:.04em}
+.ejes b{font:800 18px/22px var(--f-d)}
+.ejes span:last-child{font:400 16px/23px var(--f-t);color:var(--gris)}
+.aud{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g)}
+.aud-h{grid-column:1/5}
+.perfiles{grid-column:5/13;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--g)}
+.perfiles li{border-top:2px solid var(--carbon);padding-top:var(--s2);display:flex;flex-direction:column;gap:var(--s1)}
+.perfiles .edad{font:500 12px/16px var(--f-m);color:var(--azul);letter-spacing:.04em}
+.perfiles b{font:800 20px/24px var(--f-d)}
+.perfiles p:not(.edad):not(.tag){font:400 16px/24px var(--f-t)}
+.pilares{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--g)}
+.pilares li{border-top:2px solid var(--carbon);padding-top:var(--s2);display:flex;gap:var(--s2);align-items:baseline}
+.pilares .n{font:900 32px/1 var(--f-d);color:var(--azul);letter-spacing:-.015em}
+.pilares b{font:700 17px/22px var(--f-d)}
+/* 04 · mapa y reglas */
+.reglas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--g);margin-top:var(--s5)}
+.reglas li{border-top:2px solid var(--carbon);padding-top:var(--s2);display:flex;flex-direction:column;gap:var(--s1)}
+.reglas b{font:800 18px/22px var(--f-d)}
+.reglas span{font:400 16px/23px var(--f-t);color:var(--gris)}
+.sec .dg,.sec .gr{--g-acento:var(--azul);--g-txt:var(--carbon);--g-txt2:var(--gris)}
+.sec.alt .dg .mp-p.edit{background:var(--blanco)}
+/* 05 · phygital */
+.phy{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--g)}
+.phy-c{border-top:2px solid var(--carbon);padding-top:var(--s2);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);column-gap:var(--s4);row-gap:var(--s2);align-items:start}
+.phy-c .kicker,.phy-c .h3{grid-column:1/-1}
+.phy-vis{display:flex;flex-direction:column;gap:var(--s1)}
+.phy-qr{width:100%;max-width:220px;aspect-ratio:1;background:var(--blanco);box-shadow:inset 0 0 0 1px var(--tinta-14)}
+.phy-qr svg{width:100%;height:100%}
+.phy-nfc{position:relative;width:100%;max-width:220px;aspect-ratio:1;background:var(--platino);box-shadow:inset 0 0 0 1px var(--tinta-14)}
+.phy-nfc .g{position:absolute;inset:14%;border-radius:50%;border:2px solid var(--azul)}
+.phy-nfc .e{position:absolute;inset:22%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0,#F4F5F7 60%,#E3E6EB 100%);box-shadow:0 2px 6px rgba(13,14,18,.16)}
+.phy-nfc .o{position:absolute;inset:22%;border-radius:50%;border:2px solid var(--azul);opacity:0}
+.phy-dl{margin:0;display:grid;gap:var(--s2)}
+.phy-dl dt{font:500 12px/16px var(--f-m);color:var(--gris);letter-spacing:.04em;text-transform:uppercase}
+.phy-dl dd{margin:4px 0 0;font:400 16px/24px var(--f-t)}
+.phy-dl dd.mono{font:400 13px/20px var(--f-m);overflow-wrap:anywhere}
+.metas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--g);margin-top:var(--s6)}
+.metas li{border-top:2px solid var(--carbon);padding-top:var(--s1)}
+/* 07 · hora cero (azul noche) */
+.sec.noche{background:var(--noche);color:var(--blanco)}
+.noche .kicker,.noche .tag{color:#A9B3C1}
+.noche .l{color:#E3E8F0}
+.noche .grid-guide i{border-color:rgba(244,245,247,.05)}
+.noche .h2,.noche .h3{color:var(--blanco)}
+.hz-sim{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);align-items:center}
+.hz-reloj{grid-column:1/8;display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2)}
+.hz-hora{font:900 clamp(72px,9vw,136px)/1 var(--f-d);letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--blanco)}
+.hz-hora.cero{color:#8FB8F0}
+.hz-fase{font:500 14px/20px var(--f-m);color:#C9D2DE;min-height:20px}
+.hz-chips{list-style:none;margin:var(--s2) 0 0;padding:0;display:flex;flex-wrap:wrap;gap:var(--s1)}
+.hz-chips li{font:500 13px/18px var(--f-m);color:var(--blanco);border:1px solid rgba(244,245,247,.35);padding:6px 10px;opacity:.28}   /* sin transición CSS: GSAP anima opacidad y fondo, y una transición encima retrasa cada fotograma */
+.hz-chips li.on{opacity:1;background:rgba(27,107,214,.35);border-color:#1B6BD6}
+.hz-portada{grid-column:8/13;margin:0;display:flex;flex-direction:column;gap:var(--s1);align-items:center}
+.hz-marco{position:relative;width:min(100%,340px);aspect-ratio:3/4;overflow:hidden;background:#0B1F3A;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.hz-marco img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.hz-velo{position:absolute;inset:0;background:#0B1F3A;display:grid;place-items:center;transform-origin:50% 0}
+.hz-velo span{font:500 13px/18px var(--f-m);letter-spacing:.08em;text-transform:uppercase;color:#A9B3C1;border:1px solid rgba(244,245,247,.3);padding:8px 12px}
+.noche .dg,.noche .gr{--g-acento:#1B6BD6;--g-neutro:#7E8796;--g-pista:#16233A;--g-rej:#24324A;--g-txt:#F4F5F7;--g-txt2:#A9B3C1;--g-sup:#001433;--g-banda:#0A1D3B;--g-carbon:#16233A}
+.ev{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);row-gap:var(--s5)}
+.ev-h{grid-column:1/6}
+.agenda{grid-column:7/13;display:grid;gap:0}
+.agenda li{display:grid;grid-template-columns:72px 1fr;gap:var(--s2);padding:10px 0;border-top:1px solid rgba(244,245,247,.18);font:400 16px/22px var(--f-t);color:#E3E8F0}
+.agenda li b{font:700 15px/22px var(--f-m);color:var(--blanco);font-variant-numeric:tabular-nums}
+.agenda li.on{color:var(--blanco)}.agenda li.on b{color:#8FB8F0}
+.ev-g{grid-column:1/7}
+.ev-rel{grid-column:7/13;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3) var(--g);align-content:start}
+.ev-rel li{border-top:2px solid rgba(244,245,247,.6);padding-top:var(--s1);display:flex;flex-direction:column;gap:4px}
+.ev-rel b{font:900 36px/1 var(--f-d);letter-spacing:-.015em;color:var(--blanco)}
+.ev-rel span{font:400 15px/22px var(--f-t);color:#C9D2DE}
+/* 08 · año y distribución */
+.eds{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:var(--g);margin-top:var(--s5)}
+.eds li{border-top:2px solid var(--carbon);padding-top:var(--s1);display:flex;flex-direction:column;gap:4px}
+.eds b{font:800 16px/20px var(--f-d)}
+.eds span:last-child{font:400 15px/21px var(--f-t);color:var(--gris)}
+.dist{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g)}
+.dist-h{grid-column:1/6}
+.dist>div:last-child{grid-column:7/13}
+/* 09 · economía */
+.eco-pos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--g)}
+.eco-pos>div{border-top:2px solid var(--carbon);padding-top:var(--s2)}
+.posic{display:grid;gap:var(--s1);margin-top:var(--s2)}
+.posic li{display:grid;grid-template-columns:72px 1fr;gap:var(--s2);font:400 16px/23px var(--f-t)}
+.posic b{font:700 15px/23px var(--f-m);color:var(--azul)}
+.paq{display:grid;gap:var(--s2);margin:var(--s2) 0 var(--s2)}
+.paq li{display:grid;grid-template-columns:110px 1fr 56px;grid-template-rows:auto auto;column-gap:var(--s2);align-items:center}
+.paq b{font:800 16px/20px var(--f-d)}
+.paq .bar{display:block;height:20px;width:calc(var(--v) * 100%);background:var(--azul);border-radius:0 4px 4px 0;transform-origin:left center}
+.paq .v{font:600 15px/20px var(--f-m);text-align:right;font-variant-numeric:tabular-nums}
+.paq small{grid-column:2/4;font:400 14px/20px var(--f-t);color:var(--gris);margin-top:4px}
+.eco-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s5);margin-top:var(--s6)}
+.eco-g>div,.eco-t>div:first-child{border-top:2px solid var(--carbon);padding-top:var(--s2)}
+.eco-t{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g)}
+.eco-t>div:first-child{grid-column:1/9}
+.eco-n{grid-column:9/13;border-top:2px solid var(--azul);padding-top:var(--s2);display:flex;flex-direction:column;gap:var(--s1)}
+.eco-n .fig-n{color:var(--azul);font-size:56px}
+/* 10 · control */
+.kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4) var(--g)}
+.kpi li{border-top:2px solid var(--carbon);padding-top:var(--s2);display:flex;flex-direction:column;gap:var(--s1);font:400 16px/23px var(--f-t);color:var(--gris)}
+.kpi .kpi-n{font:900 48px/1 var(--f-d);letter-spacing:-.015em;color:var(--carbon);white-space:nowrap}
+.gob{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g)}
+.gob-h{grid-column:1/6}
+.roles{grid-column:7/13;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s2) var(--g);align-content:start}
+.roles li{border-top:2px solid var(--carbon);padding-top:var(--s1);font:400 15px/21px var(--f-t);display:flex;flex-direction:column;gap:4px}
+.roles b{font:900 24px/1 var(--f-d);color:var(--azul)}
+.docs-h{margin-bottom:var(--s3)}
+.bloques{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));column-gap:var(--g)}
+.bloques>div{border-top:2px solid var(--carbon);padding-top:var(--s2)}
+.bloques .bq{font:500 12px/16px var(--f-m);letter-spacing:.04em;text-transform:uppercase;color:var(--azul);margin-bottom:var(--s1)}
+.bloques ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font:400 15px/21px var(--f-t)}
+/* 11 · cierre */
+.pasos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:var(--g);position:relative}
+.pasos li{position:relative;padding-top:var(--s5);display:flex;flex-direction:column;gap:6px}
+.pasos li::before{content:'';position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--blanco);box-shadow:inset 0 0 0 3px var(--carbon)}
+.pasos li::after{content:'';position:absolute;left:24px;right:calc(-1*var(--g) + 4px);top:9px;height:2px;background:var(--carbon)}
+.pasos li:last-child::after{display:none}
+.pasos li.on::before{background:var(--azul);box-shadow:0 0 0 6px var(--azul-16)}
+.pasos .k{font:500 12px/16px var(--f-m);color:var(--gris);letter-spacing:.04em}
+.pasos li.on .k{color:var(--azul)}
+.pasos b{font:800 17px/22px var(--f-d)}
+.pasos span:last-child{font:400 15px/21px var(--f-t);color:var(--gris)}
+.firma-f{margin-top:var(--s7);border-top:2px solid var(--carbon);padding-top:var(--s4);display:grid;gap:var(--s2);justify-items:start}
+.firma-f .logo{width:240px;height:auto;color:var(--azul)}
+.c1 .para{font:500 13px/18px var(--f-m);letter-spacing:.06em;text-transform:uppercase;color:var(--azul)}
+/* pantallas estrechas */
+@media (max-width:1099px){
+  .ejes{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:var(--s3)}
+  .aud-h,.perfiles{grid-column:1/-1}.perfiles{margin-top:var(--s3)}
+  .reglas,.metas{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:var(--s3)}
+  .phy{grid-template-columns:1fr;row-gap:var(--s5)}
+  .eds{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:var(--s3)}
+  .ev-h,.agenda,.ev-g,.ev-rel,.dist-h,.dist>div:last-child,.gob-h,.roles{grid-column:1/-1}
+  .dist>div:last-child,.roles{margin-top:var(--s3)}
+  .eco-pos,.eco-g{grid-template-columns:1fr;row-gap:var(--s5)}
+  .eco-t>div:first-child,.eco-n{grid-column:1/-1}.eco-n{margin-top:var(--s4)}
+  .kpi{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bloques{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:var(--s3)}
+  .pasos{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:var(--s4)}
+  .pasos li:nth-child(3n)::after{display:none}
+  .hz-reloj,.hz-portada{grid-column:1/-1}.hz-portada{margin-top:var(--s5)}
+}
+@media (max-width:899px){
+  .sec{padding:var(--s6) 0}
+  .sec-head .h2,.sec-head .l{grid-column:1/-1}
+  .sec .l{font-size:18px;line-height:27px}
+  .fp{grid-template-columns:1fr}
+  .ejes,.perfiles,.pilares,.reglas,.metas,.eds,.kpi,.bloques,.pasos,.ev-rel{grid-template-columns:1fr}
+  .pasos li::after{display:none}
+  .phy-c{grid-template-columns:1fr}
+  .roles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .paq li{grid-template-columns:90px 1fr 48px}
+  .agenda li{grid-template-columns:60px 1fr}
+}
+
+/*CSS_COMPONENTES*/
+
+/* ---------- Estados de entrada: solo si hay movimiento ---------- */
+html.js-anim .rv{opacity:0;transform:translateY(12px)}
+html.js-anim .display{visibility:hidden}
+
+/* =====================================================================
+   TELÉFONO Y PANTALLAS ESTRECHAS
+   ===================================================================== */
+@media (max-width:1099px){
+  .circuit.h{display:none}
+  .circuit.v{display:block;aspect-ratio:358/940;height:auto;max-width:358px;margin-top:var(--s3)}
+  .c3-pin{min-height:0}.c3-wrap{min-height:0;grid-template-rows:none;row-gap:var(--s3)}
+  .c3-head .t,.c3-head .l{grid-column:1/-1}.c3-head .l{margin-top:var(--s2)}
+  .gate{grid-column:1/-1}.phases{grid-column:1/-1;margin-top:var(--s3)}
+}
+@media (max-height:820px) and (min-width:900px){.rail-foot .tag{display:none}.rail-list a{padding:5px 0}.rail-list li::before{top:10px}}
+@media (max-width:899px){
+  :root{--rail:0px;--m:16px;--g:8px}
+  body{font-size:17px}
+  .rail{display:none}
+  html{scroll-padding-top:calc(var(--bar) + env(safe-area-inset-top) + 16px)}
+  .ch{scroll-margin-top:var(--bar)}
+  .shell{padding:calc(var(--bar) + env(safe-area-inset-top)) env(safe-area-inset-right) 0 env(safe-area-inset-left)}
+  header.bar{display:flex;position:fixed;top:0;left:0;right:0;height:calc(var(--bar) + env(safe-area-inset-top));z-index:60;align-items:center;justify-content:space-between;
+    padding:env(safe-area-inset-top) max(var(--m),env(safe-area-inset-right)) 0 max(var(--m),env(safe-area-inset-left));background:rgba(255,255,255,.96);border-bottom:1px solid var(--tinta-14)}
+  @supports (backdrop-filter:blur(1px)){header.bar{background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%)}}
+  @media (prefers-reduced-transparency:reduce){header.bar{background:var(--blanco)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}}
+  .bar .logo{width:128px;height:auto;color:var(--azul)}
+  .bar-nav{display:flex;gap:4px;align-items:center;overflow-x:auto;scrollbar-width:none;max-width:calc(100vw - 160px);scroll-snap-type:x proximity}
+  .bar-nav::-webkit-scrollbar{display:none}
+  .bar-nav a{flex:none;scroll-snap-align:center}
+  .bar-nav a{display:flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 10px;font:500 12px/16px var(--f-m);
+    color:var(--gris);text-decoration:none}
+  .bar-nav a.on{color:var(--carbon);background:var(--platino)}
+  .bar-nav a .tt{display:none;margin-left:8px;font:700 13px/16px var(--f-d)}
+  .bar-nav a.on .tt{display:inline}
+  .bar-prog{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--azul);transform-origin:left;transform:scaleX(0)}
+  .display{font-size:52px}
+  .lead{font:400 18px/27px var(--f-t)}
+  .promise{font-size:24px;line-height:28px}
+  .c1{min-height:0}
+  .c1-top{padding-top:var(--s4);row-gap:var(--s4)}
+  .c1-text{grid-column:1/-1}
+  .c1-aside{grid-column:1/-1;justify-self:center;width:min(100%,300px)}
+  .c1-band{margin-top:var(--s5)}
+  .figs{row-gap:var(--s3)}
+  .fig,.fig:nth-child(n+4){grid-column:span 6}
+  .fig:last-child{grid-column:1/-1}
+  .fig-n{font-size:36px}
+  /* Capítulo 2 */
+  .c2-pin{--ph:calc((100vw - 32px)/1.5);height:100vh;min-height:620px}
+  .c2-wrap{grid-template-rows:auto minmax(0,1fr) auto auto;row-gap:var(--s1);padding-top:calc(var(--bar) + env(safe-area-inset-top) + var(--s2));padding-bottom:var(--s2)}
+  .c2-head{flex-direction:column;align-items:flex-start;gap:var(--s1)}
+  .c2-head .ind{font-size:24px;line-height:28px;min-height:28px}
+  .c2-spec{display:none}
+  .c2-tools{justify-content:flex-start}
+  .ann{display:none}
+  .rules{position:static!important;width:auto;height:auto;margin:0;overflow:visible;clip:auto;white-space:normal;display:grid;gap:4px;
+    font:400 12px/16px var(--f-m);color:var(--carbon);min-height:92px}
+  .rules li{padding:2px 0 2px 12px;position:relative}
+  .rules li::before{content:'';position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--azul)}
+  .c2-foot{grid-template-columns:1fr;row-gap:var(--s2)}
+  .step{padding-right:4px}.step b{font-size:12px;line-height:16px}.step span{display:none}
+  .c2-nav{justify-content:space-between}
+  .c2-nav .btn{flex:1;justify-content:center}
+  /* Capítulo 3 */
+  .h2{font-size:30px;line-height:34px}
+  .gp-code{font-size:64px;line-height:60px}
+  .gp-crit{font-size:19px;line-height:28px}
+  .wk-blk .hd,.wk-blk .strip{grid-column:1/-1}
+  .days{grid-template-columns:1fr;row-gap:var(--s3);column-gap:0}
+  .days::before,.days .live{left:11px;right:auto;top:11px;bottom:auto;width:3px;height:calc(100% - 24px)}
+  .days .live{transform-origin:top;transform:scaleY(0)}
+  .days li{padding:0 0 0 var(--s5)}
+  .days li.zero{padding:0 0 0 var(--s5)}
+  .days li.zero .hz{font-size:44px;line-height:44px}
+  .dates{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .c3-flow{padding:var(--s6) 0 var(--s5)}
+  .foot{padding:var(--s3) var(--m)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}
+}
+html.is-static .rv{opacity:1!important;transform:none!important}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Ir al contenido</a>
+
+<!-- Logotipo real de assets/logos/ (mismos trazados que lockup, isotipo y logotipo; cada uso recorta con su viewBox) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><g id="st-paths"><path d="M43,21.4a5.14,5.14,0,0,0,.34-1.93,4.16,4.16,0,0,0-1.1-2.66h0A14.28,14.28,0,0,0,38.47,14h0C36.56,13,36,12.61,35.86,12.5h0a3.77,3.77,0,0,1-.9-.91,1.47,1.47,0,0,1-.21-.75,1.23,1.23,0,0,1,.59-1,2.9,2.9,0,0,1,1.77-.49,3.8,3.8,0,0,1,1.59.33,7,7,0,0,1,1.85,1.45l.25.26L43.32,9.9l-.42-.43a9.17,9.17,0,0,0-2.84-2.13,7.21,7.21,0,0,0-2.91-.59,7.12,7.12,0,0,0-2.72.52,4.83,4.83,0,0,0-2,1.48,3.47,3.47,0,0,0-.74,2.16,3.83,3.83,0,0,0,1.22,2.72,17.6,17.6,0,0,0,3.32,2.23,20.81,20.81,0,0,1,3.05,2.07l.13.1.08.06c.59.47,1,.8.93,1.4-.06,1.32-1.21,2.21-2.87,2.21a4.77,4.77,0,0,1-3.89-2.39L33.42,19l-2.62,1.2.34.47a14.5,14.5,0,0,0,1.33,1.63A6.05,6.05,0,0,0,34,23.44a8.07,8.07,0,0,0,3.58,1,7.25,7.25,0,0,0,2.26-.33,7,7,0,0,0,1.87-1A3.88,3.88,0,0,0,43,21.4Z"></path><polygon points="80.62 6.83 76.17 13.01 76.11 12.94 71.49 6.83 67.69 6.87 74.47 15.81 74.47 24.42 77.73 24.42 77.73 15.8 84.34 6.87 80.62 6.83"></polygon><polygon points="88.63 9.87 92.96 9.87 92.96 24.49 96.44 24.49 96.44 9.87 100.76 9.87 100.76 6.75 88.63 6.75 88.63 9.87"></polygon><polygon points="109.59 17.21 115.44 17.21 115.44 14.01 109.59 14.01 109.59 9.92 117.11 9.92 117.11 6.75 106.49 6.75 106.49 24.49 117.42 24.49 117.42 21.11 109.59 21.11 109.59 17.21"></polygon><polygon points="172.76 18.59 164.75 6.68 161.45 6.68 161.45 24.49 164.86 24.49 164.86 12.56 172.86 24.49 176.16 24.49 176.16 6.68 172.76 6.68 172.76 18.59"></polygon><polygon points="151.83 13.74 145.24 13.74 145.24 6.75 141.7 6.75 141.7 24.49 145.24 24.49 145.24 17.2 151.83 17.2 151.83 24.49 155.31 24.49 155.31 6.75 151.83 6.75 151.83 13.74"></polygon><path d="M134.27,20a5.67,5.67,0,1,1-3.6-10,5.63,5.63,0,0,1,3.53,1.24l.38.31,2.19-2.34-.43-.36a8.87,8.87,0,1,0,0,13.59l.42-.36-2.15-2.37Z"></path><path d="M189.6,6.74a8.87,8.87,0,1,0,8.87,8.86A8.87,8.87,0,0,0,189.6,6.74Zm5.73,8.88a5.72,5.72,0,1,1-5.72-5.72A5.73,5.73,0,0,1,195.33,15.62Z"></path><path d="M56.64,6.74a8.87,8.87,0,1,0,8.87,8.86A8.87,8.87,0,0,0,56.64,6.74Zm5.72,8.88A5.72,5.72,0,1,1,56.65,9.9,5.72,5.72,0,0,1,62.36,15.62Z"></path><path d="M23.88,24.35V14.83l-2.54-2.54L22.68,11a1.5,1.5,0,0,0,.73.2,1.6,1.6,0,1,0-1.6-1.6,1.7,1.7,0,0,0,.2.74l-1.32,1.32-2-2,4-4a1.58,1.58,0,1,0-.88-1.41,1.59,1.59,0,0,0,.21.75l-4,4-4-4a1.59,1.59,0,1,0-1.4.85,1.61,1.61,0,0,0,.73-.19L23,15.22v9.13A1.59,1.59,0,1,0,25,25.86,1.58,1.58,0,0,0,23.88,24.35Z"></path><path d="M20.27,22.43V16.61L8.53,4.88a1.57,1.57,0,0,0,.2-.74,1.6,1.6,0,1,0-1.6,1.6,1.57,1.57,0,0,0,.74-.2l6.74,6.75-2.95,3L8.53,12.12a1.57,1.57,0,0,0,.2-.74A1.6,1.6,0,1,0,7.13,13a1.57,1.57,0,0,0,.74-.2L11,15.9,7.87,19a1.57,1.57,0,0,0-.74-.2,1.6,1.6,0,1,0,1.6,1.6,1.57,1.57,0,0,0-.2-.74L15.27,13,17.33,15l-7,7v2.31a1.6,1.6,0,1,0,.94,0V22.43L18,15.66,19.33,17v5l-2.42,2.42a1.5,1.5,0,0,0-.73-.2,1.6,1.6,0,1,0,1.6,1.6,1.66,1.66,0,0,0-.2-.74Z"></path></g></defs></svg>
+
+<!-- Riel de capítulos (escritorio) -->
+<nav class="rail" aria-label="Capítulos">
+  <a href="#c1" aria-label="SoyTechno · inicio"><svg class="logo" viewBox="0 0 204 30" aria-hidden="true" focusable="false" fill="currentColor"><use href="#st-paths"/></svg></a>
+  <div class="rail-nav">
+    <p class="kicker">Capítulos</p>
+    <div style="position:relative">
+      <i class="rail-fill" id="railFill" aria-hidden="true"></i>
+      <ol class="rail-list" id="railList">
+        <li data-ch="1" class="on"><a href="#c1" aria-current="true"><span class="n">01</span><span class="t">Apertura</span></a></li>
+        <li data-ch="2"><a href="#c2"><span class="n">02</span><span class="t">La revista</span></a></li>
+        <li data-ch="3"><a href="#c3"><span class="n">03</span><span class="t">El proyecto</span></a></li>
+        <li data-ch="4"><a href="#c4"><span class="n">04</span><span class="t">Arquitectura</span></a></li>
+        <li data-ch="5"><a href="#c5"><span class="n">05</span><span class="t">Del papel al teléfono</span></a></li>
+        <li data-ch="6"><a href="#c6"><span class="n">06</span><span class="t">Ciclo de ocho semanas</span></a></li>
+        <li data-ch="7"><a href="#c7"><span class="n">07</span><span class="t">Hora cero y evento</span></a></li>
+        <li data-ch="8"><a href="#c8"><span class="n">08</span><span class="t">Año editorial</span></a></li>
+        <li data-ch="9"><a href="#c9"><span class="n">09</span><span class="t">Economía</span></a></li>
+        <li data-ch="10"><a href="#c10"><span class="n">10</span><span class="t">Control</span></a></li>
+        <li data-ch="11"><a href="#c11"><span class="n">11</span><span class="t">Próximos pasos</span></a></li>
+      </ol>
+    </div>
+  </div>
+  <div class="rail-foot">
+    <p class="tag"><b>Retícula</b> · 12&nbsp;col<br>Medianil · 24&nbsp;px</p>
+    <p class="tag"><b>Escala</b> · px<br>8 16 24 32 48 64 96</p>
+    <button class="btn btn-line" id="gridbtn" type="button" aria-pressed="false">Ver retícula</button>
+  </div>
+</nav>
+
+<!-- Barra superior (teléfono) -->
+<header class="bar">
+  <a href="#c1" aria-label="SoyTechno · inicio"><svg class="logo" viewBox="0 0 204 30" aria-hidden="true" focusable="false" fill="currentColor"><use href="#st-paths"/></svg></a>
+  <nav class="bar-nav" id="barNav" aria-label="Capítulos">
+    <a href="#c1" data-ch="1" class="on" aria-current="true">01<span class="tt">Apertura</span></a>
+    <a href="#c2" data-ch="2">02<span class="tt">Revista</span></a>
+    <a href="#c3" data-ch="3">03<span class="tt">Proyecto</span></a>
+    <a href="#c4" data-ch="4">04<span class="tt">52 páginas</span></a>
+    <a href="#c5" data-ch="5">05<span class="tt">QR y NFC</span></a>
+    <a href="#c6" data-ch="6">06<span class="tt">Ciclo</span></a>
+    <a href="#c7" data-ch="7">07<span class="tt">Hora cero</span></a>
+    <a href="#c8" data-ch="8">08<span class="tt">2027</span></a>
+    <a href="#c9" data-ch="9">09<span class="tt">Economía</span></a>
+    <a href="#c10" data-ch="10">10<span class="tt">Control</span></a>
+    <a href="#c11" data-ch="11">11<span class="tt">Pasos</span></a>
+  </nav>
+  <i class="bar-prog" id="barProg" aria-hidden="true"></i>
+</header>
+
+<main class="shell" id="main">
+
+<!-- =============== CAPÍTULO 1 · APERTURA =============== -->
+<section id="c1" class="ch c1" data-ch="1" aria-labelledby="t1">
+  <div class="grid-guide" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="c1-top">
+      <div class="c1-text">
+        <p class="para rv">Preparado para Carelys Eljuri</p>
+        <p class="eyebrow rv">Proyecto editorial · Propuesta para evaluación</p>
+        <h1 class="display" id="t1" translate="no">SoyTechno, la revista</h1>
+        <p class="tag rv" id="spec1">Titular · Archivo Black · 96/92 px · tracking −15</p>
+        <p class="lead rv">Medio propio de SoyTechno, gratuito y bimestral: la exhibición de productos convertida en contenido informativo, estilístico y aspiracional, con acceso a la compra mediante QR y NFC.</p>
+        <p class="promise rv">Tecnología explicada, probada y accesible.</p>
+        <a class="btn rv" href="#c2" id="openBtn">Abrir la revista <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h12M10.5 4.5 16 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></a>
+      </div>
+      <div class="c1-aside rv">
+        <div class="c1-cover" id="cover1" aria-hidden="true"><div class="tilt" id="tilt1"></div></div>
+        <p class="tag"><span>C1 · Portada</span><span>210 × 280 mm · 3:4</span></p>
+      </div>
+    </div>
+    <div class="c1-band">
+      <ul class="figs" aria-label="Cifras clave">
+        <li class="fig rv"><p class="fig-n">6</p><p class="fig-l">ediciones al año</p></li>
+        <li class="fig rv"><p class="fig-n">52</p><p class="fig-l">páginas por edición</p></li>
+        <li class="fig rv"><p class="fig-n">5.000</p><p class="fig-l">ejemplares en la Edición 01</p></li>
+        <li class="fig rv"><p class="fig-n">QR + NFC</p><p class="fig-l">un código por pieza, una etiqueta por ejemplar</p></li>
+        <li class="fig rv"><p class="fig-n">19:30</p><p class="fig-l">hora cero de la revelación, <span class="nw">21-ene-2027</span></p></li>
+      </ul>
+      <p class="tag rv"><span class="backup">Documento Rector, Índice Maestro y 18 documentos de aplicación, vigentes desde el 18-oct-2026</span><span>Cifras · Archivo Black · 48 px · tabulares</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== CAPÍTULO 2 · LA REVISTA =============== -->
+<section id="c2" class="ch c2" data-ch="2" aria-labelledby="t2">
+  <div class="c2-pin" id="c2pin">
+    <div class="grid-guide" aria-hidden="true"></div>
+    <div class="wrap c2-wrap">
+      <div class="c2-head">
+        <div>
+          <p class="kicker">02 · La revista</p>
+          <h2 class="ind" id="t2" aria-live="polite">C1 · Portada</h2>
+        </div>
+        <div class="c2-tools">
+          <p class="tag c2-spec" id="spec2">Formato 210 × 280 mm · pliego 420 × 280 mm<br>12 columnas · medianil 4 mm</p>
+          <button class="btn btn-line" id="gridpg" type="button" aria-pressed="false">Retícula de página</button>
+        </div>
+      </div>
+      <div class="stage-box">
+        <noscript><p class="tag" style="padding:var(--s3) 0">La simulación de la revista requiere JavaScript.</p></noscript>
+        <div class="stage3d" id="stage" tabindex="0" role="group" aria-roledescription="revista hojeable" aria-label="La revista. Flechas izquierda y derecha cambian de pliego; también se puede arrastrar.">
+          <div class="rot" id="rot"><div class="pos" id="pos">
+            <div class="under l" id="underL"></div><div class="under r" id="underR"></div>
+            <div class="book" id="book"></div>
+          </div></div>
+          <div class="ann" id="ann" aria-hidden="true">
+            <svg id="annSvg"></svg>
+            
+          </div>
+        </div>
+      </div>
+      <div class="c2-foot">
+        <div class="steps" id="steps" role="group" aria-label="Pliegos de la revista">
+          <i class="fill" id="stepFill" aria-hidden="true"></i>
+        </div>
+        <div class="c2-nav">
+          <button class="btn btn-line" id="prev" type="button" aria-label="Pliego anterior">Anterior</button>
+          <button class="btn btn-line" id="next" type="button" aria-label="Pliego siguiente">Siguiente</button>
+        </div>
+      </div>
+      <ul class="rules" id="rules" aria-label="Reglas aplicadas en el pliego"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- =============== CAPÍTULO 3 · CICLO DE OCHO SEMANAS =============== -->
+<!-- =============== CAPÍTULO 3 · EL PROYECTO =============== -->
+<section id="c3" class="ch sec" data-ch="3" aria-labelledby="t3x">
+  <div class="grid-guide" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker rv">03 · El proyecto</p>
+      <h2 class="h2 rv" id="t3x">Un medio propio para una red de veinte tiendas</h2>
+      <p class="l rv">SoyTechno opera una red de veinte tiendas especializadas en tecnología, con sedes de alto tráfico en la región capital y comercio electrónico nacional. La revista traslada esa vitrina a un formato coleccionable: contenido que informa, orienta la compra y devuelve tráfico a las tiendas y a la tienda en línea.</p>
+    </header>
+    <dl class="fp">
+      <div class="rv"><dt class="kicker">Naturaleza</dt><dd>Medio propietario, multimarca, gratuito y bimestral: seis ediciones por año.</dd></div>
+      <div class="rv"><dt class="kicker">Formato</dt><dd>48 páginas interiores más cubiertas, 210 × 280 mm, estética de libro coleccionable.</dd></div>
+      <div class="rv"><dt class="kicker">Phygital</dt><dd>QR por pieza y etiqueta NFC por ejemplar; edición digital interactiva en la hora cero.</dd></div>
+      <div class="rv"><dt class="kicker">Extensiones</dt><dd>Pódcast, video detrás de cámaras, piezas para redes, revelación de portada y evento de <i>networking</i> por edición.</dd></div>
+    </dl>
+    <div class="bloque-c">
+      <p class="kicker rv">Cinco ejes comerciales</p>
+      <ol class="ejes">
+        <li class="rv"><span class="n">01</span><b>Movilidad y telecomunicaciones</b><span>Teléfonos inteligentes de gama de entrada, media y alta, y accesorios.</span></li>
+        <li class="rv"><span class="n">02</span><b>Cómputo y Zona Business</b><span>Portátiles de alto rendimiento y soluciones para productividad, arquitectura y diseño.</span></li>
+        <li class="rv"><span class="n">03</span><b>Hogar y línea blanca</b><span>Televisores QLED, OLED y 4K, audio inmersivo y electrodomésticos.</span></li>
+        <li class="rv"><span class="n">04</span><b>Zona Gamer</b><span>Consolas, portátiles para juego, periféricos de precisión y mobiliario ergonómico.</span></li>
+        <li class="rv"><span class="n">05</span><b>Fidelización y facilidades</b><span>Club SoyTechno y cuotas con plataformas aliadas.</span></li>
+      </ol>
+    </div>
+    <div class="bloque-c aud">
+      <div class="aud-h">
+        <p class="kicker rv">Para quién</p>
+        <h3 class="h3 rv">Tres lectores, un mismo ecosistema</h3>
+      </div>
+      <ul class="perfiles">
+        <li class="rv"><p class="edad">18 a 30 años</p><b>Entusiasta y <i>gamer</i></b><p>Especificaciones de alto rendimiento, periféricos, puestos de juego y torneos.</p><p class="tag">ADN Gamer · Bajo el Lente · Conexión en Vivo</p></li>
+        <li class="rv"><p class="edad">28 a 50 años</p><b>Profesional y ejecutivo</b><p>Productividad móvil, automatización, inteligencia artificial aplicada y finanzas para la empresa.</p><p class="tag">Espacio Business · Reportaje Central · Ruta Inteligente</p></li>
+        <li class="rv"><p class="edad">25 a 55 años</p><b>Hogar y estilo de vida</b><p>Entretenimiento doméstico, domótica, ecosistema familiar y beneficios del Club.</p><p class="tag">Bajo el Lente · Ruta Inteligente · En Primera Fila</p></li>
+      </ul>
+    </div>
+    <div class="bloque-c">
+      <p class="kicker rv">Cuatro pilares en cada edición · ninguno por encima del 40 % de las páginas editoriales</p>
+      <ol class="pilares">
+        <li class="rv"><span class="n">P1</span><b>Innovación, <i>hardware</i> y tendencias</b></li>
+        <li class="rv"><span class="n">P2</span><b>Personas, liderazgo y creadores</b></li>
+        <li class="rv"><span class="n">P3</span><b>Cultura digital, entretenimiento y eventos</b></li>
+        <li class="rv"><span class="n">P4</span><b>Finanzas, negocios y economía digital</b></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- =============== CAPÍTULO 4 · ARQUITECTURA =============== -->
+<section id="c4" class="ch sec alt" data-ch="4" aria-labelledby="t4x">
+  <div class="grid-guide" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker rv">04 · Arquitectura</p>
+      <h2 class="h2 rv" id="t4x">52 páginas con lugar fijo para cada cosa</h2>
+      <p class="l rv">El mapa de paginación es el mismo en las seis ediciones: secciones en posición fija, pauta en cuatro emplazamientos y ADN Gamer en modo oscuro entre el segundo y el tercer pliego. Las páginas de la simulación se abren desde el mapa.</p>
+    </header>
+    <div class="rv"><!--DIAGRAMA:mapa--></div>
+    <ul class="reglas">
+      <li class="rv"><b>Portada editorial</b><span>No comercializable: sin marcas, sellos ni logotipos de terceros.</span></li>
+      <li class="rv"><b>Cero precios impresos</b><span>Gama en la ficha; precio vigente mediante QR o NFC.</span></li>
+      <li class="rv"><b>Máximo de 10 páginas de pauta</b><span>Base de 7, cubiertas incluidas; 35 % como máximo por fabricante.</span></li>
+      <li class="rv"><b>Separación de cuatro páginas</b><span>Entre la pauta de una marca y la reseña de un producto propio o competidor.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- =============== CAPÍTULO 5 · DEL PAPEL AL TELÉFONO =============== -->
+<section id="c5" class="ch sec" data-ch="5" aria-labelledby="t5x">
+  <div class="grid-guide" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker rv">05 · Del papel al teléfono</p>
+      <h2 class="h2 rv" id="t5x">Cada página, una puerta a la compra</h2>
+      <p class="l rv">El papel no fija precios ni condiciones: los apunta. Cada pieza lleva su código QR y cada ejemplar, una etiqueta NFC. Los destinos se editan después de imprimir y cada lectura queda medida.</p>
+    </header>
+    <div class="phy">
+      <article class="phy-c rv" aria-labelledby="qrT">
+        <p class="kicker">Acceso por pieza</p>
+        <h3 class="h3" id="qrT">Código QR</h3>
+        <div class="phy-vis"><div class="phy-qr" id="phyQR" aria-hidden="true"></div><p class="tag">Escanear con la cámara del teléfono · código real</p></div>
+        <dl class="phy-dl">
+          <div><dt>Función</dt><dd>Ficha con precio vigente, video, afiliación al Club SoyTechno o condiciones de financiamiento.</dd></div>
+          <div><dt>Regla</dt><dd>Un código por pieza, sin reutilización entre ediciones; destino editable tras la impresión.</dd></div>
+          <div><dt>Medición</dt><dd class="mono">utm_source=revista · utm_medium=qr · utm_campaign=ed&lt;n&gt; · utm_content=p&lt;pág&gt;-&lt;sección&gt;-&lt;pieza&gt;</dd></div>
+        </dl>
+      </article>
+      <article class="phy-c rv" aria-labelledby="nfcT">
+        <p class="kicker">Acceso por ejemplar</p>
+        <h3 class="h3" id="nfcT">Etiqueta NFC</h3>
+        <div class="phy-vis"><div class="phy-nfc" aria-hidden="true"><span class="g"></span><span class="e"></span><span class="o" id="nfcOnda"></span></div><p class="tag">Zona de contacto de 40 × 40 mm en C3 · etiqueta de 25 mm</p></div>
+        <dl class="phy-dl">
+          <div><dt>Función</dt><dd>Edición digital, pódcast y detrás de cámaras; activación del ejemplar en el Club con beneficio canjeable una vez.</dd></div>
+          <div><dt>Tecnología</dt><dd>NTAG213 o equivalente NFC Forum Tipo 2; escritura bloqueada; sin datos personales.</dd></div>
+          <div><dt>Implantación</dt><dd>2.000 ejemplares en las Ediciones 01 y 02; tiraje completo desde la Edición 03 con activación acumulada del 10 % (decisión del CE el 02-mar-2027).</dd></div>
+        </dl>
+      </article>
+    </div>
+    <ul class="metas" aria-label="Metas del primer año">
+      <li class="rv"><p class="fig-n" data-cuenta="5">≥ 5 %</p><p class="fig-l">de ejemplares con escaneo QR</p></li>
+      <li class="rv"><p class="fig-n" data-cuenta="10">≥ 10 %</p><p class="fig-l">de ejemplares etiquetados con activación NFC</p></li>
+      <li class="rv"><p class="fig-n" data-cuenta="60">≥ 60 %</p><p class="fig-l">de sesiones con conversión <i>phygital</i></p></li>
+      <li class="rv"><p class="fig-n">72 h</p><p class="fig-l">reporte de alcance de la revelación, en D+3</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- =============== CAPÍTULO 6 · CICLO DE OCHO SEMANAS =============== -->
+<section id="c6" class="ch c3" data-ch="6" aria-labelledby="t3">
+  <div class="c3-pin" id="c3pin">
+    <div class="grid-guide" aria-hidden="true"></div>
+    <div class="wrap c3-wrap">
+      <div class="c3-head">
+        <div class="t">
+          <p class="kicker rv">06 · Ciclo de ocho semanas y compuertas</p>
+          <h2 class="h2 rv" id="t3"><span class="ln">Ocho semanas por edición.</span> <span class="ln">Seis compuertas de control.</span></h2>
+        </div>
+        <p class="l rv">Cada edición avanza solo cuando la compuerta anterior queda firmada. Toda la producción impresa ocurre en la semana 7; la revelación, el jueves de la semana 8.</p>
+      </div>
+      <div class="circuit h" id="circH" role="group" aria-label="Circuito de ocho semanas con seis compuertas"></div>
+      <div class="circuit v" id="circV" role="group" aria-label="Circuito de ocho semanas con seis compuertas"></div>
+      <div class="c3-low">
+        <div class="gate" id="gate" aria-live="polite">
+          <p class="kicker gp-k">Compuerta seleccionada</p>
+          <p class="gp-code" id="gpCode">G3</p>
+          <div class="gp-meta"><p class="w" id="gpWhen">viernes de S6 · 08-ene-2027</p><p class="r" id="gpWho"><abbr title="Comercial y Alianzas">CC</abbr> · <abbr title="Eventos y Creadores">EV</abbr></p></div>
+          <p class="gp-crit" id="gpCrit">Pauta aprobada; cero precios impresos; revisión legal; patrocinio del evento ≥&nbsp;70&nbsp;% del costo.</p>
+        </div>
+        <div class="phases">
+          <p class="kicker">Fases</p>
+          <ol id="phaseList">
+            <li data-p="S1"><b>S1 · Planificación</b> — eje temático, personaje de portada, mapa de paginación, pauta y evento</li>
+            <li data-p="S2-S4"><b>S2-S4 · Producción</b> — pruebas, entrevistas, sesión de portada con video y pódcast, redacción</li>
+            <li data-p="S5-S6"><b>S5-S6 · Diseño y edición</b> — maquetación, QR y NFC, corrección, validación comercial y legal</li>
+            <li data-p="S7"><b>S7 · Pre-prensa e impresión</b> — ferro, impresión, encuadernación, etiquetas NFC</li>
+            <li data-p="S8"><b>S8 · Lanzamiento</b> — revelación, evento, edición digital y sedes</li>
+          </ol>
+        </div>
+      </div>
+      <p class="glos"><span><b>CE</b> Consejo Editorial ·</span> <span><b>DE</b> Dirección Editorial ·</span> <span><b>EC</b> Cierre y Corrección ·</span> <span><b>CC</b> Comercial y Alianzas ·</span> <span><b>EV</b> Eventos y Creadores ·</span> <span><b>DA</b> Arte y Maquetación ·</span> <span><b>PD</b> Digital y Datos</span></p>
+    </div>
+  </div>
+
+  <div class="c3-flow">
+    <div class="wrap">
+      <div class="wk-blk" id="wk7">
+        <div class="hd"><p class="kicker">Semana 7</p><h3 class="h3">Pre-prensa e impresión</h3></div>
+        <div class="strip"><ol class="days" style="--n:5">
+          <li><b>Lunes</b><span class="sep"> · </span>archivos, ferro y pruebas</li>
+          <li><b>Martes</b><span class="sep"> · </span>G4 e impresión</li>
+          <li><b>Miércoles</b><span class="sep"> · </span>laminado y barniz UV</li>
+          <li><b>Jueves</b><span class="sep"> · </span>encuadernación PUR</li>
+          <li><b>Viernes</b><span class="sep"> · </span>NFC, control 1/50 y sellado</li>
+        </ol></div>
+      </div>
+      <div class="wk-blk" id="wk8">
+        <div class="hd"><p class="kicker">Semana 8</p><h3 class="h3">Lanzamiento</h3></div>
+        <div class="strip"><ol class="days" style="--n:4">
+          <li><b>Lunes</b><span class="sep"> · </span>almacén</li>
+          <li><b>Miércoles</b><span class="sep"> · </span>despacho</li>
+          <li class="zero"><span class="hz" aria-hidden="true">19:30</span><b>Jueves</b><span class="sep"> · </span>Día D, revelación a las 19:30</li>
+          <li><b>Viernes</b><span class="sep"> · </span>sedes y Club SoyTechno</li>
+        </ol></div>
+      </div>
+      <div>
+        <p class="kicker" style="margin-bottom:var(--s2)">Edición 01</p>
+        <ul class="dates">
+          <li><span class="k">S1</span><span class="v">16-nov-2026</span></li>
+          <li><span class="k">G0</span><span class="v">20-nov-2026</span></li>
+          <li><span class="k">G1</span><span class="v">11-dic-2026</span></li>
+          <li><span class="k">pausa</span><span class="v"><span class="nw">21-dic-2026</span> a <span class="nw">03-ene-2027</span></span></li>
+          <li><span class="k">G2 y G3</span><span class="v">08-ene-2027</span></li>
+          <li><span class="k">G4</span><span class="v">12-ene-2027</span></li>
+          <li><span class="k">Día D</span><span class="v">21-ene-2027</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- =============== CAPÍTULO 7 · HORA CERO Y EVENTO =============== -->
+<section id="c7" class="ch sec noche" data-ch="7" aria-labelledby="t7x">
+  <div class="grid-guide" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker rv">07 · Hora cero</p>
+      <h2 class="h2 rv" id="t7x">19:30. La portada se descubre en escena</h2>
+      <p class="l rv">La portada se mantiene en reserva hasta el Día D. A las 19:30 se descubre en gran formato, con el personaje y en transmisión directa; cinco minutos después la edición digital, el pódcast, el QR y el NFC quedan activos a la vez.</p>
+    </header>
+    <div class="hz-sim rv" id="hzSim">
+      <div class="hz-reloj">
+        <p class="kicker">Simulación del Día D · 21-ene-2027</p>
+        <p class="hz-hora" id="hzHora" aria-live="off">19:28:00</p>
+        <p class="hz-fase" id="hzFase" aria-live="polite">Cuenta regresiva en pantalla LED · 120 segundos</p>
+        <button class="btn" type="button" id="hzBtn">Simular la hora cero <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4l9 6-9 6z" fill="currentColor"/></svg></button>
+        <ol class="hz-chips" id="hzChips" aria-label="Bloque de las 19:35">
+          <li>Publicación colaborativa simultánea</li><li>QR y NFC: del aviso al contenido</li><li>Edición digital, pódcast y video liberados</li>
+        </ol>
+      </div>
+      <figure class="hz-portada" aria-label="Portada en reserva hasta la hora cero">
+        <div class="hz-marco" id="hzMarco"><img data-foto="1534528741775-53994a69daeb" alt="Portada de la Edición 01 (imagen de referencia)" width="600" height="800"><div class="hz-velo" id="hzVelo"><span>Portada en reserva</span></div></div>
+        <figcaption class="tag">Edición 01 · Enero-febrero 2027 · ejemplares en cajas selladas hasta la hora cero</figcaption>
+      </figure>
+    </div>
+    <div class="bloque-c rv"><!--DIAGRAMA:hora--></div>
+    <div class="bloque-c ev">
+      <div class="ev-h">
+        <p class="kicker rv">El evento de lanzamiento</p>
+        <h3 class="h3 rv">Una noche para conectar marcas, clientes y creadores</h3>
+        <p class="l rv">Cada Día D, de 18:00 a 22:00: de 150 a 200 invitados en las Ediciones 01 a 05 y una gala de 250 a 300 en la Edición 06. Acceso con invitación nominativa y QR, sin venta de entradas.</p>
+      </div>
+      <ol class="agenda">
+        <li class="rv"><b>18:00</b><span>Acreditación y zonas de experiencia</span></li>
+        <li class="rv"><b>18:45</b><span><i>Networking</i> en mesas de afinidad con anfitrión</span></li>
+        <li class="rv on"><b>19:30</b><span>Revelación de la portada</span></li>
+        <li class="rv"><b>19:45</b><span>Conversación en escena grabada como pódcast en vivo</span></li>
+        <li class="rv"><b>20:20</b><span>Rueda de negocios y demostraciones</span></li>
+        <li class="rv"><b>21:00</b><span>Entrega de ejemplares con NFC y sorteos</span></li>
+        <li class="rv"><b>22:00</b><span>Cierre y encuesta</span></li>
+      </ol>
+      <div class="ev-g rv"><!--GRAFICO:invitados--></div>
+      <ul class="ev-rel">
+        <li class="rv"><b>5</b><span>mesas de afinidad: Business, Gamer, Hogar, Creadores y Finanzas</span></li>
+        <li class="rv"><b>10 min</b><span>por cita de la rueda de negocios, preagendada según intereses</span></li>
+        <li class="rv"><b>2 semanas</b><span>de directorio digital con consentimiento y seguimiento a la semana siguiente</span></li>
+        <li class="rv"><b>70 %</b><span>del costo del evento cubierto en G3; si no, formato reducido de 80 a 100 invitados</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =============== CAPÍTULO 8 · AÑO EDITORIAL =============== -->
+<section id="c8" class="ch sec" data-ch="8" aria-labelledby="t8x">
+  <div class="grid-guide" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker rv">08 · Año editorial</p>
+      <h2 class="h2 rv" id="t8x">Seis ediciones en 2027, cada una en su ventana comercial</h2>
+      <p class="l rv">Cada Día D cae al menos diez días antes de la fecha comercial principal de su ventana. Dos pausas operativas absorben las fiestas y mitad de año sin mover ningún lanzamiento, y cada edición circula hasta el Día D de la siguiente.</p>
+    </header>
+    <div class="rv"><!--DIAGRAMA:calendario--></div>
+    <ul class="eds">
+      <li class="rv"><span class="n">01</span><b>Enero-febrero</b><span>Novedades del año, productividad y finanzas personales</span></li>
+      <li class="rv"><span class="n">02</span><b>Marzo-abril</b><span>Movilidad, fotografía móvil y creadores de viaje</span></li>
+      <li class="rv"><span class="n">03</span><b>Mayo-junio</b><span>Hogar: televisión, audio, línea blanca y domótica</span></li>
+      <li class="rv"><span class="n">04</span><b>Julio-agosto</b><span>Universo <i>gamer</i>, deportes electrónicos y <i>streaming</i></span></li>
+      <li class="rv"><span class="n">05</span><b>Septiembre-octubre</b><span>Cómputo, educación, emprendimiento y pymes</span></li>
+      <li class="rv"><span class="n">06</span><b>Noviembre-diciembre</b><span>Guía de regalos, financiamiento responsable y gala del año</span></li>
+    </ul>
+    <div class="bloque-c dist">
+      <div class="dist-h">
+        <p class="kicker rv">Distribución</p>
+        <h3 class="h3 rv">5.000 ejemplares donde está el cliente</h3>
+        <p class="l rv">Sedes VIP elegidas por tráfico, zona de marca y <i>ticket</i>, con Sambil Chacao y City Market fijas. Exhibición desde D+1, reposición y acta semanal de conteo; el tiraje se ajusta hasta un 20 % por edición según la distribución efectiva, con meta del 85 %.</p>
+      </div>
+      <div class="rv"><!--GRAFICO:distribucion--></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== CAPÍTULO 9 · ECONOMÍA =============== -->
+<section id="c9" class="ch sec alt" data-ch="9" aria-labelledby="t9x">
+  <div class="grid-guide" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker rv">09 · Economía</p>
+      <h2 class="h2 rv" id="t9x">Pauta con reglas claras, patrocinio con retorno medible</h2>
+      <p class="l rv">El programa se sostiene como inversión de mercadeo de SoyTechno, con metas de cobertura por pauta y patrocinio del 50 % en el primer año y del 70 % desde el segundo. Todas las cifras se expresan en porcentajes e índices.</p>
+    </header>
+    <div class="eco-pos">
+      <div class="rv">
+        <p class="kicker">Posiciones de pauta</p>
+        <ul class="posic">
+          <li><b>C2-01</b><span>Doble premium del patrocinante principal, con exclusividad de categoría y paquete del evento</span></li>
+          <li><b>14-15</b><span>Pauta I · movilidad, cómputo o televisión</span></li>
+          <li><b>26-27</b><span>Pauta II · <i>gamer</i> o alto rendimiento</span></li>
+          <li><b>C4</b><span>Marca aliada de línea blanca o televisión</span></li>
+        </ul>
+      </div>
+      <div class="rv">
+        <p class="kicker">Paquetes · índice de tarifa (Presenta = 100)</p>
+        <ul class="paq">
+          <li style="--v:1"><b>Presenta</b><span class="bar"></span><span class="v">100,0</span><small>Doble premium, presentación del evento, experiencia NFC y pantallas en tiendas · gala 155,6</small></li>
+          <li style="--v:.444"><b>Afinidad</b><span class="bar"></span><span class="v">44,4</span><small>Doble interior, zona de experiencia y dos semanas en pantallas · gala 60,0</small></li>
+          <li style="--v:.133"><b>Comunidad</b><span class="bar"></span><span class="v">13,3</span><small>Mesa de afinidad y sorteo con lectura NFC</small></li>
+        </ul>
+        <p class="tag">Composición del ingreso potencial: revista 34,9 % · evento 65,1 %</p>
+      </div>
+    </div>
+    <div class="eco-g">
+      <div class="rv"><!--GRAFICO:costos--></div>
+      <div class="rv"><!--GRAFICO:cobertura--></div>
+    </div>
+    <div class="bloque-c eco-t">
+      <div class="rv"><!--GRAFICO:trayecto--></div>
+      <div class="eco-n rv">
+        <p class="kicker">Lectura</p>
+        <p class="fig-n">53,8 %</p>
+        <p class="fig-l">de cobertura en el plan anual base 2027, con aporte de SoyTechno del 46,2 %. La trayectoria de referencia alcanza el 71,4 % desde el segundo año sin cambiar la estructura de costos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== CAPÍTULO 10 · CONTROL =============== -->
+<section id="c10" class="ch sec" data-ch="10" aria-labelledby="t10x">
+  <div class="grid-guide" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker rv">10 · Control</p>
+      <h2 class="h2 rv" id="t10x">Metas medibles, responsables únicos y documentos vigentes</h2>
+      <p class="l rv">Cada indicador tiene meta, fuente y momento de reporte: alcance a 72 horas en D+3 e informe consolidado en la semana 4 del ciclo siguiente.</p>
+    </header>
+    <ul class="kpi">
+      <li class="rv"><p class="kicker">Posicionamiento</p><p class="kpi-n">+10 %</p><p>Alcance de la revelación a 72 h y lecturas digitales únicas, por edición</p></li>
+      <li class="rv"><p class="kicker">Activación comercial</p><p class="kpi-n">≥ 85 %</p><p>Distribución efectiva; escaneo QR ≥ 5 % y conversión <i>phygital</i> ≥ 60 %</p></li>
+      <li class="rv"><p class="kicker">Fidelización</p><p class="kpi-n">≥ 10 %</p><p>Activación NFC; afiliaciones al Club con crecimiento del 10 % por edición</p></li>
+      <li class="rv"><p class="kicker">Comunidad</p><p class="kpi-n">≥ 75 %</p><p>Asistencia de confirmados; contactos de negocio y audiencia del pódcast</p></li>
+      <li class="rv"><p class="kicker">Fabricantes</p><p class="kpi-n">≥ 4 / 5</p><p>Satisfacción de marcas con pauta o patrocinio, medición semestral</p></li>
+      <li class="rv"><p class="kicker">Calidad</p><p class="kpi-n">6 / 6</p><p>Días D en fecha; erratas posteriores a la impresión ≤ 3 por edición</p></li>
+    </ul>
+    <div class="bloque-c gob">
+      <div class="gob-h">
+        <p class="kicker rv">Gobierno</p>
+        <h3 class="h3 rv">Consejo Editorial y ocho roles</h3>
+        <p class="l rv">Dirección Editorial (presidencia), Gerencia de Mercadeo, Coordinación Comercial y Alianzas y Gerencia de Compras o Categorías. Sesiones en la semana 1 de cada ciclo (G0) y en G4; un único responsable por entregable.</p>
+      </div>
+      <ul class="roles">
+        <li class="rv"><b>DE</b>Dirección Editorial</li><li class="rv"><b>CR</b>Redacción y Especialistas</li><li class="rv"><b>DA</b>Arte y Maquetación</li><li class="rv"><b>PF</b>Fotografía y Audiovisual</li>
+        <li class="rv"><b>CC</b>Comercial y Alianzas</li><li class="rv"><b>EC</b>Cierre y Corrección</li><li class="rv"><b>PD</b>Digital y Datos</li><li class="rv"><b>EV</b>Eventos y Creadores</li>
+      </ul>
+    </div>
+    <div class="bloque-c docs">
+      <div class="docs-h">
+        <p class="kicker rv">Sistema documental · vigente desde el 18-oct-2026</p>
+        <h3 class="h3 rv">20 documentos que ya gobiernan la operación</h3>
+      </div>
+      <div class="bloques">
+        <div class="rv"><p class="bq">Dirección</p><ul><li>DIR-ED · Documento Rector</li><li>IND-ED · Índice Maestro</li></ul></div>
+        <div class="rv"><p class="bq">Bloque I · Corpus permanente</p><ul><li>MAN-ID · Identidad editorial</li><li>GUI-PP · Pre-prensa</li><li>PRO-PR · Laboratorio y fotografía</li><li>KIT-CO · Kit comercial</li><li>REG-LG · Compendio legal</li><li>CAL-ED · Calendario 2027</li></ul></div>
+        <div class="rv"><p class="bq">Bloque II · Programa de lanzamiento</p><ul><li>PRO-RP · Revelación de portada</li><li>MAN-EV · Producción del evento</li><li>GUI-NW · <i>Networking</i></li><li>GUI-CR · Creadores y portada</li><li>MAN-EX · Zonas de experiencia</li></ul></div>
+        <div class="rv"><p class="bq">Bloque III · Gestión del programa</p><ul><li>EXP-ID · Nombre y cabecera</li><li>PLA-FI · Plan económico</li><li>MAN-OR · Organización</li><li>MAN-MD · Medición</li><li>PLA-CM · Canales y difusión</li><li>PLA-DI · Distribución</li><li>PLI-PV · Proveedores</li></ul></div>
+        <div class="rv"><p class="bq">Bloque IV · Expediente por edición</p><ul><li>DOC-E-01 a DOC-E-28</li><li>Planificación, textos, fotografía, diseño, pauta, pre-prensa, digital, lanzamiento y cierre</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== CAPÍTULO 11 · PRÓXIMOS PASOS =============== -->
+<section id="c11" class="ch sec cierre" data-ch="11" aria-labelledby="t11x">
+  <div class="grid-guide" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker rv">11 · Próximos pasos</p>
+      <h2 class="h2 rv" id="t11x">De la aprobación a la hora cero</h2>
+    </header>
+    <ol class="pasos">
+      <li class="rv"><span class="k">Ahora</span><b>Aprobación del proyecto y del presupuesto anual</b><span>Consejo Editorial de SoyTechno</span></li>
+      <li class="rv"><span class="k">Noviembre de 2026</span><b>Registro de marca y cabecera; contratación de proveedores</b><span>EXP-ID · PLI-PV</span></li>
+      <li class="rv"><span class="k">16-nov-2026</span><b>Semana 1 de la Edición 01</b><span>Eje temático, personaje de portada y mapa de paginación</span></li>
+      <li class="rv"><span class="k">20-nov-2026</span><b>G0 · sesión del Consejo Editorial</b><span>Pauta comprometida, tiraje y evento</span></li>
+      <li class="rv"><span class="k">12-ene-2027</span><b>G4 · ferro aprobado e impresión</b><span>Producción completa en la semana 7</span></li>
+      <li class="rv on"><span class="k">21-ene-2027 · 19:30</span><b>Día D · revelación de la portada</b><span>Evento, edición digital y ejemplares en sedes desde D+1</span></li>
+    </ol>
+    <div class="firma-f rv">
+      <svg class="logo" viewBox="0 0 204 30" role="img" aria-label="SoyTechno" fill="currentColor"><use href="#st-paths"/></svg>
+      <p class="kicker">Propuesta preparada para Carelys Eljuri · 19-oct-2026</p>
+      <p class="promise">Tecnología explicada, probada y accesible.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <svg class="iso" viewBox="5.10 0 20.30 30.80" role="img" aria-label="SoyTechno"><use href="#st-paths"/></svg>
+  <p>Proyecto editorial · Propuesta para evaluación</p>
+  <a href="#c1" id="toTop">Volver al inicio</a>
+</footer>
+
+<!-- Páginas de la revista (fuente): el motor las coloca en las hojas -->
+<div id="revista-fuente" hidden><!--REVISTA--></div>
+<script>/*FOTOS*/</script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script>/*JS_COMPONENTES*/</script>
+<script>
+(() => {
+'use strict';
+
+/* =====================================================================
+   0 · UTILIDADES Y MODOS
+   ===================================================================== */
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const html = document.documentElement;
+const qs = new URLSearchParams(location.search);
+const CAPTURA = qs.get('captura') === '1';
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const HAS_GSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+const HAS_SPLIT = typeof window.SplitText !== 'undefined';
+const STATIC = CAPTURA || REDUCED || !HAS_GSAP;          // estados finales, sin movimiento
+const mqPhone = matchMedia('(max-width: 899px)');
+const tpl = id => document.getElementById(id).content.firstElementChild.cloneNode(true);
+const el = (tag, cls, parent) => { const e = document.createElement(tag); if (cls) e.className = cls; if (parent) parent.append(e); return e; };
+const SVGNS = 'http://www.w3.org/2000/svg';
+const sv = (tag, attrs, parent) => { const e = document.createElementNS(SVGNS, tag); for (const k in (attrs || {})) e.setAttribute(k, attrs[k]); if (parent) parent.append(e); return e; };
+if (STATIC) html.classList.add('is-static');
+
+/* =====================================================================
+   1 · PATRÓN DE MÓDULOS GENÉRICO (no escaneable, MAN-ID §9.1)
+   ===================================================================== */
+function qrPath(seed) {
+  const N = 25; let s = 2166136261;
+  for (const c of seed) s = Math.imul(s ^ c.charCodeAt(0), 16777619) >>> 0;
+  const rnd = () => (s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296;
+  const m = Array.from({ length: N }, () => Array(N).fill(-1));
+  const finder = (x0, y0) => {
+    for (let j = -1; j <= 7; j++) for (let i = -1; i <= 7; i++) {
+      const x = x0 + i, y = y0 + j; if (x < 0 || y < 0 || x >= N || y >= N) continue;
+      const inside = i >= 0 && i <= 6 && j >= 0 && j <= 6;
+      const ring = i === 0 || j === 0 || i === 6 || j === 6, core = i >= 2 && i <= 4 && j >= 2 && j <= 4;
+      m[y][x] = inside && (ring || core) ? 1 : 0;
+    }
+  };
+  finder(0, 0); finder(N - 7, 0); finder(0, N - 7);
+  for (let i = 8; i < N - 8; i++) { m[6][i] = i % 2 === 0 ? 1 : 0; m[i][6] = i % 2 === 0 ? 1 : 0; }
+  const ax = N - 9, ay = N - 9;
+  for (let j = 0; j < 5; j++) for (let i = 0; i < 5; i++) { const ring = i === 0 || j === 0 || i === 4 || j === 4; m[ay + j][ax + i] = ring || (i === 2 && j === 2) ? 1 : 0; }
+  let d = '';
+  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) { let v = m[y][x]; if (v === -1) v = rnd() < .48 ? 1 : 0; if (v) d += `M${x} ${y}h1v1h-1z`; }
+  return d;
+}
+const paintQR = root => $$('svg[data-qr]', root).forEach(svg => {
+  svg.setAttribute('shape-rendering', 'crispEdges'); svg.setAttribute('fill', 'currentColor');
+  svg.innerHTML = `<path d="${qrPath(svg.dataset.qr)}"/>`;
+});
+
+/* =====================================================================
+   2 · PÁGINAS Y HOJAS (26 hojas = 52 páginas: 4 de cubierta + 48 interiores)
+   Hoja i: anverso = página 2i-1, reverso = página 2i. Hoja 0 = C1 / C2; hoja 25 = C3 / C4.
+   ===================================================================== */
+const SECTIONS = [
+  { from: 2,  to: 3,  name: 'SUMARIO' },            { from: 4,  to: 7,  name: 'PULSO TECHNO' },
+  { from: 8,  to: 13, name: 'BAJO EL LENTE' },      { from: 14, to: 15, pauta: true },
+  { from: 16, to: 19, name: 'REPORTAJE CENTRAL' },  { from: 20, to: 25, name: 'EN PRIMERA FILA' },
+  { from: 26, to: 27, pauta: true, dark: true },    { from: 28, to: 35, name: 'ADN GAMER', dark: true },
+  { from: 36, to: 39, name: 'ESPACIO BUSINESS' },   { from: 40, to: 43, name: 'CONEXIÓN EN VIVO' },
+  { from: 44, to: 47, name: 'RUTA INTELIGENTE' },   { from: 48, to: 48, name: 'ÚLTIMA PÁGINA' }
+];
+const sectionOf = n => SECTIONS.find(s => n >= s.from && n <= s.to) || {};
+
+/* Página en tránsito: solo estructura de retícula (bloques y líneas de texto), sin contenido inventado */
+function genPage(n) {
+  const sec = sectionOf(n), verso = n % 2 === 0, dark = !!sec.dark;
+  const page = el('div', `page ${verso ? 'verso hinge-l' : 'recto hinge-r'} gen${dark ? ' pg-dark' : ''}${sec.pauta ? ' pauta' : ''}`);
+  page.dataset.page = String(n).padStart(2, '0');
+  if (sec.pauta) { page.innerHTML = '<p class="rotulo">Publicidad</p><div class="slot"><span>Espacio de pauta · marca aliada</span></div>'; return page; }
+  const x0 = verso ? 15 : 18, w = 177, mm = v => `calc(${v}*var(--mm))`;
+  const blk = (x, y, ww, hh) => { const b = el('div', 'blk', page); b.style.cssText = `left:${mm(x)};top:${mm(y)};width:${mm(ww)};height:${mm(hh)}`; };
+  const bars = (x, y, ww, count) => { for (let i = 0; i < count; i++) { const b = el('div', 'bar', page); b.style.cssText = `left:${mm(x)};top:${mm(y + i * 4.41)};width:${mm(i === count - 1 ? ww * .6 : ww)}`; } };
+  const first = n === sec.from;
+  if (first) { const h = el('h3', 'gh st-cabsec', page); h.textContent = sec.name; }
+  const y0 = first ? 38 : 15;
+  switch ((n * 7) % 4) {
+    case 0: blk(x0, y0, w, 112); bars(x0, y0 + 124, 86.5, 9); bars(x0 + 90.5, y0 + 124, 86.5, 9); break;
+    case 1: blk(x0, y0, 86.5, 86); blk(x0 + 90.5, y0, 86.5, 86); bars(x0, y0 + 100, 86.5, 12); bars(x0 + 90.5, y0 + 100, 86.5, 12); break;
+    case 2: blk(x0, y0, 56.3, 70); bars(x0 + 60.3, y0, 116.7, 15); bars(x0, y0 + 84, 56.3, 14); bars(x0 + 60.3, y0 + 84, 56.3, 14); bars(x0 + 120.6, y0 + 84, 56.3, 14); break;
+    default: bars(x0, y0, 86.5, 10); bars(x0 + 90.5, y0, 86.5, 10); blk(x0, y0 + 56, w, 130); break;
+  }
+  if (n !== 20 && n !== 21) { const f = el('p', 'folio st-folio', page); f.textContent = `${String(n).padStart(2, '0')} · ${sec.name}`; }
+  return page;
+}
+const KNOWN = { 1: 'tpl-p01', 2: 'tpl-p02', 3: 'tpl-p03', 16: 'tpl-p16', 17: 'tpl-p17', 28: 'tpl-p28', 29: 'tpl-p29' };
+const NL = 26;
+function pageFor(i, side) {
+  if (i === 0) return tpl(side === 'front' ? 'tpl-cover' : 'tpl-c2');
+  if (i === NL - 1) return el('div', `page pg-c2 ${side === 'front' ? 'recto hinge-r' : 'verso hinge-l'}`);
+  const n = side === 'front' ? 2 * i - 1 : 2 * i;
+  return KNOWN[n] ? tpl(KNOWN[n]) : genPage(n);
+}
+const decorate = page => { el('div', 'cast', page); el('div', 'shade', page); return page; };
+
+const bookEl = $('#book');
+const leaves = [];
+for (let i = 0; i < NL; i++) {
+  const leaf = el('div', 'leaf leaf' + i, bookEl);
+  const f = el('div', 'face front', leaf), b = el('div', 'face back', leaf);
+  f.append(decorate(pageFor(i, 'front'))); b.append(decorate(pageFor(i, 'back')));
+  leaves.push({ el: leaf, front: f, back: b, castF: $('.cast', f), castB: $('.cast', b), shF: $('.shade', f), shB: $('.shade', b), key: '' });
+}
+paintQR(bookEl);
+/* La marca no se traduce: se envuelve SoyTechno con translate="no" (excepto el titular, que ya lo lleva) */
+function protectBrand() {
+  const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: n => /SoyTechno/.test(n.nodeValue) && !n.parentElement.closest('script,style,template,svg,.display,[translate="no"]') ? 1 : 2 });
+  const nodes = []; while (w.nextNode()) nodes.push(w.currentNode);
+  nodes.forEach(n => {
+    const frag = document.createDocumentFragment();
+    n.nodeValue.split(/(SoyTechno)/).forEach(part => { if (part === 'SoyTechno') { const sp = document.createElement('span'); sp.setAttribute('translate', 'no'); sp.textContent = part; frag.append(sp); } else if (part) frag.append(document.createTextNode(part)); });
+    n.replaceWith(frag);
+  });
+}
+
+/* Portada de la apertura: misma pieza, con una separación mínima de capas para dar profundidad al inclinarla */
+const cover1 = tpl('tpl-cover'); cover1.style.setProperty('--e', '.22'); $('#tilt1').append(cover1);
+$('.ph', cover1).setAttribute('fetchpriority', 'high');                       // portada de la apertura: imagen crítica
+if (!STATIC) $$('img', bookEl).forEach(i => { i.loading = 'lazy'; });             // fotografías del libro: bajo el pliegue
+protectBrand();
+
+/* =====================================================================
+   3 · MOTOR DEL OBJETO: giro 3D real alrededor del lomo, sombra dinámica, despiece
+   ===================================================================== */
+const EPS = .45, EXG = 46;                                 // grosor de papel entre hojas · separación de hojas en el despiece (px a 1440 × 900)
+let K = 1;                                                 // escala del escenario respecto al diseño de 676 px de alto
+const exOf = i => (i <= 5 ? -i * EXG : -5 * EXG - (i - 5) * 4) * K;
+function updateK() { K = (stage.clientHeight || 676) / 676; stage.style.perspective = (3200 * K).toFixed(0) + 'px'; coverEl.style.setProperty('--k', K.toFixed(4)); leaves.forEach(l => { l.key = ''; }); }
+const L = leaves.map(() => ({ t: 0 }));                    // giro de cada hoja: 0 = derecha · 1 = izquierda
+const S = { E: 1, shift: 1 };                              // E: despiece (1→0) · shift: 1 = cerrada y centrada
+const rot = $('#rot'), pos = $('#pos'), underL = $('#underL'), underR = $('#underR'), stage = $('#stage');
+const coverEl = $('.page.cover', leaves[0].front);        // las variables --e / --r / --k solo se heredan en las capas de la portada
+updateK();
+const closedScale = () => mqPhone.matches ? 1.45 : 1;
+
+function renderLeaf(i) {
+  const lf = leaves[i], t = L[i].t, E = S.E;
+  const key = t.toFixed(4) + '|' + E.toFixed(4);
+  if (lf.key === key) return; lf.key = key;
+  const th = Math.PI * t, s = Math.sin(th);
+  // Pila física: las hojas sin girar se apilan a la derecha (la 0 arriba); las giradas, a la izquierda (la última girada arriba)
+  const zFlat = ((NL - i) * (1 - t) + (i + 1) * t) * EPS * K;
+  lf.el.style.transform = `translateZ(${(zFlat + E * exOf(i)).toFixed(2)}px) rotateY(${(-180 * t).toFixed(3)}deg)`;
+  lf.shF.style.opacity = t < .5 ? (s * .95).toFixed(3) : 0;                   // oscurecimiento de la cara que se aleja de la luz
+  lf.shB.style.opacity = t > .5 ? (s * .95).toFixed(3) : 0;
+  const nxt = leaves[i + 1], prv = leaves[i - 1];                              // sombra proyectada sobre la página de debajo
+  if (nxt) { nxt.castF.style.transform = `scaleX(${(t < .5 ? Math.cos(th) : 0).toFixed(3)})`; nxt.castF.style.opacity = t < .5 ? (s * .9).toFixed(3) : 0; }
+  if (prv) { prv.castB.style.transform = `scaleX(${(t > .5 ? -Math.cos(th) : 0).toFixed(3)})`; prv.castB.style.opacity = t > .5 ? (s * .9).toFixed(3) : 0; }
+}
+function render() {
+  const E = S.E;
+  rot.style.transform = `translateY(${(-6 * E).toFixed(3)}%) rotateX(${(55 * E).toFixed(3)}deg) rotateZ(${(-35 * E).toFixed(3)}deg) scale(${(1 - .27 * E).toFixed(4)})`;
+  coverEl.style.setProperty('--e', E.toFixed(4)); coverEl.style.setProperty('--r', E.toFixed(4));
+  pos.style.transform = `translateX(${(-25 * S.shift).toFixed(3)}%) scale(${(1 + (closedScale() - 1) * S.shift * (1 - E)).toFixed(4)})`;
+  const zBase = 3 * K;                                          // por debajo de toda la pila plana (todas las hojas: z ≥ EPS)
+  underR.style.transform = `translateZ(${-(zBase + E * (5 * EXG + 70) * K).toFixed(1)}px)`;
+  underL.style.transform = `translateZ(${-zBase.toFixed(1)}px)`;
+  underL.style.opacity = clamp((L[0].t - .5) * 4, 0, 1).toFixed(3);                  // la sombra izquierda asoma solo cuando la portada aterriza
+  for (let i = 0; i < NL; i++) renderLeaf(i);
+}
+
+/* Pliegos: portada → 02-03 → 16-17 → 28-29 */
+const TURNED = [0, 2, 9, 15];                              // hojas giradas en cada pliego
+const NAMES = ['C1 · Portada', '02-03 · Sumario y créditos', '16-17 · Reportaje Central', '28-29 · ADN Gamer'];
+function setStop(k, E = 0) {
+  S.E = E; S.shift = k === 0 ? 1 : 0;
+  L.forEach((o, i) => { o.t = i < TURNED[k] ? 1 : 0; });
+  render();
+}
+render();
+
+/* =====================================================================
+   4 · ANOTACIONES TÉCNICAS (reglas del Manual aplicadas, en JetBrains Mono)
+   Coordenadas en % del escenario (pliego 3:2). cov / ver / rec convierten mm de página.
+   ===================================================================== */
+const cov = (x, y) => [25 + x / 210 * 50, y / 280 * 100];      // portada centrada (% del escenario)
+const ver = (x, y) => [x / 210 * 50, y / 280 * 100];           // página izquierda del pliego
+const rec = (x, y) => [50 + x / 210 * 50, y / 280 * 100];      // página derecha del pliego
+/* Cada nota se ancla al elemento real (face = [hoja, cara], el = selector, at = lado del ancla, rng = medir el texto)
+   o a un punto en % (a). o = posición de la nota respecto al ancla, en px, con w y h = tamaño de la nota y k = escala del libro (1 con 676 px de escenario). */
+const ANN = {
+  x: [  // vista despiezada · el ancla sale del propio elemento 3D
+    { t: 'Crédito · Source Serif 4 · 6,5/9,5 pt',            el: '.cv-credit', c: [79, 13], s: 'r' },
+    { t: 'Llamados · Archivo Bold 14/18,75 pt',              el: '.cv-calls',  c: [79, 27], s: 'r' },
+    { t: 'Titular · Archivo Black 60 pt',                    el: '.cv-title',  c: [79, 41], s: 'r' },
+    { t: 'Velo oscuro · 40 % como mínimo',                   el: '.ly-veil',   c: [79, 55], s: 'r' },
+    { t: 'Cintillo · Archivo Medium 9/12,5 pt',              el: '.cv-band',   c: [21, 15], s: 'l' },
+    { t: 'Cabecera · logotipo vectorial sin deformar',       el: '.logo',      c: [21, 27], s: 'l' },
+    { t: 'Fotografía · retrato 3:4 · sin precios',           el: '.ph',        c: [21, 50], s: 'l' },
+    { t: 'Fondo · extensión del color de la foto',           el: '.ph-bg',     c: [21, 66], s: 'l' }
+  ],
+  0: [
+    { t: 'Formato 210 × 280 mm · sangrado 3 mm',   a: cov(210, 6),    c: [76.8, 3],  s: 'r' },
+    { t: 'Cabecera · 18-22 % de la altura',        a: cov(17, 24),    c: [23.2, 8],  s: 'l' },
+    { t: 'Zona libre superior 20 %',               a: cov(210, 56),   c: [76.8, 14], s: 'r' },
+    { t: 'Cintillo · Archivo Medium 9/12,5 pt',    a: cov(17, 53),    c: [23.2, 20], s: 'l' },
+    { t: 'Fotografía · 3:4 · fondo extendido',     a: cov(160, 110),  c: [76.8, 36], s: 'r' },
+    { t: 'Titular · Archivo Black · 60 pt',        a: cov(17, 199),   c: [23.2, 72], s: 'l' },
+    { t: 'Sin precios ni logotipos de terceros',   a: cov(201, 192),  c: [76.8, 62], s: 'r' },
+    { t: 'Llamados · Archivo Bold 14/18,75 pt',    a: cov(16, 248),   c: [23.2, 89], s: 'l' },
+    { t: 'Crédito vertical · 6,5/9,5 pt',          a: cov(205, 238),  c: [76.8, 88], s: 'r' }
+  ],
+  1: [
+    { t: 'Cabecera · Archivo Black 24/25 pt\nFilete · 1 pt · Azul SoyTechno', face: [1, 'back'], el: '.st-cabsec', rng: 1, at: 'r', o: ['14', '-h/2'] },
+    { t: 'Índice · módulos de 3 columnas de retícula',            face: [1, 'back'], el: '.idx li:nth-child(9)', at: 'r', o: ['24', '-h/2'] },
+    { t: 'Folio · margen inferior exterior', face: [1, 'back'], el: '.folio', rng: 1, at: 'r', o: ['14', '-h/2'] },
+    { t: 'Carta · 2 columnas · 9,5/12,5 pt',                      face: [2, 'front'], el: '.st-titular', rng: 1, at: 'r', o: ['14', '-h/2'] },
+    { t: 'Mancheta · 4 columnas · JetBrains Mono 8/10 pt',        face: [2, 'front'], el: '.manch', at: 'b', f: .3, o: ['-24', '30'] },
+    { t: 'QR · 2 columnas (26,16 mm) · un código por pieza',      face: [2, 'front'], el: '.inter .qr', at: 't', f: .5, o: ['-40', '-h-34'] },
+    { t: 'Folio · Archivo Medium 7 pt',                          face: [2, 'front'], el: '.folio', rng: 1, at: 'l', o: ['-w-14', '-h/2'] }
+  ],
+  2: [
+    { t: 'Imagen a doble página · compensación de 3 mm por lado en el lomo', a: [50, 12], o: ['-w/2', '-h-26'] },
+    { t: 'Pestaña de navegación · 3 × 24 mm',                face: [8, 'back'], el: '.tab', at: 'r', o: ['30', '-h/2'] },
+    { t: 'Titular · Archivo Black · 48 pt\nEntradilla · Source Serif 4 Semibold 13/18,75 pt\nCrédito · versalitas 6,5/9,5 pt', face: [8, 'back'], el: '.st-titular', at: 't', f: .7, o: ['-w/2', '-h-190'] },
+    { t: 'Apertura a sangre · sin folio visible',                 face: [8, 'back'], el: '.firma-r', rng: 1, at: 'b', f: .1, o: ['0', '26'] },
+    { t: 'Destacado · uno por doble página\nSource Serif 4 Italic 18/25 pt', face: [9, 'front'], el: '.st-destacado', at: 't', f: .5, o: ['-w/2', '-h-110'] },
+    { t: 'Texto · 2 columnas · justificado · 9,5/12,5 pt',        face: [9, 'front'], el: '.caja', at: 'b', f: .35, o: ['-30', '26'] }
+  ],
+  3: [
+    { t: 'Modo oscuro · #0D0E12 · solo ADN Gamer\nCabecera · filete 1 pt Azul SoyTechno', face: [14, 'back'], el: '.cabsec h3', rng: 1, at: 'r', o: ['18', '-h/2'] },
+    { t: 'Pestaña de navegación · ADN Gamer · sección 6 de 10',  face: [15, 'front'], el: '.tab', at: 'l', o: ['-w-36', '-h/2'] },
+    { t: 'Titular · Archivo Black · 48 pt · Blanco Puro\nEntradilla · Source Serif 4 Semibold 13/18,75 pt', face: [14, 'back'], el: '.st-entra', at: 'b', f: .3, o: ['-20', '34'] },
+    { t: 'Ficha · JetBrains Mono Medium 9,5/12,5 pt\nBloque Azul Profundo #0B1F3A',                         face: [15, 'front'], el: '.ficha', at: 'b', f: .12, o: ['-20', '66'] },
+    { t: 'QR · recuadro claro con silencio\n2 columnas (26,16 mm) · un código por pieza',                face: [15, 'front'], el: '.qrb', at: 'b', f: .5, o: ['-w+70', '44'] },
+    { t: 'Folio · Blanco Puro · 9,5 pt sobre fondo oscuro',      face: [14, 'back'], el: '.folio', rng: 1, at: 'r', o: ['16', '-h/2'] }
+  ]
+};
+const groups = {}; $$('.ann-g').forEach(g => { groups[g.dataset.g] = g; });
+const elbow = (x0, y0, x1, y1) => {                       // guía ortogonal + tramo a 45°
+  const dx = x1 - x0, dy = y1 - y0, ax = Math.abs(dx), ay = Math.abs(dy);
+  if (ax >= ay) return [[x0, y0], [x0 + Math.sign(dx) * (ax - ay), y0], [x1, y1]];
+  return [[x0, y0], [x0 + dx, y0 + Math.sign(dy) * (ay - ax)], [x1, y1]];
+};
+function withState(set, fn) {                              // mide con el libro en un estado dado y lo restaura
+  const keep = { E: S.E, shift: S.shift, t: L.map(o => o.t) };
+  set(); leaves.forEach(l => { l.key = ''; }); render();
+  let r; try { r = fn(); } finally { S.E = keep.E; S.shift = keep.shift; L.forEach((o, i) => { o.t = keep.t[i]; }); leaves.forEach(l => { l.key = ''; }); render(); }
+  return r;
+}
+const stateOf = k => () => { S.E = k === 'x' ? 1 : 0; S.shift = (k === 'x' || k === 0) ? 1 : 0; L.forEach((o, i) => { o.t = k === 'x' ? 0 : (i < TURNED[k] ? 1 : 0); }); };
+const textRect = n => { const r = document.createRange(); r.selectNodeContents(n); const b = r.getBoundingClientRect(); return b.width ? b : n.getBoundingClientRect(); };
+function anchorOf(c, sr, W, H) {
+  if (c.a) return [c.a[0] / 100 * W, c.a[1] / 100 * H];
+  const root = c.face ? leaves[c.face[0]][c.face[1]] : leaves[0].front, n = $(c.el, root); if (!n) return null;
+  const b = c.rng ? textRect(n) : n.getBoundingClientRect(), f = c.f ?? .5;
+  const pt = { r: [b.right, b.top + b.height / 2], l: [b.left, b.top + b.height / 2], t: [b.left + b.width * f, b.top], b: [b.left + b.width * f, b.bottom], c: [b.left + b.width / 2, b.top + b.height / 2] }[c.at || 'c'];
+  const nudge = { r: [6, 0], l: [-6, 0], t: [0, -6], b: [0, 6], c: [0, 0] }[c.at || 'c'];
+  return [pt[0] - sr.left + nudge[0], pt[1] - sr.top + nudge[1]];
+}
+function layoutAnn() {
+  if (mqPhone.matches) return;
+  const W = stage.clientWidth, H = stage.clientHeight, sr = stage.getBoundingClientRect();
+  const anch = {};                                           // anclas medidas con el libro en reposo de cada pliego
+  ['x', 0, 1, 2, 3].forEach(k => { anch[k] = withState(stateOf(k), () => (ANN[k] || []).map(c => anchorOf(c, sr, W, H))); });
+  for (const key in groups) {
+    const g = groups[key]; g.innerHTML = '';
+    const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H }, g);
+    if (key === '0') {                                      // cota de la zona libre superior (20 %)
+      const [x1, y1] = cov(-3, 56), [x2, y2] = cov(213, 56);
+      sv('line', { x1: x1 / 100 * W, y1: y1 / 100 * H, x2: x2 / 100 * W, y2: y2 / 100 * H, class: 'lead-l', 'stroke-dasharray': '6 4' }, svg);
+    }
+    (ANN[key] || []).forEach((c, i) => {
+      const an = anch[key][i]; if (!an) return;
+      const chip = el('div', 'chip', g); chip.textContent = c.t; chip.setAttribute('translate', 'no');
+      const w = chip.offsetWidth, h = chip.offsetHeight; let left, top;
+      if (c.o) { const ev = e => Function('w', 'h', 'k', 'return ' + e)(w, h, K); left = an[0] + ev(c.o[0]); top = an[1] + ev(c.o[1]); }
+      else { const cx = c.c[0] / 100 * W, cy = c.c[1] / 100 * H; left = c.s === 'l' ? cx - w : cx; top = cy - h / 2; }
+      chip.style.left = left.toFixed(1) + 'px'; chip.style.top = top.toFixed(1) + 'px';
+      let sx, sy;                                            // la guía sale del lado de la nota más cercano al ancla
+      if (an[0] > left + w) { sx = left + w; sy = clamp(an[1], top + 6, top + h - 6); }
+      else if (an[0] < left) { sx = left; sy = clamp(an[1], top + 6, top + h - 6); }
+      else if (an[1] < top) { sx = clamp(an[0], left + 10, left + w - 10); sy = top; }
+      else { sx = clamp(an[0], left + 10, left + w - 10); sy = top + h; }
+      const pts = elbow(sx, sy, an[0], an[1]), d = 'M' + pts.map(q => q[0].toFixed(1) + ' ' + q[1].toFixed(1)).join('L');
+      sv('path', { d, class: 'halo' }, svg); sv('path', { d, class: 'lead-l' }, svg); sv('circle', { cx: an[0], cy: an[1], r: 4.5 }, svg);
+    });
+  }
+}
+function showGroup(key) {
+  for (const k in groups) { const on = k === String(key); groups[k].style.opacity = on ? 1 : 0; groups[k].style.visibility = on ? 'visible' : 'hidden'; }
+}
+
+/* =====================================================================
+   5 · INTERFAZ DE PLIEGOS: indicador, pasos, reglas accesibles
+   ===================================================================== */
+const indEl = $('#t2'), prevBtn = $('#prev'), nextBtn = $('#next'), stepBtns = $$('.step'), rulesEl = $('#rules'), stepFill = $('#stepFill');
+let curK = -1;
+let urlTimer = 0;
+function syncURL() {                                       // la URL refleja el estado: capítulo, pliego y compuerta (se abre igual al recargar o compartir)
+  if (CAPTURA) return;
+  clearTimeout(urlTimer);
+  urlTimer = setTimeout(() => {
+    try {
+      const u = new URL(location.href), q = u.searchParams;
+      ['pantalla', 'pliego', 'compuerta'].forEach(k => q.delete(k));
+      if (activeCh > 1) q.set('pantalla', activeCh);
+      if (activeCh === 2 && curK >= 0) q.set('pliego', curK);
+      if (activeCh === 3 && selId) q.set('compuerta', selId);
+      history.replaceState(null, '', u.pathname + (q.toString() ? '?' + q.toString() : '') + u.hash);
+    } catch (e) { /* entorno sin History API */ }
+  }, 450);
+}
+function updateUI(k, animate) {
+  if (k === curK) return;
+  const first = curK < 0; curK = k; syncURL();
+  indEl.textContent = NAMES[k];
+  stepBtns.forEach((b, i) => { b.classList.toggle('on', i === k); b.classList.toggle('done', i < k); if (i === k) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); });
+  prevBtn.disabled = k === 0; nextBtn.disabled = k === 3;
+  rulesEl.innerHTML = (ANN[k] || []).map(c => `<li>${c.t.replace(/\n/g, ' · ')}</li>`).join('');
+  if (!first && animate && HAS_GSAP) gsap.fromTo(indEl, REDUCED ? { opacity: 0 } : { y: 8, opacity: 0 }, { y: 0, opacity: 1, duration: REDUCED ? .2 : .3, ease: 'power3.out', overwrite: true });
+}
+const stepsEl = $('#steps'), stepX = []; let trackW = 1;
+const cacheSteps = () => { stepBtns.forEach((b, i) => { stepX[i] = b.offsetLeft + 1; }); trackW = Math.max(1, stepsEl.clientWidth - 14); };   // medidas fuera del bucle de animación
+const setFill = f => {                                     // f ∈ [0, 3]: avance continuo entre pasos
+  const a = Math.floor(clamp(f, 0, 3)), b = Math.min(3, a + 1), fr = clamp(f, 0, 3) - a;
+  stepFill.style.transform = `scaleX(${clamp((stepX[a] + (stepX[b] - stepX[a]) * fr) / trackW, 0, 1).toFixed(4)})`;
+};
+cacheSteps();
+const stopStatic = k => {
+  k = clamp(k, 0, 3); const fade = REDUCED && !CAPTURA && HAS_GSAP && curK >= 0 && k !== curK;
+  setStop(k); showGroup(k); updateUI(k, true); setFill(k);
+  if (fade) gsap.fromTo(stage, { opacity: .15 }, { opacity: 1, duration: .24, ease: 'power1.out', overwrite: true });   // movimiento reducido: fundido, sin giro
+};
+
+/* =====================================================================
+   6 · NAVEGACIÓN: capítulo activo, riel de progreso, retícula, desplazamiento
+   ===================================================================== */
+$$('.grid-guide').forEach(g => { g.innerHTML = '<i></i>'.repeat(12); });
+let activeCh = 1;
+const railItems = $$('#railList li'), barLinks = $$('#barNav a'), railFill = $('#railFill'), barProg = $('#barProg');
+const setActive = n => {
+  activeCh = n; syncURL();
+  railItems.forEach(li => { const on = +li.dataset.ch === n; li.classList.toggle('on', on); const a = $('a', li); if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+  barLinks.forEach(a => { const on = +a.dataset.ch === n; a.classList.toggle('on', on); if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+};
+const onlyN = parseInt(html.getAttribute('data-only') || '0', 10);
+if (onlyN) setActive(onlyN);
+else if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) setActive(+en.target.dataset.ch); }), { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+  $$('.ch').forEach(c => io.observe(c));
+}
+let railTick = false;
+let circST = null, circDraw = () => innerHeight * 1.4;
+const railOl = $('#railList');
+const railYs = []; let railEnd = 1;
+const cacheRail = () => { railYs.length = 0; railItems.forEach(li => railYs.push(li.offsetTop + 18)); railEnd = Math.max(1, railOl.offsetHeight - 20); };
+const chEls = $$('.ch'); let chTops = [], chHs = [];
+const cacheCh = () => { chTops = chEls.map(c => c.getBoundingClientRect().top + scrollY); chHs = chEls.map(c => c.offsetHeight); };
+const updateRail = (forcedPos) => {
+  railTick = false;
+  const mid = scrollY + innerHeight / 2; let pos = 0;                                // pos = índice de capítulo + avance dentro del capítulo
+  if (forcedPos !== undefined) pos = forcedPos;
+  else chEls.forEach((c, i) => { if (mid >= chTops[i]) pos = i + clamp((mid - chTops[i]) / Math.max(1, chHs[i]), 0, 1); });
+  const i = Math.min(2, Math.floor(pos)), fr = pos - i, y = railYs[i] + ((i < 2 ? railYs[i + 1] : railEnd) - railYs[i]) * fr;
+  railFill.style.transform = `scaleY(${clamp((y - 20) / Math.max(1, railEnd - 20), 0, 1).toFixed(4)})`;
+  barProg.style.transform = `scaleX(${clamp(pos / 3, 0, 1).toFixed(4)})`;
+};
+cacheRail(); cacheCh();
+if (!onlyN) addEventListener('scroll', () => { if (!railTick) { railTick = true; requestAnimationFrame(() => updateRail()); } }, { passive: true });
+else updateRail(onlyN - 1);
+const gridbtn = $('#gridbtn');
+const toggleGrid = () => { const on = html.classList.toggle('grid-on'); gridbtn.setAttribute('aria-pressed', String(on)); };
+gridbtn.addEventListener('click', toggleGrid);
+const gridpg = $('#gridpg');
+gridpg.addEventListener('click', () => { const on = html.classList.toggle('show-pgrid'); gridpg.setAttribute('aria-pressed', String(on)); });
+
+let scrollTween = null;
+const killScroll = () => { if (scrollTween) { scrollTween.kill(); scrollTween = null; } };
+['wheel', 'touchstart', 'pointerdown'].forEach(ev => addEventListener(ev, killScroll, { passive: true }));
+addEventListener('keydown', e => { if (/^(Arrow|Page|Home|End| )/.test(e.key)) killScroll(); }, { passive: true });
+function scrollToY(y, dur = .9) {                           // el desplazamiento es la fuente única de verdad: todo lo demás lo sigue
+  killScroll();
+  if (!HAS_GSAP || STATIC || dur <= 0) { window.scrollTo(0, y); return; }
+  const o = { y: scrollY };
+  scrollTween = gsap.to(o, { y, duration: dur, ease: 'power2.inOut', onUpdate: () => window.scrollTo(0, o.y), onComplete: () => { scrollTween = null; } });
+}
+const chapterY = n => { const c = $('#c' + n); return c.getBoundingClientRect().top + scrollY - (mqPhone.matches && n === 3 ? 56 : 0); };
+const goChapter = n => { if (onlyN) return; scrollToY(chapterY(n), 1); };
+$$('a[href^="#c"]').forEach(a => a.addEventListener('click', e => { const n = parseInt(a.getAttribute('href').slice(2), 10); if (n) { e.preventDefault(); goChapter(n); } }));
+$('#toTop').addEventListener('click', e => { e.preventDefault(); scrollToY(0, 1); });
+
+/* =====================================================================
+   7 · LÍNEA DE TIEMPO DEL LIBRO (scrub) + FIJACIÓN con ScrollTrigger
+   0 → 1 despiece → montaje · cada pliego: reposo · giro · reposo
+   ===================================================================== */
+const STOPS = [1.3, 2.85, 4.4, 5.95], TOTAL = 6.25;
+let bookTL = null, bookST = null, dragging = false;
+function onBookUpdate() {
+  render();
+  const t = bookTL.time(); let k = 0;
+  for (let i = 1; i < 4; i++) if (Math.abs(t - STOPS[i]) < Math.abs(t - STOPS[k])) k = i;
+  updateUI(k, true);
+  let f = 0;
+  if (t >= STOPS[3]) f = 3; else if (t > STOPS[0]) { let a = 0; while (a < 2 && t > STOPS[a + 1]) a++; f = a + (t - STOPS[a]) / (STOPS[a + 1] - STOPS[a]); }
+  setFill(f);
+}
+function buildBookTL() {
+  const tl = gsap.timeline({ paused: true, defaults: { ease: 'none' }, onUpdate: onBookUpdate });
+  tl.to(S, { E: 0, duration: 1, ease: 'power2.inOut' }, 0);                                  // despiece → montaje
+  tl.to(S, { shift: 0, duration: .7, ease: 'power2.inOut' }, 1.5);                           // la portada se abre y el libro se centra
+  tl.to(L[0], { t: 1, duration: .7, ease: 'power2.inOut' }, 1.5);
+  tl.to(L[1], { t: 1, duration: .7, ease: 'power2.inOut' }, 1.85);                           // → 02-03
+  for (let i = 2; i <= 8; i++) tl.to(L[i], { t: 1, duration: .5, ease: 'power2.inOut' }, 3.05 + (i - 2) * .1);   // → 16-17
+  for (let i = 9; i <= 14; i++) tl.to(L[i], { t: 1, duration: .5, ease: 'power2.inOut' }, 4.6 + (i - 9) * .12); // → 28-29
+  tl.to({}, { duration: .01 }, TOTAL - .01);
+  // Las anotaciones solo aparecen en reposo
+  tl.fromTo(groups.x, { autoAlpha: 1 }, { autoAlpha: 0, duration: .25 }, .55);
+  STOPS.forEach((s, k) => {
+    tl.fromTo(groups[k], { autoAlpha: 0 }, { autoAlpha: 1, duration: .2 }, s - .3);
+    if (k < 3) tl.to(groups[k], { autoAlpha: 0, duration: .2 }, s + .12);
+  });
+  return tl;
+}
+const SNAPS = () => [0, ...STOPS.map(s => s / TOTAL), 1];
+const nearestSnap = v => SNAPS().reduce((a, b) => Math.abs(b - v) < Math.abs(a - v) ? b : a);
+const yOfTime = t => bookST.start + (t / TOTAL) * (bookST.end - bookST.start);
+/* El avance del libro sigue al desplazamiento con un suavizado propio (equivale al scrub, pero ajustable):
+   0,55 s con la rueda · 0,28 s en la navegación por botones y flechas · 0,12 s mientras se arrastra (pegado al dedo) */
+const drv = { p: 0 };
+const applyP = () => { if (bookTL) bookTL.progress(clamp(drv.p, 0, 1)); };
+const smoothTo = (p, d) => gsap.to(drv, { p, duration: d, ease: 'power3.out', overwrite: true, onUpdate: applyP });
+function buildBookST() {
+  bookST = ScrollTrigger.create({
+    trigger: '#c2', start: 'top top', end: () => '+=' + Math.round(innerHeight * TOTAL * .72),
+    pin: '#c2pin', pinSpacing: true, anticipatePin: 1, invalidateOnRefresh: true,
+    snap: { snapTo: v => dragging ? v : nearestSnap(v), duration: { min: .25, max: .7 }, delay: .12, ease: 'power1.inOut', inertia: false, directional: false },
+    onUpdate: self => smoothTo(self.progress, dragging ? .12 : (scrollTween ? .28 : .55)),
+    onRefresh: self => { gsap.killTweensOf(drv); drv.p = self.progress; applyP(); }
+  });
+}
+function goStop(k) {
+  k = clamp(k, 0, 3);
+  if (!bookST) { stopStatic(k); return; }
+  scrollToY(yOfTime(STOPS[k]), .8);
+}
+prevBtn.addEventListener('click', () => goStop(curK - 1));
+nextBtn.addEventListener('click', () => goStop(curK + 1));
+stepBtns.forEach(b => b.addEventListener('click', () => goStop(+b.dataset.k)));
+
+/* Arrastre y clic sobre el libro (interrumpibles: el giro sigue al desplazamiento) */
+let drag = null;
+stage.addEventListener('pointerdown', e => { if (e.button !== 0 || !e.isPrimary || drag) return; drag = { x: e.clientX, y: e.clientY, id: e.pointerId, moved: false, k0: curK, h: [[e.clientX, e.timeStamp]] }; });   // un solo puntero: se ignoran los toques adicionales
+stage.addEventListener('pointermove', e => {
+  if (!drag || e.pointerId !== drag.id) return;
+  drag.h.push([e.clientX, e.timeStamp]); if (drag.h.length > 8) drag.h.shift();
+  const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+  if (!drag.moved) { if (Math.abs(dx) < 8 || Math.abs(dx) < Math.abs(dy)) return; drag.moved = true; dragging = true; killScroll(); stage.setPointerCapture(e.pointerId); stage.classList.add('drag'); }
+  if (!bookST) return;
+  const k0 = drag.k0, fr = clamp(-dx / (stage.clientWidth / 2 * .85), -1, 1), tgt = clamp(k0 + (fr > 0 ? 1 : -1), 0, 3), lim = tgt === k0 ? .1 : 1;
+  window.scrollTo(0, yOfTime(STOPS[k0] + Math.abs(fr) * lim * (STOPS[tgt] - STOPS[k0])));
+});
+const endDrag = e => {
+  if (!drag || e.pointerId !== drag.id) return;
+  const dx = e.clientX - drag.x, wasMoved = drag.moved, k0 = drag.k0, h = drag.h; drag = null; dragging = false; stage.classList.remove('drag');
+  if (wasMoved) {
+    const W = stage.clientWidth / 2 * .85, a = h[Math.max(0, h.length - 4)], b = h[h.length - 1];
+    const vx = (b[0] - a[0]) / Math.max(1, b[1] - a[1]);          // velocidad al soltar (px/ms)
+    const proj = -(dx + vx * 160) / W;                              // posición proyectada: hacia dónde iba el gesto, no dónde se soltó
+    goStop(Math.abs(proj) > .35 ? k0 + (proj > 0 ? 1 : -1) : k0);
+  }
+  else if (e.type === 'pointerup') { const r = stage.getBoundingClientRect(); goStop(curK === 0 || e.clientX > r.left + r.width / 2 ? curK + 1 : curK - 1); }
+};
+stage.addEventListener('pointerup', endDrag); stage.addEventListener('pointercancel', endDrag);
+
+/* Teclado: flechas según el capítulo activo; 1 · 2 · 3 saltan de capítulo; G alterna la retícula */
+let gateStep = () => {};                                    // lo define el capítulo 3
+addEventListener('keydown', e => {
+  if (e.altKey || e.ctrlKey || e.metaKey || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+  if ((e.key === 'ArrowRight' || e.key === 'ArrowLeft') && activeCh === 2) { e.preventDefault(); goStop(curK + (e.key === 'ArrowRight' ? 1 : -1)); }
+  else if ((e.key === 'ArrowRight' || e.key === 'ArrowLeft') && activeCh === 3) { e.preventDefault(); gateStep(e.key === 'ArrowRight' ? 1 : -1); }
+  else if (e.key === 'g' || e.key === 'G') toggleGrid();
+  else if (/^[123]$/.test(e.key)) goChapter(+e.key);
+});
+
+/* =====================================================================
+   8 · CICLO DE OCHO SEMANAS · CIRCUITO DE NODOS
+   Un solo modelo de datos; dos orientaciones (horizontal fijada · vertical en pantallas estrechas)
+   ===================================================================== */
+const GATES = [
+  { id: 'G0', wk: 'S1', when: 'viernes de S1', date: '20-nov-2026', who: [['Consejo Editorial']], crit: 'Eje temático, personaje de portada, mapa de paginación, pauta comprometida, tiraje y evento.' },
+  { id: 'G1', wk: 'S4', when: 'viernes de S4', date: '11-dic-2026', who: [['DE']], crit: 'Textos firmados; fotografía, video y pódcast entregados; autorizaciones archivadas.' },
+  { id: 'G2', wk: 'S6', when: 'viernes de S6', date: '08-ene-2027', who: [['DE'], ['EC']], crit: 'Páginas con doble corrección; cifras verificadas; QR y NFC configurados.' },
+  { id: 'G3', wk: 'S6', when: 'viernes de S6', date: '08-ene-2027', who: [['CC'], ['EV']], crit: 'Pauta aprobada; cero precios impresos; revisión legal; patrocinio del evento ≥\u00a070\u00a0% del costo.' },
+  { id: 'G4', wk: 'S7', when: 'martes de S7', date: '12-ene-2027', who: [['DE'], ['DA'], ['EV']], crit: 'Ferro y color aprobados; QR y NFC verificados; plan del evento cerrado.' },
+  { id: 'G5', wk: 'S8', when: 'D+1', date: '', who: [['PD'], ['CC'], ['EV']], crit: 'Portada revelada; edición digital y pódcast publicados; ejemplares en sedes.' }
+];
+const ROLES = { DE: 'Dirección Editorial', EC: 'Cierre y Corrección', CC: 'Comercial y Alianzas', EV: 'Eventos y Creadores', DA: 'Arte y Maquetación', PD: 'Digital y Datos' };
+const PHASE_OF = { S1: 'S1', S2: 'S2-S4', S3: 'S2-S4', S4: 'S2-S4', S5: 'S5-S6', S6: 'S5-S6', S7: 'S7', S8: 'S8' };
+const PHASES = [{ k: 'S1', n: 'Planificación', a: 'S1', b: 'S1' }, { k: 'S2-S4', n: 'Producción', a: 'S2', b: 'S4' }, { k: 'S5-S6', n: 'Diseño y edición', a: 'S5', b: 'S6' },
+                { k: 'S7', n: 'Pre-prensa e impresión', a: 'S7', b: 'S7' }, { k: 'S8', n: 'Lanzamiento', a: 'S8', b: 'S8' }];
+
+function layoutH() {
+  const W = 1152, H = 322, T = 184, X0 = 24, X1 = 1112;
+  const SEG = [['S1', 108], ['S2', 76], ['S3', 76], ['S4', 88], ['S5', 80], ['P', 64], ['S6', 104], ['S7', 208], ['S8', 224]];
+  const seg = {}; let x = 62; SEG.forEach(([id, w]) => { seg[id] = { a: x, b: x + w }; x += w; });
+  const at = (id, f) => seg[id].a + (seg[id].b - seg[id].a) * f;
+  const fx = at('S6', .92);
+  const nodes = [
+    { id: 'G0', kind: 'gate', x: at('S1', .92), y: T, side: 'up' },
+    { id: 'G1', kind: 'gate', x: at('S4', .92), y: T, side: 'down' },
+    { id: 'G2', kind: 'gate', x: fx, y: T - 22, side: 'up' },
+    { id: 'G3', kind: 'gate', x: fx, y: T + 22, side: 'down' },
+    { id: 'G4', kind: 'gate', x: at('S7', .30), y: T, side: 'up', align: 'left' },
+    { id: 'DD', kind: 'event', x: at('S8', .70), y: T, side: 'up' },
+    { id: 'G5', kind: 'gate', x: at('S8', .90), y: T, side: 'down' }
+  ];
+  const paths = [
+    { d: `M${X0} ${T}H${seg.P.a}` }, { d: `M${seg.P.a} ${T}H${seg.P.b}`, pause: true },
+    { d: `M${seg.P.b} ${T}H${fx - 38}` },
+    { d: `M${fx - 38} ${T}l22 -22H${fx + 16}l22 22` }, { d: `M${fx - 38} ${T}l22 22H${fx + 16}l22 -22` },
+    { d: `M${fx + 38} ${T}H${X1}` }
+  ];
+  const bounds = Object.keys(seg).map(k => seg[k].a).concat([seg.S8.b]).map(v => ({ x1: v, x2: v, y1: 54, y2: 290 }));
+  const weeks = SEG.map(([id]) => ({ t: id === 'P' ? 'pausa' : id, x: (seg[id].a + seg[id].b) / 2, y: 304 }));
+  const bands = PHASES.map(p => ({ k: p.k, n: p.n, x: seg[p.a].a, w: seg[p.b].b - seg[p.a].a }));
+  return { o: 'h', W, H, T, X0, X1, nodes, paths, bounds, weeks, bands, along: n => n.x };
+}
+function layoutV() {
+  const W = 358, H = 940, X = 76, Y0 = 28, Y1 = 912;
+  const SEG = [['S1', 92], ['S2', 64], ['S3', 64], ['S4', 92], ['S5', 64], ['P', 56], ['S6', 132], ['S7', 150], ['S8', 170]];
+  const seg = {}; let y = 40; SEG.forEach(([id, h]) => { seg[id] = { a: y, b: y + h }; y += h; });
+  const at = (id, f) => seg[id].a + (seg[id].b - seg[id].a) * f;
+  const nodes = [
+    { id: 'G0', kind: 'gate', x: X, y: at('S1', .9) }, { id: 'G1', kind: 'gate', x: X, y: at('S4', .9) },
+    { id: 'G2', kind: 'gate', x: X, y: at('S6', .5) }, { id: 'G3', kind: 'gate', x: X, y: at('S6', .88) },
+    { id: 'G4', kind: 'gate', x: X, y: at('S7', .3) }, { id: 'DD', kind: 'event', x: X, y: at('S8', .66) }, { id: 'G5', kind: 'gate', x: X, y: at('S8', .9) }
+  ];
+  const paths = [{ d: `M${X} ${Y0}V${seg.P.a}` }, { d: `M${X} ${seg.P.a}V${seg.P.b}`, pause: true }, { d: `M${X} ${seg.P.b}V${Y1}` }];
+  const bounds = Object.keys(seg).map(k => seg[k].a).concat([seg.S8.b]).map(v => ({ x1: 56, x2: 96, y1: v, y2: v }));
+  const weeks = SEG.map(([id]) => ({ t: id === 'P' ? 'pausa' : id, x: 44, y: (seg[id].a + seg[id].b) / 2 }));
+  return { o: 'v', W, H, T: X, X0: Y0, X1: Y1, nodes, paths, bounds, weeks, bands: [], along: n => n.y };
+}
+const gateById = id => GATES.find(g => g.id === id);
+const circ = { h: null, v: null };
+function buildCircuit(root, lay) {
+  root.innerHTML = '';
+  const hor = lay.o === 'h', pc = (v, d) => (v / d * 100).toFixed(3) + '%';
+  const svg = sv('svg', { viewBox: `0 0 ${lay.W} ${lay.H}`, preserveAspectRatio: 'xMinYMin meet', 'aria-hidden': 'true', focusable: 'false' }, root);
+  const cp = sv('clipPath', { id: 'clip-' + lay.o }, sv('defs', {}, svg));
+  const clipRect = sv('rect', hor ? { x: 0, y: 0, width: 0, height: lay.H } : { x: 0, y: 0, width: lay.W, height: 0 }, cp);
+  lay.bounds.forEach(b => sv('line', Object.assign({ class: 'tk' }, b), svg));
+  const gBase = sv('g', {}, svg), gLive = sv('g', { 'clip-path': `url(#clip-${lay.o})` }, svg);
+  lay.paths.forEach(p => { const c = 'tr-base' + (p.pause ? ' tr-pause' : ''); sv('path', { d: p.d, class: c }, gBase); sv('path', { d: p.d, class: c.replace('base', 'live') }, gLive); });
+  const head = sv('line', hor ? { x1: 0, x2: 0, y1: lay.T - 30, y2: lay.T + 30, class: 'scan' } : { x1: lay.T - 30, x2: lay.T + 30, y1: 0, y2: 0, class: 'scan' }, svg);
+  const out = { root, lay, clipRect, head, nodes: [], bands: [] };
+  // terminales del circuito (inicio y fin)
+  [lay.X0, lay.X1].forEach(v => sv('circle', { cx: hor ? v : lay.T, cy: hor ? lay.T : v, r: 5, class: 'term' }, svg));
+  lay.nodes.forEach(n => {
+    const g = sv('g', { class: 'nd' + (n.kind === 'event' ? ' ev' : ''), transform: `translate(${n.x} ${n.y})` }, svg);
+    sv('circle', { class: 'halo2', r: 17 }, g); sv('circle', { class: 'ring', r: n.kind === 'event' ? 12 : 9 }, g); sv('circle', { class: 'dot', r: 3.5 }, g);
+    const gd = gateById(n.id), lab = el('div', 'gl' + (hor ? (n.side === 'up' ? ' up' : '') : ' vr'), root);
+    lab.innerHTML = n.kind === 'event' ? '<b>Día D</b><small>21-ene-2027 · 19:30</small>' : `<b>${n.id}</b><small>${gd.date || gd.when}</small>`;
+    lab.style.left = pc(n.x + (hor ? 0 : 26), lay.W); lab.style.top = pc(n.y + (hor ? (n.side === 'up' ? -(n.kind === 'event' ? 26 : 22) : 22) : 0), lay.H);
+    if (hor && n.align === 'left') { lab.style.textAlign = 'left'; lab.style.transform = lab.classList.contains('up') ? 'translate(-10px,-100%)' : 'translate(-10px,0)'; }
+    let btn = null;
+    if (n.kind === 'gate') {
+      btn = el('button', 'nb', root); btn.type = 'button';
+      btn.style.left = pc(n.x, lay.W); btn.style.top = pc(n.y, lay.H);
+      btn.setAttribute('aria-pressed', 'false'); btn.dataset.g = n.id;
+      btn.setAttribute('aria-label', `${n.id} · ${gd.when}${gd.date ? ' · ' + gd.date : ''}: ver criterios`);
+      btn.addEventListener('click', () => selectGate(n.id, 'click'));
+    }
+    out.nodes.push(Object.assign({}, n, { g, lab, btn }));
+  });
+  lay.weeks.forEach(w => { const e = el('span', 'wk', root); e.textContent = w.t; e.style.left = pc(w.x, lay.W); e.style.top = pc(w.y, lay.H); if (!hor) e.style.transform = 'translate(-100%,-50%)'; });
+  lay.bands.forEach(b => {
+    const e = el('div', 'pband', root); e.dataset.p = b.k; e.innerHTML = `<small>${b.k}</small>${b.n}`;
+    e.style.left = pc(b.x, lay.W); e.style.width = pc(b.w, lay.W); out.bands.push(e);
+  });
+  return out;
+}
+const gpCode = $('#gpCode'), gpWhen = $('#gpWhen'), gpWho = $('#gpWho'), gpCrit = $('#gpCrit'), phaseLis = $$('#phaseList li');
+let selId = null;
+function selectGate(id, src) {
+  const g = gateById(id); if (!g) return;
+  const changed = selId !== id; selId = id; if (changed && src !== 'init') syncURL();
+  [circ.h, circ.v].forEach(c => c && c.nodes.forEach(n => { const on = n.id === id; n.g.classList.toggle('sel', on); n.lab.classList.toggle('sel', on); if (n.btn) n.btn.setAttribute('aria-pressed', String(on)); }));
+  gpCode.textContent = g.id;
+  gpWhen.textContent = g.when + (g.date ? ' · ' + g.date : '');
+  gpWho.innerHTML = g.who.map(([r]) => ROLES[r] ? `<abbr title="${ROLES[r]}">${r}</abbr>` : r).join(' · ');
+  gpCrit.textContent = g.crit;
+  const ph = PHASE_OF[g.wk];
+  phaseLis.forEach(li => li.classList.toggle('on', li.dataset.p === ph));
+  [circ.h, circ.v].forEach(c => c && c.bands.forEach(b => b.classList.toggle('on', b.dataset.p === ph)));
+  if (changed && src !== 'init' && HAS_GSAP && !STATIC) gsap.fromTo([gpCode, gpCrit], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: .3, ease: 'power3.out', overwrite: true });
+}
+gateStep = d => { const i = GATES.findIndex(g => g.id === selId); selectGate(GATES[clamp(i + d, 0, GATES.length - 1)].id, 'key'); };
+
+let lastReached = -2;
+function setCircuit(p, auto = true) {
+  [circ.h, circ.v].forEach(c => {
+    if (!c) return;
+    const lay = c.lay, v = lay.X0 + clamp(p, 0, 1) * (lay.X1 - lay.X0), hor = lay.o === 'h';
+    if (hor) { c.clipRect.setAttribute('width', v.toFixed(1)); c.head.setAttribute('transform', `translate(${v.toFixed(1)} 0)`); }
+    else { c.clipRect.setAttribute('height', v.toFixed(1)); c.head.setAttribute('transform', `translate(0 ${v.toFixed(1)})`); }
+    c.head.style.opacity = p > 0 && p < 1 ? 1 : 0;
+    c.nodes.forEach(n => { const hit = lay.along(n) <= v + .5; n.g.classList.toggle('hit', hit); n.lab.classList.toggle('hit', hit); });
+  });
+  const lay = (circ.h || circ.v).lay, v = lay.X0 + clamp(p, 0, 1) * (lay.X1 - lay.X0);
+  let reached = -1; GATES.forEach((g, i) => { const n = (circ.h || circ.v).nodes.find(q => q.id === g.id); if (lay.along(n) <= v + .5) reached = i; });
+  if (auto && reached !== lastReached) { lastReached = reached; selectGate(GATES[Math.max(0, reached)].id, 'scroll'); }
+}
+if ($('#circH')) circ.h = buildCircuit($('#circH'), layoutH());
+if ($('#circV')) circ.v = buildCircuit($('#circV'), layoutV());
+selectGate(qs.get('compuerta') && gateById(qs.get('compuerta')) ? qs.get('compuerta') : 'G3', 'init');
+
+/* Secuencias de S7 y S8: trazo que avanza con el desplazamiento */
+const strips = $$('.days').map(d => {
+  const live = el('i', 'live', d); live.setAttribute('aria-hidden', 'true');
+  return { d, live, lis: $$('li', d) };
+});
+function setStrip(s, p) {
+  s.live.style.transform = mqPhone.matches ? `scaleY(${p.toFixed(4)})` : `scaleX(${p.toFixed(4)})`;
+  s.lis.forEach((li, i) => {
+    const hit = p >= (i / Math.max(1, s.lis.length - 1)) - .001 && p > 0 || p >= 1;
+    const was = li.classList.contains('hit'); li.classList.toggle('hit', hit);
+    if (li.classList.contains('zero') && hit && !was && !STATIC) li.classList.add('pulse');
+  });
+}
+
+/* =====================================================================
+   9 · CAPÍTULO 1: titular, revelado, portada que se inclina
+   ===================================================================== */
+const heroSpec = () => {
+  const f = $('.fig-n'), fs = f ? Math.round(parseFloat(getComputedStyle(f).fontSize)) : 48, ft = $('.c1-band .tag span:last-child'); if (ft) ft.textContent = `Cifras · Archivo Black · ${fs}\u00a0px · tabulares`;
+  const h = $('.display'), cs = getComputedStyle(h);
+  $('#spec1').textContent = `Titular · Archivo Black · ${Math.round(parseFloat(cs.fontSize))}/${Math.round(parseFloat(cs.lineHeight))}\u00a0px` + (mqPhone.matches ? '' : ' · tracking −15');
+};
+function kernFix(chars, h) {                                 // SplitText pierde el kerning entre caracteres: se calcula con canvas y se compensa
+  const cs = getComputedStyle(h), ctx = document.createElement('canvas').getContext('2d');
+  ctx.font = `${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+  chars.forEach((c, i) => {
+    const n = chars[i + 1]; if (!n || c.nextSibling !== n) return;
+    const a = c.textContent, b = n.textContent;
+    const k = ctx.measureText(a + b).width - ctx.measureText(a).width - ctx.measureText(b).width;
+    c.style.marginRight = Math.abs(k) > .01 ? k.toFixed(2) + 'px' : '';
+  });
+}
+function introHero() {
+  const h = $('.display');
+  if (!HAS_SPLIT) { h.style.visibility = 'visible'; return; }
+  try {
+    SplitText.create(h, {
+      type: 'lines,chars', mask: 'lines', autoSplit: true,
+      onSplit(self) {
+        h.style.fontKerning = 'none'; kernFix(self.chars, h); h.style.visibility = 'visible';
+        return gsap.from(self.chars, { yPercent: 110, duration: .6, ease: 'expo.out', stagger: .015, delay: .1 });
+      }
+    });
+  } catch (err) { h.style.visibility = 'visible'; }
+}
+function reveals() {
+  ScrollTrigger.batch('.rv', {
+    start: 'top 98%', once: true, interval: .08, batchMax: 6,
+    onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, duration: .35, ease: 'power1.out', stagger: .06, overwrite: true, onComplete: () => batch.forEach(e => { e.style.willChange = 'auto'; }) })
+  });
+}
+function coverTilt() {
+  const t = $('#tilt1'), wrap = $('.c1-aside');
+  gsap.from(t, { rotationY: -18, duration: 1, ease: 'expo.out', delay: .15, transformPerspective: 1800 });
+  if (!matchMedia('(hover:hover)').matches) return;
+  const rx = gsap.quickTo(t, 'rotationX', { duration: .6, ease: 'power3.out' }), ry = gsap.quickTo(t, 'rotationY', { duration: .6, ease: 'power3.out' });
+  wrap.addEventListener('pointermove', e => { const r = t.getBoundingClientRect(); ry(((e.clientX - r.left) / r.width - .5) * 10); rx(-((e.clientY - r.top) / r.height - .5) * 8); });
+  wrap.addEventListener('pointerleave', () => { ry(0); rx(0); });
+}
+
+/* =====================================================================
+   10 · ARRANQUE
+   ===================================================================== */
+function circuitST() {
+  const mm = gsap.matchMedia();
+  mm.add('(min-width: 1100px)', () => {
+    const wrap = $('.c3-wrap'), draw = () => innerHeight * 1.4, tail = () => Math.max(0, Math.ceil(wrap.offsetHeight - innerHeight));
+    circDraw = draw;
+    circST = ScrollTrigger.create({ trigger: '#c3', start: 'top top', end: () => '+=' + Math.round(draw() + tail()), pin: '#c3pin', pinSpacing: true, scrub: .5, anticipatePin: 1, invalidateOnRefresh: true,
+      onUpdate: s => {
+        const px = s.progress * (s.end - s.start);                  // desplazamiento dentro de la fijación
+        setCircuit(clamp((px - draw() * .05) / (draw() * .85), 0, 1));
+        wrap.style.transform = tail() ? `translateY(${-clamp(px - draw(), 0, tail())}px)` : '';   // viewport bajo: el sobrante sube al final
+      },
+      onRefresh: () => { wrap.style.transform = ''; } });
+    lastReached = -2; setCircuit(0);
+  });
+  mm.add('(max-width: 1099px)', () => {
+    circDraw = null;
+    circST = ScrollTrigger.create({ trigger: '#circV', start: 'top 80%', end: 'bottom 40%', scrub: .4, onUpdate: s => setCircuit(s.progress) });
+    lastReached = -2; setCircuit(0);
+  });
+}
+function stripsST() { strips.forEach(s => ScrollTrigger.create({ trigger: s.d, start: 'top 85%', end: 'bottom 55%', scrub: .4, onUpdate: self => setStrip(s, self.progress) })); }
+
+function bootStatic() {
+  const k0 = clamp(parseInt(qs.get('pliego') || '0', 10) || 0, 0, 3);
+  if (qs.get('despiece') === '1') { setStop(0, 1); showGroup('x'); updateUI(0); setFill(0); }
+  else stopStatic(k0);
+  if (HAS_GSAP && qs.get('progreso')) { bookTL = buildBookTL(); bookTL.time(parseFloat(qs.get('progreso'))); }   // ayuda de revisión: tiempo de la línea de tiempo
+  setCircuit(parseFloat(qs.get('circuito') || '1'), false);
+  strips.forEach(s => setStrip(s, 1));
+}
+function bootAnimated() {
+  gsap.registerPlugin(...(HAS_SPLIT ? [ScrollTrigger, SplitText] : [ScrollTrigger]));
+  ScrollTrigger.config({ ignoreMobileResize: true });
+  introHero(); coverTilt(); reveals();
+  render(); showGroup('x');
+  bookTL = buildBookTL(); buildBookST(); onBookUpdate();      // estado inicial del indicador y de los pasos
+  circuitST(); stripsST();
+  ScrollTrigger.addEventListener('refresh', cacheCh); cacheCh(); updateRail();
+}
+if (STATIC) bootStatic(); else bootAnimated();
+heroSpec();
+layoutAnn();
+
+/* Fuentes y tamaño: las anotaciones y los disparadores se recalculan */
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => {
+  heroSpec(); updateK(); render(); cacheSteps(); cacheRail(); cacheCh(); layoutAnn();
+  if (!STATIC) { ScrollTrigger.refresh(); cacheCh(); }
+  if (!STATIC && !onlyN) {                                  // ?pantalla=N y ?pliego=K en uso normal: el documento salta al capítulo
+    const n = parseInt(qs.get('pantalla') || '0', 10), k = qs.get('pliego');
+    const gate = qs.get('compuerta');
+    if (n === 2 && k !== null && bookST) scrollToY(yOfTime(STOPS[clamp(parseInt(k, 10) || 0, 0, 3)]), 0);
+    else if (n === 3 && gate && circST && (circ.h || circ.v)) {
+      const nd = (circ.h || circ.v).nodes.find(q => q.id === gate), lay = (circ.h || circ.v).lay;
+      if (nd) { const pg = (lay.along(nd) - lay.X0) / (lay.X1 - lay.X0); scrollToY(circST.start + (circDraw ? circDraw() * (.05 + .85 * pg) + 4 : pg * (circST.end - circST.start) + 4), 0); }
+    }
+    else if (n >= 1 && n <= 3) scrollToY(chapterY(n), 0);
+  }
+  if (STATIC && !onlyN) {
+    const n = parseInt(qs.get('pantalla') || '0', 10); if (n >= 1 && n <= 3) scrollToY(chapterY(n), 0);
+  }
+});
+addEventListener('resize', () => { heroSpec(); updateK(); render(); cacheSteps(); cacheRail(); cacheCh(); layoutAnn(); });
+})();
+</script>
+</body>
+</html>
